@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>小Lin说 · 知识库</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    body { font-family: 'Inter', sans-serif; background: #0a0a0a; color: #e5e5e5; }
+    .card:hover { border-color: rgba(249,115,22,0.4) !important; }
+    .tag { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 4px; font-weight: 500; }
+    #search:focus { outline: none; border-color: #f97316; }
+    .hidden-card { display: none !important; }
+    ::-webkit-scrollbar { width: 6px; } ::-webkit-scrollbar-track { background: #111; } ::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
+    .nav-btn.active { color: #f97316; border-color: #f97316; }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <div style="background:#111;border-bottom:1px solid #222;" class="sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center gap-6">
+      <div>
+        <span style="color:#f97316;font-weight:700;font-size:18px;">🦞 小Lin说</span>
+        <span style="color:#555;font-size:13px;margin-left:8px;">· 金融知识库</span>
+      </div>
+      <input id="search" placeholder="搜索视频…" style="flex:1;background:#1a1a1a;border:1px solid #333;border-radius:8px;padding:8px 14px;color:#e5e5e5;font-size:14px;" oninput="doSearch(this.value)" />
+      <a href="https://www.youtube.com/@小Lin说" target="_blank" style="color:#555;font-size:13px;white-space:nowrap;" class="hover:text-white">YouTube ↗</a>
+    </div>
+    <!-- Category nav -->
+    <div class="max-w-7xl mx-auto px-6 pb-3 flex gap-2 flex-wrap">
+      <button class="nav-btn active" onclick="filterCat('all',this)" style="border:1px solid #f97316;color:#f97316;background:transparent;border-radius:20px;padding:4px 14px;font-size:12px;cursor:pointer;">全部</button>
+      <button class="nav-btn" onclick="filterCat('macro',this)" style="border:1px solid #333;color:#888;background:transparent;border-radius:20px;padding:4px 14px;font-size:12px;cursor:pointer;">🌐 宏观经济</button>
+      <button class="nav-btn" onclick="filterCat('finance',this)" style="border:1px solid #333;color:#888;background:transparent;border-radius:20px;padding:4px 14px;font-size:12px;cursor:pointer;">📈 金融工具</button>
+      <button class="nav-btn" onclick="filterCat('country',this)" style="border:1px solid #333;color:#888;background:transparent;border-radius:20px;padding:4px 14px;font-size:12px;cursor:pointer;">🗺️ 国别经济</button>
+      <button class="nav-btn" onclick="filterCat('biz',this)" style="border:1px solid #333;color:#888;background:transparent;border-radius:20px;padding:4px 14px;font-size:12px;cursor:pointer;">🏢 企业案例</button>
+      <button class="nav-btn" onclick="filterCat('invest',this)" style="border:1px solid #333;color:#888;background:transparent;border-radius:20px;padding:4px 14px;font-size:12px;cursor:pointer;">💡 投资常识</button>
+    </div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-6 py-8">
+    <p id="count" style="color:#555;font-size:13px;margin-bottom:20px;">共 30 个视频</p>
+    <div id="grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+
+      <!-- MACRO -->
+      <div class="card" data-cat="macro" data-text="GDP骗人 经济指标 统计误差 购买力平价" style="background:#111;border:1px solid #222;border-radius:12px;padding:20px;">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;">
+          <span class="tag" style="background:#1a2a1a;color:#4ade80;">宏观经济</span>
+          <a href="https://youtube.com/watch?v=P-NmMX9rlYQ" target="_blank" style="color:#555;font-size:12px;">↗ YouTube</a>
+        </div>
+        <h3 style="font-size:15px;font-weight:600;margin-bottom:10px;color:#fff;">GDP 是会骗人的</h3>
+        <ul style="color:#999;font-size:13px;line-height:1.8;padding-left:16px;">
+          <li>GDP 只统计市场交易，家务劳动、志愿服务不计入</li>
+          <li>名义 GDP vs 实际 GDP：通胀膨胀了数字，不代表真实增长</li>
+          <li>购买力平价（PPP）才是比较各国生活水平的正确姿势</li>
+          <li>中国 GDP 按 PPP 计算早已超过美国</li>
+          <li>GDP 高不代表人民富裕——分配不均是关键</li>
+        </ul>
+      </div>
+
+      <div class="card" data-cat="macro" data-text="关税 贸易战 特朗普 保护主义 进口税" style="background:#111;border:1px solid #222;border-radius:12px;padding:20px;">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;">
+          <span class="tag" style="background:#1a2a1a;color:#4ade80;">宏观经济</span>
+          <a href="https://youtube.com/watch?v=uiMsul6sKus" target="_blank" style="color:#555;font-size:12px;">↗ YouTube</a>
+        </div>
+        <h3 style="font-size:15px;font-weight:600;margin-bottom:10px;color:#fff;">一口气了解关税</h3>
+        <ul style="color:#999;font-size:13px;line-height:1.8;padding-left:16px;">
+          <li>关税本质：政府向进口商品征税，羊毛出在消费者身上</li>
+          <li>特朗普用关税作为谈判筹码，而非单纯的保护主义</li>
+          <li>关税战的真实代价：供应链重组、通胀上升、盟友关系受损</li>
+          <li>历史上关税战没有赢家，斯穆特-霍利法案加剧了大萧条</li>
+          <li>中国的反制手段：稀土、农产品采购、汇率调节</li>
+        </ul>
+      </div>
+
+      <div class="card" data-cat="macro" data-text="关税过山车 特朗普 贸易政策 不确定性" style="background:#111;border:1px solid #222;border-radius:12px;padding:20px;">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;">
+          <span class="tag" style="background:#1a2a1a;color:#4ade80;">宏观经济</span>
+          <a href="https://youtube.com/watch?v=Op_lsH_ys5g" target="_blank" style="color:#555;font-size:12px;">↗ YouTube</a>
+        </div>
+        <h3 style="font-size:15px;font-weight:600;margin-bottom:10px;color:#fff;">关税过山车，特朗普究竟想干嘛？</h3>
+        <ul style="color:#999;font-size:13px;line-height:1.8;padding-left:16px;">
+          <li>特朗普关税政策的核心逻辑：制造不确定性 = 谈判筹码</li>
+          <li>"Art of the Deal"策略：先极端出价，再妥协成交</li>
+          <li>盟友和对手都被关税打到，目的是重塑全球贸易秩序</li>
+          <li>短期市场恐慌可能是故意制造的，为了压低利率</li>
+          <li>真正的长期目标：把制造业拉回美国</li>
+        </ul>
+      </div>
+
+      <div class="card" data-cat="macro" data-text="贸易逆差 美元 进出口 经常账户" style="background:#111;border:1px solid #222;border-radius:12px;padding:20px;">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;">
+          <span class="tag" style="background:#1a2a1a;color:#4ade80;">宏观经济</span>
+          <a href="https://youtube.com/watch?v=XDXeZk6a170" target="_blank" style="color:#555;font-size:12px;">↗ YouTube</a>
+        </div>
+        <h3 style="font-size:15px;font-weight:600;margin-bottom:10px;color:#fff;">美国刹不住的贸易逆差，根本原因是什么？</h3>
+        <ul style="color:#999;font-size:13px;line-height:1.8;padding-left:16px;">
+          <li>贸易逆差不等于吃亏——美国用印钱换取实物商品</li>
+          <li>美元作为储备货币，全球都要买美元，推高了汇率，导致出口贵</li>
+          <li>"特里芬困境"：储备货币国家天然会产生逆差</li>
+          <li>美国储蓄率极低是逆差的内因：消费大于生产</li>
+          <li>关税无法从根本上解决逆差，除非美元失去储备地位</li>
+        </ul>
+      </div>
+
+      <div class="card" data-cat="macro" data-text="美联储 货币政策 利率 特朗普 央行独立性" style="background:#111;border:1px solid #222;border-radius:12px;padding:20px;">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;">
+          <span class="tag" style="background:#1a2a1a;color:#4ade80;">宏观经济</span>
+          <a href="https://youtube.com/watch?v=OFmvWLBwDys" target="_blank" style="color:#555;font-size:12px;">↗ YouTube</a>
+        </div>
+        <h3 style="font-size:15px;font-weight:600;margin-bottom:10px;color:#fff;">特朗普打算怎么干美联储？</h3>
+        <ul style="color:#999;font-size:13px;line-height:1.8;padding-left:16px;">
+          <li>美联储独立性是百年博弈的结果，总统无权直接命令降息</li>
+          <li>特朗普曾多次公开批评鲍威尔，市场把这当风险信号</li>
+          <li>如果总统控制央行：短期可能繁荣，长期通胀失控</li>
+          <li>土耳其是反面教材：埃尔多安干预央行 → 里拉崩溃</li>
+          <li>美联储真正的武器是"预期管理"，一句话可以移动市场</li>
+        </ul>
+      </div>
+
+      <div class="card" data-cat="macro" data-text="化债 地方债 财政 中国经济 债务" style="background:#111;border:1px solid #222;border-radius:12px;padding:20px;">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;">
+          <span class="tag" style="background:#1a2a1a;color:#4ade80;">宏观经济</span>
+          <a href="https://youtube.com/watch?v=4hBpLHqBSOg" target="_blank" style="color:#555;font-size:12px;">↗ YouTube</a>
+        </div>
+        <h3 style="font-size:15px;font-weight:600;margin-bottom:10px;color:#fff;">12万亿化债和中国财政体系</h3>
+        <ul style="color:#999;font-size:13px;line-height:1.8;padding-left:16px;">
+          <li>地方政府融资平台（城投）是中国独特的"表外债务"模式</li>
+          <li>化债 = 把高息隐性债务换成低息显性国债，降低风险</li>
+          <li>12万亿规模：约等于日本一年的 GDP</li>
+          <li>债务置换不是免债，是时间换空间，压低利息成本</li>
+          <li>根本问题未解决：土地财政下滑后，地方财政靠什么？</li>
+        </ul>
+      </div>
+
+      <div class="card" data-cat="macro" data-text="制裁 俄罗斯 伊朗 朝鲜 委内瑞拉 经济封锁" style="background:#111;border:1px solid #222;border-radius:12px;padding:20px;">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;">
+          <span class="tag" style="background:#1a2a1a;color:#4ade80;">宏观经济</span>
+          <a href="https://youtube.com/watch?v=zsFTTKNLcXM" target="_blank" style="color:#555;font-size:12px;">↗ YouTube</a>
+        </div>
+        <h3 style="font-size:15px;font-weight:600;margin-bottom:10px;color:#fff;">被制裁最严重的国家，都怎么样了？</h3>
+        <ul style="color:#999;font-size:13px;line-height:1.8;padding-left:16px;">
+          <li>制裁的杀伤力取决于被制裁国与美元/全球金融体系的绑定程度</li>
+          <li>伊朗：制裁 40 年仍然存在，用石油换物资+发展本土体系</li>
+          <li>朝鲜：极度孤立但政权稳定，代价是人民极度贫困</li>
+          <li>俄罗斯：西方低估了其自给自足能力和与中国的合作空间</li>
+          <li>制裁最有效的场景：小国 + 高度美元依赖 + 内部分裂</li>
+        </ul>
+      </div>
+
+      <div class="card" data-cat="macro" data-text="伊朗战争 石油 中东 能源 地缘政治" style="background:#111;border:1px solid #222;border-radius:12px;padding:20px;">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;">
+          <span class="tag" style="background:#1a2a1a;color:#4ade80;">宏观经济</span>
+          <a href="https://youtube.com/watch?v=HeVuAKDtWX8" target="_blank" style="color:#555;font-size:12px;">↗ YouTube</a>
+        </div>
+        <h3 style="font-size:15px;font-weight:600;margin-bottom:10px;color:#fff;">伊朗战争与全球能源格局</h3>
+        <ul style="color:#999;font-size:13px;line-height:1.8;padding-left:16px;">
+          <li>霍尔木兹海峡：全球 20% 石油从这里过，伊朗可随时封锁</li>
+          <li>伊朗核协议破裂的根本：美国国内政治撕裂，政策无法持续</li>
+          <li>中东局势对全球通胀的传导：油价 → 运输成本 → 所有商品</li>
+          <li>以色列与伊朗的代理人战争已打了几十年，每次升级都是试探</li>
+          <li>中国是最大变量：既是伊朗最大石油买家，又希望中东稳定</li>
+        </ul>
+      </div>
+
+      <!-- FINANCE TOOLS -->
+      <div class="card" data-cat="finance" data-text="期货 合约 做多 做空 杠杆 商品" style="background:#111;border:1px solid #222;border-radius:12px;padding:20px;">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;">
+          <span class="tag" style="background:#1a1a2e;color:#60a5fa;">金融工具</span>
+          <a href="https://youtube.com/watch?v=8qAHj1a0H4c" target="_blank" style="color:#555;font-size:12px;">↗ YouTube</a>
+        </div>
+        <h3 style="font-size:15px;font-weight:600;margin-bottom:10px;color:#fff;">一口气了解期货（上）</h3>
+        <ul style="color:#999;font-size:13px;line-height:1.8;padding-left:16px;">
+          <li>期货起源：农民和商人为了锁定未来价格，对冲风险</li>
+          <li>期货 ≠ 股票：买的是"未来某时间点的价格承诺"，不是所有权</li>
+          <li>杠杆是双刃剑：10% 保证金 = 10倍杠杆，收益和亏损都放大</li>
+          <li>交割日到期必须处理仓位，否则真的会收到实物大豆</li>
+          <li>期货市场的正常形态：远期价格高于近期（正向市场）</li>
+        </ul>
+      </div>
+
+      <div class="card" data-cat="finance" data-text="期货 套保 投机 指数期货 原油" style="background:#111;border:1px solid #222;border-radius:12px;padding:20px;">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;">
+          <span class="tag" style="background:#1a1a2e;color:#60a5fa;">金融工具</span>
+          <a href="https://youtube.com/watch?v=Ylvr5hl6hYo" target="_blank" style="color:#555;font-size:12px;">↗ YouTube</a>
+        </div>
+        <h3 style="font-size:15px;font-weight:600;margin-bottom:10px;color:#fff;">一口气了解期货（下）</h3>
+        <ul style="color:#999;font-size:13px;line-height:1.8;padding-left:16px;">
+          <li>套期保值（对冲）：航空公司买油价期货，锁定燃油成本</li>
+          <li>2020年原油期货负价格：仓库装满了，没地方存，只能倒贴钱请人接货</li>
+          <li>股指期货：不用买所有股票，买一个合约就等于买了整个市场</li>
+          <li>散户参与期货九死一生：专业机构有信息和资金优势</li>
+          <li>期权 vs 期货：期权是权利，可以不行使；期货是义务，必须履行</li>
+        </ul>
+      </div>
+
+      <div class="card" data-cat="finance" data-text="稳定币 USDT USDC 加密货币 美元锚定" style="background:#111;border:1px solid #222;border-radius:12px;padding:20px;">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;">
+          <span class="tag" style="background:#1a1a2e;color:#60a5fa;">金融工具</span>
+          <a href="https://youtube.com/watch?v=tm09cMTBTSU" target="_blank" style="color:#555;font-size:12px;">↗ YouTube</a>
+        </div>
+        <h3 style="font-size:15px;font-weight:600;margin-bottom:10px;color:#fff;">一口气了解稳定币</h3>
+        <ul style="color:#999;font-size:13px;line-height:1.8;padding-left:16px;">
+          <li>稳定币解决了加密货币价格波动大、无法日常使用的问题</li>
+          <li>USDT（Tether）是最大稳定币，背后储备透明度一直被质疑</li>
+          <li>算法稳定币 UST 崩盘：没有真实抵押，只靠算法维持锚定，一旦恐慌就死亡螺旋</li>
+          <li>稳定币是加密世界的"美元化"——实际上在扩大美元影响力</li>
+          <li>各国央行数字货币（CBDC）是对稳定币的国家版本回应</li>
+        </ul>
+      </div>
+
+      <div class="card" data-cat="finance" data-text="A股 上市 IPO 注册制 退市 股票" style="background:#111;border:1px solid #222;border-radius:12px;padding:20px;">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;">
+          <span class="tag" style="background:#1a1a2e;color:#60a5fa;">金融工具</span>
+          <a href="https://youtube.com/watch?v=NYs-wpYp0bY" target="_blank" style="color:#555;font-size:12px;">↗ YouTube</a>
+        </div>
+        <h3 style="font-size:15px;font-weight:600;margin-bottom:10px;color:#fff;">一口气了解A股上市</h3>
+        <ul style="color:#999;font-size:13px;line-height:1.8;padding-left:16px;">
+          <li>A股 IPO 曾是核准制：监管层审批，排队数年，壳资源极值钱</li>
+          <li>注册制改革：从"审批通过才能上"变成"符合条件就能上"</li>
+          <li>退市制度不完善是A股长期问题：垃圾公司不死，资源无法优化配置</li>
+          <li>打新股为什么稳赚？首发定价人为压低 + 散户哄抢 = 上市即涨</li>
+          <li>大股东减持是最大利益输送路径，散户要看清锁定期</li>
+        </ul>
+      </div>
+
+      <div class="card" data-cat="finance" data-text="主权基金 挪威 沙特 新加坡 国家投资" style="background:#111;border:1px solid #222;border-radius:12px;padding:20px;">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;">
+          <span class="tag" style="background:#1a1a2e;color:#60a5fa;">金融工具</span>
+          <a href="https://youtube.com/watch?v=kIo2BAubO6k" target="_blank" style="color:#555;font-size:12px;">↗ YouTube</a>
+        </div>
+        <h3 style="font-size:15px;font-weight:600;margin-bottom:10px;color:#fff;">一口气了解全球三大主权基金</h3>
+        <ul style="color:#999;font-size:13px;line-height:1.8;padding-left:16px;">
+          <li>主权基金 = 国家的"长期储蓄账户"，用资源换来的钱投资全球</li>
+          <li>挪威政府养老基金：全球最大，1.7万亿美元，几乎买遍全球上市公司</li>
+          <li>新加坡 GIC：低调、分散、不透明，但收益率出色</li>
+          <li>沙特 PIF：开始从石油依赖转型，大举投资科技和娱乐（高尔夫、游戏）</li>
+          <li>核心逻辑：把"今天的资源"变成"永久的资产收益"，为后代储存财富</li>
+        </ul>
+      </div>
+
+      <div class="card" data-cat="finance" data-text="黄金 避险 暴涨 央行购金 通胀" style="background:#111;border:1px solid #222;border-radius:12px;padding:20px;">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;">
+          <span class="tag" style="background:#1a1a2e;color:#60a5fa;">金融工具</span>
+          <a href="https://youtube.com/watch?v=mU_jDXfjYTA" target="_blank" style="color:#555;font-size:12px;">↗ YouTube</a>
+        </div>
+        <h3 style="font-size:15px;font-weight:600;margin-bottom:10px;color:#fff;">黄金白银大崩盘，谁是幕后推手？</h3>
+        <ul style="color:#999;font-size:13px;line-height:1.8;padding-left:16px;">
+          <li>黄金暴涨的驱动：央行去美元化 + 地缘风险 + 通胀预期</li>
+          <li>纸黄金 vs 实物金：ETF和期货市场的"黄金"可能100倍超发</li>
+          <li>白银比黄金更工业化（光伏、电子），价格更受经济周期影响</li>
+          <li>大崩盘往往是机构在高位获利了结，散户接盘</li>
+          <li>黄金没有现金流，长期持有跑赢通胀，但跑不赢股市</li>
+        </ul>
+      </div>
+
+      <!-- COUNTRY -->
+      <div class="card" data-cat="country" data-text="伊朗 石油 制裁 经济 核武" style="background:#111;border:1px solid #222;border-radius:12px;padding:20px;">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;">
+          <span class="tag" style="background:#2a1a0a;color:#fb923c;">国别经济</span>
+          <a href="https://youtube.com/watch?v=uQJF5fcjFbg" target="_blank" style="color:#555;font-size:12px;">↗ YouTube</a>
+        </div>
+        <h3 style="font-size:15px;font-weight:600;margin-bottom:10px;color:#fff;">一口气了解伊朗经济</h3>
+        <ul style="color:#999;font-size:13px;line-height:1.8;padding-left:16px;">
+          <li>伊朗有世界第四大石油储量，却因制裁无法正常出口</li>
+          <li>核协议（JCPOA）破裂后：通胀超过 40%，里亚尔贬值 80%</li>
+          <li>地下经济蓬勃：换汇黑市、走私、人民币结算绕过制裁</li>
+          <li>年轻人口多（60% 以下35岁），但受过教育的人大量移民</li>
+          <li>伊朗最大的韧性：国内有完整的工农业体系，不像小国那么脆弱</li>
+        </ul>
+      </div>
+
+      <div class="card" data-cat="country" data-text="越南 经济 腐败 女富豪 死刑 银行" style="background:#111;border:1px solid #222;border-radius:12px;padding:20px;">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;">
+          <span class="tag" style="background:#2a1a0a;color:#fb923c;">国别经济</span>
+          <a href="https://youtube.com/watch?v=AJLe1AEgz5M" target="_blank" style="color:#555;font-size:12px;">↗ YouTube</a>
+        </div>
+        <h3 style="font-size:15px;font-weight:600;margin-bottom:10px;color:#fff;">越南女首富被判死刑 · 越南经济背后</h3>
+        <ul style="color:#999;font-size:13px;line-height:1.8;padding-left:16px;">
+          <li>张美兰通过操控银行贷款，骗取 440 亿美元，相当于越南 GDP 的 12%</li>
+          <li>越南"反腐风暴"：政治清洗还是真正的法治建设？两者都有</li>
+          <li>越南经济奇迹背后：承接中国产业转移，出口导向，外资涌入</li>
+          <li>金融系统的脆弱性：关系贷款、不透明的产权关系是定时炸弹</li>
+          <li>死刑判决有减刑条款：退还部分资产可以换命——法律经济学的现实逻辑</li>
+        </ul>
+      </div>
+
+      <div class="card" data-cat="country" data-text="瑞士 中立 银行 手表 金融中心" style="background:#111;border:1px solid #222;border-radius:12px;padding:20px;">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;">
+          <span class="tag" style="background:#2a1a0a;color:#fb923c;">国别经济</span>
+          <a href="https://youtube.com/watch?v=-HOzOBmQ5ro" target="_blank" style="color:#555;font-size:12px;">↗ YouTube</a>
+        </div>
+        <h3 style="font-size:15px;font-weight:600;margin-bottom:10px;color:#fff;">一口气了解瑞士经济</h3>
+        <ul style="color:#999;font-size:13px;line-height:1.8;padding-left:16px;">
+          <li>瑞士中立不是天真，是精心设计的国家战略——谁都不得罪，谁都要用它</li>
+          <li>私人银行业：历史上保密制度吸引全球富豪，现已被美国FATCA逼破</li>
+          <li>瑞士法郎是全球最强避险货币之一，危机时必升值</li>
+          <li>手表、制药、金融三大支柱：小而精，走高端路线</li>
+          <li>直接民主制度：重大决策全民投票，政策稳定性极高</li>
+        </ul>
+      </div>
+
+      <!-- BIZ CASES -->
+      <div class="card" data-cat="biz" data-text="乐高 商业模式 授权 玩具 品牌 破产重生" style="background:#111;border:1px solid #222;border-radius:12px;padding:20px;">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;">
+          <span class="tag" style="background:#1a0a2e;color:#c084fc;">企业案例</span>
+          <a href="https://youtube.com/watch?v=n7s5bWD4_mA" target="_blank" style="color:#555;font-size:12px;">↗ YouTube</a>
+        </div>
+        <h3 style="font-size:15px;font-weight:600;margin-bottom:10px;color:#fff;">乐高到底靠什么赚了这么多钱？</h3>
+        <ul style="color:#999;font-size:13px;line-height:1.8;padding-left:16px;">
+          <li>乐高2003年濒临破产：过度扩张（游乐园、电子游戏）偏离核心</li>
+          <li>回归砖块策略：回到"让孩子用积木创造"的本质，砍掉90%产品线</li>
+          <li>IP授权是利润引擎：星球大战、哈利波特、漫威积木溢价3-5倍</li>
+          <li>成人粉丝（AFOL）市场：越来越多成人买乐高解压，客单价极高</li>
+          <li>限量策略：停产套装在二手市场升值，形成投资属性，拉高品牌价值</li>
+        </ul>
+      </div>
+
+      <div class="card" data-cat="biz" data-text="奶茶 蜜雪冰城 商业模式 加盟 供应链" style="background:#111;border:1px solid #222;border-radius:12px;padding:20px;">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;">
+          <span class="tag" style="background:#1a0a2e;color:#c084fc;">企业案例</span>
+          <a href="https://youtube.com/watch?v=BHxJg38OiOs" target="_blank" style="color:#555;font-size:12px;">↗ YouTube</a>
+        </div>
+        <h3 style="font-size:15px;font-weight:600;margin-bottom:10px;color:#fff;">全球最大奶茶公司的秘密</h3>
+        <ul style="color:#999;font-size:13px;line-height:1.8;padding-left:16px;">
+          <li>蜜雪冰城门店超4万家，超过麦当劳在中国的数量</li>
+          <li>核心护城河：自建供应链——自己种茶、制糖、生产包材，成本比竞争对手低40%</li>
+          <li>低价不是薄利：3元冰淇淋靠走量和加盟费赚钱，逻辑类似Costco</li>
+          <li>加盟模式：门店赚钱，总部靠卖原材料给加盟商，不受门店亏损影响</li>
+          <li>出海东南亚：消费水平匹配，同样的低价策略复制成功</li>
+        </ul>
+      </div>
+
+      <div class="card" data-cat="biz" data-text="供应链 全球化 苹果 制造业 物流" style="background:#111;border:1px solid #222;border-radius:12px;padding:20px;">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;">
+          <span class="tag" style="background:#1a0a2e;color:#c084fc;">企业案例</span>
+          <a href="https://youtube.com/watch?v=5nTPBvQZm-s" target="_blank" style="color:#555;font-size:12px;">↗ YouTube</a>
+        </div>
+        <h3 style="font-size:15px;font-weight:600;margin-bottom:10px;color:#fff;">供应链到底有多重要？</h3>
+        <ul style="color:#999;font-size:13px;line-height:1.8;padding-left:16px;">
+          <li>一部 iPhone 有2000多个零部件，来自43个国家——这就是现代供应链</li>
+          <li>COVID教训：过度集中的单一供应链在危机时完全失效</li>
+          <li>丰田"Just-in-time"零库存模式：效率极致，但抗风险能力极差</li>
+          <li>供应链重构：Friend-shoring（盟友国家间互供）正在替代全球化</li>
+          <li>中国的供应链护城河：40年积累的完整产业生态，不是搬走几家工厂就能复制的</li>
+        </ul>
+      </div>
+
+      <div class="card" data-cat="biz" data-text="网红 MrBeast YouTube 商业模式 变现 内容创业" style="background:#111;border:1px solid #222;border-radius:12px;padding:20px;">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;">
+          <span class="tag" style="background:#1a0a2e;color:#c084fc;">企业案例</span>
+          <a href="https://youtube.com/watch?v=XCqFwufI_KM" target="_blank" style="color:#555;font-size:12px;">↗ YouTube</a>
+        </div>
+        <h3 style="font-size:15px;font-weight:600;margin-bottom:10px;color:#fff;">全球第一网红 · 一边撒钱一边赚钱</h3>
+        <ul style="color:#999;font-size:13px;line-height:1.8;padding-left:16px;">
+          <li>MrBeast 收入来源：广告只占小头，主要靠品牌合作 + 自有品牌（Feastables巧克力）</li>
+          <li>再投资逻辑：每次赚到的钱全部投入下一个更大的视频，复利增长</li>
+          <li>视频即广告：自有品牌的宣传成本为零，因为就是内容本身</li>
+          <li>团队规模 250 人，本质上是一家媒体公司而不是"网红"</li>
+          <li>中国版本：李佳琦/董宇辉的直播间本质上是同样的逻辑，只是平台不同</li>
+        </ul>
+      </div>
+
+      <!-- INVEST -->
+      <div class="card" data-cat="invest" data-text="机器人 AI 自动化 就业 制造业 人形机器人" style="background:#111;border:1px solid #222;border-radius:12px;padding:20px;">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;">
+          <span class="tag" style="background:#0a1a1a;color:#34d399;">投资常识</span>
+          <a href="https://youtube.com/watch?v=HTa1uc_kmHQ" target="_blank" style="color:#555;font-size:12px;">↗ YouTube</a>
+        </div>
+        <h3 style="font-size:15px;font-weight:600;margin-bottom:10px;color:#fff;">机器人时代，真的来了吗？</h3>
+        <ul style="color:#999;font-size:13px;line-height:1.8;padding-left:16px;">
+          <li>人形机器人技术在 2024-2026 年实现了质的突破，波士顿动力、Figure、特斯拉竞赛</li>
+          <li>最先被替代的不是体力劳动，而是标准化、可预测的白领工作</li>
+          <li>中国在机器人领域的优势：完整的供应链 + 巨大的劳动力替代需求</li>
+          <li>投资机器人赛道的逻辑：类比2010年代的智能手机生态</li>
+          <li>社会问题：生产率提升带来的财富，会流向工人还是资本方？</li>
+        </ul>
+      </div>
+
+      <div class="card" data-cat="invest" data-text="美元 下跌 汇率 去美元化 避险货币" style="background:#111;border:1px solid #222;border-radius:12px;padding:20px;">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;">
+          <span class="tag" style="background:#0a1a1a;color:#34d399;">投资常识</span>
+          <a href="https://youtube.com/watch?v=SdZ-hvVdFTk" target="_blank" style="color:#555;font-size:12px;">↗ YouTube</a>
+        </div>
+        <h3 style="font-size:15px;font-weight:600;margin-bottom:10px;color:#fff;">美元下跌背后……</h3>
+        <ul style="color:#999;font-size:13px;line-height:1.8;padding-left:16px;">
+          <li>美元指数下跌 ≠ 美国衰落，有时反映全球风险偏好回升</li>
+          <li>去美元化的现实进展：结算份额从 75% 降至 58%，但仍遥遥领先</li>
+          <li>人民币国际化的障碍：资本账户未开放，无法自由流动</li>
+          <li>美债被抛售：日本和中国减持，但找不到替代品，美元仍是最不坏的选择</li>
+          <li>普通人的应对：资产多元化，别把所有储蓄放在单一货币</li>
+        </ul>
+      </div>
+
+      <div class="card" data-cat="invest" data-text="体育博彩 赌博 赔率 商业模式 成瘾" style="background:#111;border:1px solid #222;border-radius:12px;padding:20px;">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;">
+          <span class="tag" style="background:#0a1a1a;color:#34d399;">投资常识</span>
+          <a href="https://youtube.com/watch?v=hhtMlRZLJ0g" target="_blank" style="color:#555;font-size:12px;">↗ YouTube</a>
+        </div>
+        <h3 style="font-size:15px;font-weight:600;margin-bottom:10px;color:#fff;">All you need to know about Sport Betting</h3>
+        <ul style="color:#999;font-size:13px;line-height:1.8;padding-left:16px;">
+          <li>博彩公司的数学优势：赔率里内置 5-10% 的抽水，长期必赢</li>
+          <li>为什么感觉能赢钱？小额赢钱的快感强化赌博行为——设计出来的</li>
+          <li>全球合法博彩市场规模超 4000 亿美元，英国、澳大利亚是大市场</li>
+          <li>数据分析师反而是博彩公司最需要的人才：风控定价靠算法</li>
+          <li>投资博彩公司股票：稳定现金流，但道德争议，需自行判断</li>
+        </ul>
+      </div>
+
+      <div class="card" data-cat="invest" data-text="小Lin 团队 内容创业 YouTube 收入 商业模式" style="background:#111;border:1px solid #222;border-radius:12px;padding:20px;">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;">
+          <span class="tag" style="background:#0a1a1a;color:#34d399;">投资常识</span>
+          <a href="https://youtube.com/watch?v=KosgUhdAL5w" target="_blank" style="color:#555;font-size:12px;">↗ YouTube</a>
+        </div>
+        <h3 style="font-size:15px;font-weight:600;margin-bottom:10px;color:#fff;">聊聊我是怎么赚钱的 · 小Lin的团队</h3>
+        <ul style="color:#999;font-size:13px;line-height:1.8;padding-left:16px;">
+          <li>主要收入：YouTube广告 + 品牌合作，内容是核心资产</li>
+          <li>团队构成：编导、动画、研究各有分工，不是一个人单打独斗</li>
+          <li>选题逻辑：找到复杂议题的最小可理解单元，用故事包装数据</li>
+          <li>一个视频的完整制作周期：3-4周，研究占一半时间</li>
+          <li>可持续性的关键：不做热点追流量，做有长尾价值的"常青"内容</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <div style="text-align:center;padding:40px;color:#333;font-size:12px;">
+    小Lin说 · 知识库 · 共 30 个视频整理 · 持续更新
+  </div>
+
+  <script>
+    function doSearch(q) {
+      q = q.toLowerCase();
+      const cards = document.querySelectorAll('.card');
+      let count = 0;
+      cards.forEach(c => {
+        const text = (c.dataset.text + ' ' + c.innerText).toLowerCase();
+        if (!q || text.includes(q)) { c.classList.remove('hidden-card'); count++; }
+        else c.classList.add('hidden-card');
+      });
+      document.getElementById('count').textContent = `显示 ${count} 个视频`;
+    }
+
+    function filterCat(cat, btn) {
+      document.querySelectorAll('.nav-btn').forEach(b => {
+        b.style.color = '#888'; b.style.borderColor = '#333';
+        b.classList.remove('active');
+      });
+      btn.style.color = '#f97316'; btn.style.borderColor = '#f97316';
+      btn.classList.add('active');
+
+      const cards = document.querySelectorAll('.card');
+      let count = 0;
+      cards.forEach(c => {
+        if (cat === 'all' || c.dataset.cat === cat) { c.classList.remove('hidden-card'); count++; }
+        else c.classList.add('hidden-card');
+      });
+      document.getElementById('count').textContent = `显示 ${count} 个视频`;
+      document.getElementById('search').value = '';
+    }
+  </script>
+</body>
+</html>
