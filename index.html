@@ -7,17 +7,20 @@
 <style>
 /* ===== RESET & BASE ===== */
 * { margin:0; padding:0; box-sizing:border-box; }
-body { background:#0a0a0a; color:#e5e5e5; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif; line-height:1.6; }
+body { background:#09090b; color:#e5e5e5; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif; line-height:1.6; }
 
 /* ===== HEADER ===== */
-.header { position:sticky; top:0; z-index:100; background:#0a0a0a; border-bottom:1px solid #222; padding:16px 24px; }
+.header { position:sticky; top:0; z-index:100; background:#09090b; border-bottom:1px solid #1e1e22; padding:20px 24px; }
 .header-inner { max-width:1400px; margin:0 auto; }
 .header h1 { font-size:1.5rem; margin-bottom:12px; }
-.search-row { display:flex; gap:12px; align-items:center; flex-wrap:wrap; }
-.search-input { flex:1; min-width:200px; padding:10px 16px; background:#1a1a1a; border:1px solid #333; border-radius:8px; color:#e5e5e5; font-size:1rem; outline:none; }
-.search-input:focus { border-color:#3b82f6; }
+.search-row { display:flex; gap:16px; align-items:center; flex-wrap:wrap; margin-bottom:8px; }
+.search-input { flex:1; min-width:200px; padding:10px 16px 10px 40px; background:#1a1a1a; border:1px solid #333; border-radius:10px; color:#e5e5e5; font-size:1rem; outline:none; transition:border-color 0.2s, box-shadow 0.2s; }
+.search-input:focus { border-color:#3b82f6; box-shadow:0 0 0 3px rgba(59,130,246,0.1); }
+.search-wrapper { position:relative; flex:1; min-width:200px; }
+.search-wrapper::before { content:"🔍"; position:absolute; left:12px; top:50%; transform:translateY(-50%); font-size:0.85rem; pointer-events:none; opacity:0.5; }
+.search-wrapper .search-input { width:100%; padding-left:36px; }
 .filter-btns { display:flex; gap:8px; flex-wrap:wrap; }
-.filter-btn { padding:6px 14px; border-radius:6px; border:1px solid #333; background:#1a1a1a; color:#aaa; cursor:pointer; font-size:0.85rem; transition:all 0.2s; }
+.filter-btn { padding:10px 16px; border-radius:6px; border:1px solid #333; background:#1a1a1a; color:#aaa; cursor:pointer; font-size:0.85rem; transition:all 0.2s; min-height:44px; }
 .filter-btn:hover { border-color:#555; color:#e5e5e5; }
 .filter-btn.active { color:#fff; border-color:transparent; }
 .filter-btn[data-cat="all"].active { background:#444; }
@@ -31,12 +34,12 @@ body { background:#0a0a0a; color:#e5e5e5; font-family:-apple-system,BlinkMacSyst
 /* ===== FRAMEWORK BAR ===== */
 .framework-bar { display:none; padding:8px 0 4px; border-top:1px solid #1e1e1e; margin-top:8px; }
 .framework-bar.visible { display:flex; flex-wrap:wrap; gap:6px; }
-.fw-pill { padding:4px 12px; border-radius:20px; border:1px solid #333; background:#1a1a1a; color:#888; cursor:pointer; font-size:0.8rem; transition:all 0.2s; white-space:nowrap; }
+.fw-pill { padding:10px 16px; border-radius:20px; border:1px solid #333; background:#1a1a1a; color:#888; cursor:pointer; font-size:0.8rem; transition:all 0.2s; white-space:nowrap; min-height:44px; display:inline-flex; align-items:center; }
 .fw-pill:hover { border-color:#555; color:#ccc; }
 .fw-pill.active { background:#2a2a3a; border-color:#6366f1; color:#a5b4fc; }
 
 /* ===== GRID ===== */
-.grid { max-width:1400px; margin:0 auto; padding:0 24px 40px; display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+.grid { max-width:1400px; margin:0 auto; padding:0 24px 40px; display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
 @media(max-width:1024px) { .grid { grid-template-columns:repeat(2,1fr); } }
 @media(max-width:640px) { .grid { grid-template-columns:1fr; padding:0 12px 24px; } .header { padding:12px; } }
 
@@ -59,15 +62,34 @@ body { background:#0a0a0a; color:#e5e5e5; font-family:-apple-system,BlinkMacSyst
   top:0; left:0;
   width:100%;
   min-height:320px;
-  background:#111;
-  border:1px solid #222;
+  background:#0f0f11;
+  border:1px solid #1e1e22;
   border-radius:12px;
   backface-visibility:hidden;
   -webkit-backface-visibility:hidden;
   overflow:hidden;
 }
-.card:not(.card-back) { display:flex; flex-direction:column; padding:20px; transition:border-color 0.2s; }
-.card:not(.card-back):hover { border-color:#444; }
+
+/* ===== CARD BACK VISIBILITY FIX ===== */
+/* The back face is always rotated 180deg; hide it until the flipper is flipped */
+.card-back { visibility:hidden; }
+.card-flipper.flipped .card-back { visibility:visible; }
+.card-flipper.flipped .card-front { visibility:hidden; }
+
+.card:not(.card-back) { display:flex; flex-direction:column; padding:20px; transition:transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease; }
+/* Only lift the front face when the card is not yet flipped */
+.card-container:hover .card-flipper:not(.flipped) .card-front {
+  transform:translateY(-4px);
+  box-shadow:0 8px 25px rgba(0,0,0,0.3);
+  border-color:#444;
+}
+
+/* ===== CATEGORY COLOR ACCENTS ===== */
+.card-front[data-cat="macro"]    { border-left:3px solid #22c55e; background:linear-gradient(135deg, rgba(34,197,94,0.03) 0%, #0f0f11 40%); }
+.card-front[data-cat="finance"]  { border-left:3px solid #3b82f6; background:linear-gradient(135deg, rgba(59,130,246,0.03) 0%, #0f0f11 40%); }
+.card-front[data-cat="country"]  { border-left:3px solid #f97316; background:linear-gradient(135deg, rgba(249,115,22,0.03) 0%, #0f0f11 40%); }
+.card-front[data-cat="biz"]      { border-left:3px solid #a855f7; background:linear-gradient(135deg, rgba(168,85,247,0.03) 0%, #0f0f11 40%); }
+.card-front[data-cat="invest"]   { border-left:3px solid #14b8a6; background:linear-gradient(135deg, rgba(20,184,166,0.03) 0%, #0f0f11 40%); }
 
 /* ===== CARD FRONT ===== */
 .card-front { }
@@ -75,15 +97,17 @@ body { background:#0a0a0a; color:#e5e5e5; font-family:-apple-system,BlinkMacSyst
 .badge { padding:3px 10px; border-radius:20px; font-size:0.75rem; font-weight:600; }
 .source-sub { background:#1a3a2a; color:#4ade80; border:1px solid #22c55e40; }
 .source-know { background:#2a2a1a; color:#facc15; border:1px solid #eab30840; }
-.card-title { font-size:1.05rem; font-weight:600; margin-bottom:12px; line-height:1.4; }
+.card-title { font-size:1.1rem; font-weight:700; margin-bottom:12px; line-height:1.35; letter-spacing:-0.01em; }
 .points { list-style:none; margin-bottom:16px; flex:1; }
 .points li { padding:4px 0 4px 16px; position:relative; font-size:0.88rem; color:#bbb; line-height:1.5; }
 .points li::before { content:"•"; position:absolute; left:0; color:#555; }
 .card-front-footer { display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin-top:auto; }
-.yt-btn { display:inline-block; padding:8px 18px; background:#dc2626; color:#fff; text-decoration:none; border-radius:8px; font-size:0.85rem; font-weight:600; transition:background 0.2s; }
-.yt-btn:hover { background:#ef4444; }
-.flip-btn { display:inline-block; padding:8px 14px; background:none; border:1px solid #333; color:#888; border-radius:8px; font-size:0.82rem; cursor:pointer; transition:all 0.2s; }
-.flip-btn:hover { border-color:#6366f1; color:#a5b4fc; background:#1a1a2e; }
+/* Toned-down YouTube button — red accent only on hover */
+.yt-btn { display:inline-block; padding:8px 18px; background:#1a1a1a; color:#e5e5e5; text-decoration:none; border-radius:8px; font-size:0.85rem; font-weight:600; border:1px solid #333; transition:background 0.2s, border-color 0.2s, color 0.2s; }
+.yt-btn:hover { background:#2a0a0a; border-color:#dc2626; color:#ff6b6b; }
+/* Thinking map button — more discoverable */
+.flip-btn { display:inline-block; padding:6px 14px; background:none; border:1px solid #222; color:#888; border-radius:6px; font-size:0.82rem; cursor:pointer; transition:all 0.2s; }
+.flip-btn:hover { border-color:#444; color:#a5b4fc; background:#1a1a1a; }
 
 /* ===== CARD BACK ===== */
 .card-back {
@@ -194,6 +218,19 @@ body { background:#0a0a0a; color:#e5e5e5; font-family:-apple-system,BlinkMacSyst
   .card-back { min-height:380px; }
   .mindmap-canvas-wrap { min-height:240px; }
 }
+
+/* ===== FOOTER ===== */
+.site-footer { text-align:center; padding:40px 24px; color:#444; font-size:0.8rem; border-top:1px solid #1a1a1a; margin-top:20px; }
+.site-footer a { color:#555; text-decoration:none; }
+.site-footer a:hover { color:#888; }
+
+/* ===== REDUCED MOTION ===== */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
 </style>
 </head>
 <body>
@@ -201,7 +238,9 @@ body { background:#0a0a0a; color:#e5e5e5; font-family:-apple-system,BlinkMacSyst
   <div class="header-inner">
     <h1>&#127916; 小Lin说 · 金融知识库</h1>
     <div class="search-row">
-      <input type="text" class="search-input" id="searchInput" placeholder="搜索视频标题或知识点...">
+      <div class="search-wrapper">
+        <input type="text" class="search-input" id="searchInput" placeholder="搜索视频标题或知识点...">
+      </div>
       <div class="filter-btns">
         <button class="filter-btn active" data-cat="all">全部</button>
         <button class="filter-btn" data-cat="macro">宏观经济</button>
@@ -222,7 +261,7 @@ body { background:#0a0a0a; color:#e5e5e5; font-family:-apple-system,BlinkMacSyst
     </div>
   </div>
 </div>
-<div class="stats">共 138 个视频 · 54 个有字幕</div>
+<div class="stats" id="statsBar">共 138 个视频 · 54 个有字幕</div>
 <div class="grid" id="grid">
 <div class="card-container" data-idx="0">
   <div class="card-flipper">
@@ -4487,11 +4526,22 @@ function isMobile() {
   const btns = Array.from(document.querySelectorAll('.filter-btn'));
   const fwBar = document.getElementById('frameworkBar');
   const fwPills = Array.from(document.querySelectorAll('.fw-pill'));
+  const statsBar = document.getElementById('statsBar');
+  const totalCards = containers.length;
   let activeCat = 'all';
   let activeFws = new Set();
 
   function getCard(container) {
     return container.querySelector('.card-front');
+  }
+
+  function updateStats() {
+    const visible = containers.filter(c => !c.classList.contains('hidden')).length;
+    if (visible === totalCards) {
+      statsBar.textContent = `共 ${totalCards} 个视频 · 54 个有字幕`;
+    } else {
+      statsBar.textContent = `显示 ${visible} / ${totalCards} 个视频`;
+    }
   }
 
   function applyFilters() {
@@ -4510,6 +4560,7 @@ function isMobile() {
 
       container.classList.toggle('hidden', !(catMatch && textMatch && fwMatch));
     });
+    updateStats();
   }
 
   input.addEventListener('input', applyFilters);
@@ -4544,7 +4595,11 @@ function isMobile() {
       applyFilters();
     });
   });
+
 })();
 </script>
+<footer class="site-footer">
+  小Lin说 · 金融知识库 — 138个视频 · 思维框架分析 · <a href="https://github.com/YuqingNicole/xiaolin-finance-notes" target="_blank" rel="noopener">GitHub</a>
+</footer>
 </body>
 </html>
