@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>小Lin说 · 金融知识库</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsmind@0.8.5/style/jsmind.css" />
+<script src="https://cdn.jsdelivr.net/npm/jsmind@0.8.5/es6/jsmind.js"></script>
 <style>
 /* ===== RESET & BASE ===== */
 * { margin:0; padding:0; box-sizing:border-box; }
@@ -135,21 +137,8 @@ body { background:#fafaf9; color:#1c1917; font-family:'Inter','Noto Sans SC',-ap
   position:relative;
   overflow:hidden;
 }
-.modal-canvas-wrap .mindmap-svg {
-  width:100%;
-  height:100%;
-  display:block;
-  cursor:grab;
-  user-select:none;
-  touch-action:none;
-}
-.modal-canvas-wrap .mindmap-svg:active { cursor:grabbing; }
-/* Make nodes clearly interactive */
-.mm-node { cursor:move !important; }
-.mm-node:hover { filter:brightness(1.3); }
-.mm-node rect, .mm-node ellipse { transition:filter 0.15s; }
 /* Hint text */
-.modal-hint { position:absolute; bottom:60px; left:50%; transform:translateX(-50%); color:rgba(255,255,255,0.3); font-size:0.75rem; pointer-events:none; }
+.modal-hint { position:absolute; bottom:16px; left:50%; transform:translateX(-50%); color:rgba(255,255,255,0.3); font-size:0.75rem; pointer-events:none; white-space:nowrap; }
 .modal-thinking {
   padding:12px 24px;
   font-size:0.85rem;
@@ -163,51 +152,32 @@ body { background:#fafaf9; color:#1c1917; font-family:'Inter','Noto Sans SC',-ap
 /* Hide the in-card back elements completely */
 .back-topbar, .mindmap-canvas-wrap, .back-thinking { display:none; }
 
-/* ===== CONTEXT MENU ===== */
-.node-context-menu {
-  position:fixed;
-  background:#ffffff;
-  border:1px solid #e7e5e4;
-  border-radius:8px;
-  padding:4px;
-  z-index:9999;
-  box-shadow:0 8px 24px rgba(0,0,0,0.12);
-  display:none;
+/* ===== jsMIND DARK THEME OVERRIDES ===== */
+#jsmindContainer .jsmind-inner { background: transparent !important; }
+#jsmindContainer jmnode {
+  background: #1e1e2e !important;
+  color: #e5e5e5 !important;
+  border-radius: 8px !important;
+  padding: 8px 16px !important;
+  font-size: 13px !important;
+  border: 1px solid #3a3a4e !important;
+  font-family: 'Inter', 'Noto Sans SC', sans-serif !important;
 }
-.node-context-menu button {
-  display:block;
-  width:100%;
-  padding:7px 14px;
-  background:none;
-  border:none;
-  color:#57534e;
-  font-size:0.82rem;
-  cursor:pointer;
-  border-radius:6px;
-  text-align:left;
-  white-space:nowrap;
-  transition:background 0.15s;
-  font-family:inherit;
+#jsmindContainer jmnode.root {
+  background: linear-gradient(135deg, #2a2a4a, #1a1a2e) !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  padding: 12px 24px !important;
+  border: 2px solid #4a4a7a !important;
 }
-.node-context-menu button:hover { background:#f5f5f4; color:#1c1917; }
-
-/* ===== NODE EDIT OVERLAY ===== */
-.node-edit-overlay {
-  position:fixed;
-  background:#ffffff;
-  border:1px solid #2563eb;
-  border-radius:6px;
-  padding:4px 8px;
-  color:#1c1917;
-  font-size:0.8rem;
-  z-index:9999;
-  min-width:80px;
-  max-width:200px;
-  outline:none;
-  box-shadow:0 4px 20px rgba(37,99,235,0.15);
-  display:none;
-  font-family:inherit;
-}
+#jsmindContainer jmnode[data-fw="logic"] { border-color: #3b82f6 !important; }
+#jsmindContainer jmnode[data-fw="stake"] { border-color: #f97316 !important; }
+#jsmindContainer jmnode[data-fw="system"] { border-color: #8b5cf6 !important; }
+#jsmindContainer jmnode[data-fw="history"] { border-color: #22c55e !important; }
+#jsmindContainer jmnode[data-fw="loop"] { border-color: #ec4899 !important; }
+#jsmindContainer jmnode[data-fw="signal"] { border-color: #14b8a6 !important; }
+/* Connections */
+#jsmindContainer canvas { opacity: 0.6; }
 
 /* ===== HIDDEN ===== */
 .hidden { display:none !important; }
@@ -3852,14 +3822,6 @@ body { background:#fafaf9; color:#1c1917; font-family:'Inter','Noto Sans SC',-ap
 </div>
 </div>
 
-<!-- Context menu -->
-<div class="node-context-menu" id="nodeContextMenu">
-  <button id="ctxAddLeaf">&#43; 添加叶节点</button>
-  <button id="ctxEditNode">&#9998; 编辑文字</button>
-</div>
-<!-- Edit overlay -->
-<div class="node-edit-overlay" id="nodeEditOverlay" contenteditable="true"></div>
-
 <script>
 // ============================================================
 // MIND MAP DATA — generated from card data
@@ -3879,8 +3841,9 @@ const FW_INFO = {
 };
 
 // ============================================================
-// CARD FLIP
+// CARD FLIP — jsMind-based
 // ============================================================
+let currentJsMind = null;
 let currentModalIdx = -1;
 
 function flipCard(btn) {
@@ -3889,17 +3852,78 @@ function flipCard(btn) {
   const data = MIND_MAP_DATA[idx];
   if (!data) return;
   currentModalIdx = idx;
+
   const modal = document.getElementById('mindmapModal');
   document.getElementById('modalTitle').textContent = data.title;
   document.getElementById('modalThinking').innerHTML = '<em>思考路径：' + data.thinking + '</em>';
-  const svg = document.getElementById('modalSvg');
-  while (svg.firstChild) svg.removeChild(svg.firstChild);
-  svg.removeAttribute('data-initialized');
   modal.classList.add('open');
   document.body.style.overflow = 'hidden';
+
+  // Build jsMind data from MIND_MAP_DATA
+  const children = [];
+  data.frameworks.forEach((fw, fi) => {
+    const fwChildren = (fw.leaves || []).map((leaf, li) => ({
+      id: 'leaf-' + fi + '-' + li,
+      topic: leaf,
+      direction: fi % 2 === 0 ? 'right' : 'left'
+    }));
+    children.push({
+      id: 'fw-' + fi,
+      topic: fw.name,
+      direction: fi % 2 === 0 ? 'right' : 'left',
+      children: fwChildren
+    });
+  });
+
+  const mindData = {
+    meta: { name: data.title, version: '0.2' },
+    format: 'node_tree',
+    data: {
+      id: 'root',
+      topic: data.title,
+      children: children
+    }
+  };
+
+  // Destroy previous instance
+  if (currentJsMind) {
+    try { currentJsMind.destroy && currentJsMind.destroy(); } catch(e) {}
+    currentJsMind = null;
+  }
+
+  // Clear container
+  const jmContainer = document.getElementById('jsmindContainer');
+  jmContainer.innerHTML = '';
+
   requestAnimationFrame(() => {
-    svg.dataset.initialized = '1';
-    initMindMap(svg, idx, modal);
+    const options = {
+      container: 'jsmindContainer',
+      theme: 'primary',
+      editable: true,
+      view: {
+        engine: 'canvas',
+        hmargin: 100,
+        vmargin: 50,
+        line_width: 2,
+        line_color: '#4a4a6a'
+      },
+      layout: {
+        hspace: 60,
+        vspace: 20,
+        pspace: 13
+      }
+    };
+
+    currentJsMind = new jsMind(options);
+    currentJsMind.show(mindData);
+
+    // Apply framework colors via data attributes
+    requestAnimationFrame(() => {
+      data.frameworks.forEach((fw, fi) => {
+        const node = document.querySelector('jmnode[nodeid="fw-' + fi + '"]');
+        if (node) node.setAttribute('data-fw', fw.id);
+      });
+    });
   });
 }
 
@@ -3912,10 +3936,17 @@ function closeModal() {
 
 function resetModal() {
   if (currentModalIdx < 0) return;
-  const svg = document.getElementById('modalSvg');
-  while (svg.firstChild) svg.removeChild(svg.firstChild);
-  svg.dataset.initialized = '1';
-  initMindMap(svg, currentModalIdx, document.getElementById('mindmapModal'));
+  const data = MIND_MAP_DATA[currentModalIdx];
+  if (!data) return;
+
+  if (currentJsMind) {
+    try { currentJsMind.destroy && currentJsMind.destroy(); } catch(e) {}
+    currentJsMind = null;
+  }
+  document.getElementById('jsmindContainer').innerHTML = '';
+
+  const btn = document.querySelectorAll('.flip-btn')[currentModalIdx];
+  if (btn) flipCard(btn);
 }
 
 // ESC to close modal
@@ -3926,611 +3957,6 @@ document.addEventListener('keydown', function(e) {
 // Keep old function names for any remaining onclick handlers
 function flipBack(btn) { closeModal(); }
 function resetMap(btn) { resetModal(); }
-
-// ============================================================
-// MIND MAP ENGINE
-// ============================================================
-function initMindMap(svg, idx, container) {
-  const data = MIND_MAP_DATA[idx];
-  if (!data) return;
-
-  const wrap = svg.parentElement;
-  const W = wrap.clientWidth || 380;
-  const H = wrap.clientHeight || 300;
-  svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
-
-  // State
-  let viewOffX = 0, viewOffY = 0, viewScale = 1;
-  let isPanning = false, panStartX = 0, panStartY = 0, panOffX = 0, panOffY = 0;
-
-  // SVG groups
-  const mainG = createEl('g');
-  mainG.setAttribute('class', 'mm-main');
-  svg.appendChild(mainG);
-
-  // Defs for gradients & filters
-  const defs = createEl('defs');
-  svg.appendChild(defs);
-
-  // Drop shadow filter
-  const filter = createEl('filter');
-  filter.setAttribute('id', `shadow-${idx}`);
-  filter.setAttribute('x', '-20%'); filter.setAttribute('y', '-20%');
-  filter.setAttribute('width', '140%'); filter.setAttribute('height', '140%');
-  const feDropShadow = createEl('feDropShadow');
-  feDropShadow.setAttribute('dx', '0'); feDropShadow.setAttribute('dy', '2');
-  feDropShadow.setAttribute('stdDeviation', '3');
-  feDropShadow.setAttribute('flood-color', 'rgba(0,0,0,0.5)');
-  filter.appendChild(feDropShadow);
-  defs.appendChild(filter);
-
-  // Center gradient
-  const cGrad = createEl('radialGradient');
-  cGrad.setAttribute('id', `cgrad-${idx}`);
-  addStop(cGrad, '0%', '#2a2a4a');
-  addStop(cGrad, '100%', '#111');
-  defs.appendChild(cGrad);
-
-  // Node tree structure: { el, textEl, x, y, w, h, children: [], connEls: [] }
-  const nodeMap = {}; // key -> node record
-
-  // Compute layout
-  const cx = W / 2;
-  const cy = H / 2;
-  const fwList = data.frameworks;
-  const N = fwList.length;
-  const fwRadius = Math.min(W, H) * 0.28;
-  const leafRadius = Math.min(W, H) * 0.44;
-
-  // Connections group (drawn first, behind nodes)
-  const connG = createEl('g');
-  connG.setAttribute('class', 'mm-conns');
-  mainG.appendChild(connG);
-  const nodeG = createEl('g');
-  nodeG.setAttribute('class', 'mm-nodes');
-  mainG.appendChild(nodeG);
-
-  // Center node
-  const centerNode = makeRectNode({
-    id: 'center',
-    text: data.title,
-    x: cx, y: cy,
-    w: Math.min(180, W * 0.3), h: 44,
-    fill: `url(#cgrad-${idx})`,
-    stroke: '#4a4a7a',
-    textColor: '#e5e5e5',
-    fontSize: 14,
-    filterId: `shadow-${idx}`,
-    rx: 8,
-    bold: true
-  }, nodeG, idx);
-  nodeMap['center'] = { ...centerNode, children: [] };
-
-  // Framework nodes + leaf nodes
-  fwList.forEach((fw, fi) => {
-    const angle = (fi / N) * 2 * Math.PI - Math.PI / 2;
-    const fx = cx + Math.cos(angle) * fwRadius;
-    const fy = cy + Math.sin(angle) * fwRadius;
-
-    const fwNode = makePillNode({
-      id: `fw-${fi}`,
-      text: fw.name,
-      x: fx, y: fy,
-      color: fw.color,
-      dim: fw.dim,
-      fontSize: isMobile() ? 10 : 12,
-      filterId: `shadow-${idx}`,
-      fwId: fw.id
-    }, nodeG, idx);
-    nodeMap[`fw-${fi}`] = { ...fwNode, children: [], parentId: 'center', fwIdx: fi };
-
-    // Draw connection center -> fw
-    const connEl = drawCurvedConn(connG, centerNode, fwNode, fw.color);
-    nodeMap['center'].children.push(`fw-${fi}`);
-
-    // Leaf nodes
-    const leaves = fw.leaves || [];
-    leaves.forEach((leafText, li) => {
-      const totalLeaves = leaves.length;
-      // Spread leaves around fw node, away from center
-      const leafAngleBase = angle;
-      const spread = 0.45;
-      const leafAngle = leafAngleBase + (li - (totalLeaves - 1) / 2) * spread;
-      const lx = cx + Math.cos(leafAngle) * leafRadius;
-      const ly = cy + Math.sin(leafAngle) * leafRadius;
-
-      const leafNode = makeRectNode({
-        id: `leaf-${fi}-${li}`,
-        text: leafText,
-        x: lx, y: ly,
-        w: isMobile() ? 80 : 100, h: 30,
-        fill: fw.dim,
-        stroke: fw.color + '88',
-        textColor: '#ccc',
-        fontSize: isMobile() ? 9 : 11,
-        filterId: `shadow-${idx}`,
-        rx: 5
-      }, nodeG, idx);
-      nodeMap[`leaf-${fi}-${li}`] = { ...leafNode, children: [], parentId: `fw-${fi}`, fwIdx: fi };
-
-      const leafConn = drawCurvedConn(connG, fwNode, leafNode, fw.color + 'aa');
-      nodeMap[`fw-${fi}`].children.push(`leaf-${fi}-${li}`);
-    });
-  });
-
-  // Animate connections (dash draw)
-  animateConnections(connG);
-
-  // Animate nodes fade-in
-  animateNodesFadeIn(nodeG);
-
-  // ---- DRAG NODES ----
-  nodeG.querySelectorAll('.mm-node').forEach(el => {
-    el.addEventListener('mousedown', onNodeMouseDown, { passive: false });
-    el.addEventListener('touchstart', onNodeTouchStart, { passive: false });
-    el.addEventListener('dblclick', onNodeDblClick);
-    el.addEventListener('contextmenu', onNodeContextMenu);
-  });
-
-  let dragging = null, dragStartX = 0, dragStartY = 0, dragNodeOrigX = 0, dragNodeOrigY = 0;
-
-  function onNodeMouseDown(e) {
-    e.stopPropagation();
-    const nodeId = e.currentTarget.dataset.nodeId;
-    dragging = nodeId;
-    const svgP = svgPoint(svg, e.clientX, e.clientY, viewScale, viewOffX, viewOffY);
-    dragStartX = svgP.x;
-    dragStartY = svgP.y;
-    dragNodeOrigX = nodeMap[nodeId].x;
-    dragNodeOrigY = nodeMap[nodeId].y;
-    e.currentTarget.style.filter = 'brightness(1.4)';
-    e.currentTarget.style.outline = '2px solid ' + (nodeMap[nodeId].color || '#6366f1');
-    svg.addEventListener('mousemove', onSvgMouseMove);
-    svg.addEventListener('mouseup', onSvgMouseUp);
-  }
-
-  function onNodeTouchStart(e) {
-    if (e.touches.length !== 1) return;
-    e.stopPropagation();
-    const t = e.touches[0];
-    const nodeId = e.currentTarget.dataset.nodeId;
-    dragging = nodeId;
-    const svgP = svgPoint(svg, t.clientX, t.clientY, viewScale, viewOffX, viewOffY);
-    dragStartX = svgP.x;
-    dragStartY = svgP.y;
-    dragNodeOrigX = nodeMap[nodeId].x;
-    dragNodeOrigY = nodeMap[nodeId].y;
-    svg.addEventListener('touchmove', onSvgTouchMove, { passive: false });
-    svg.addEventListener('touchend', onSvgTouchEnd);
-  }
-
-  function onSvgMouseMove(e) {
-    if (!dragging) return;
-    const svgP = svgPoint(svg, e.clientX, e.clientY, viewScale, viewOffX, viewOffY);
-    const dx = svgP.x - dragStartX;
-    const dy = svgP.y - dragStartY;
-    moveNode(dragging, dragNodeOrigX + dx, dragNodeOrigY + dy, dx, dy);
-  }
-
-  function onSvgTouchMove(e) {
-    if (!dragging || e.touches.length !== 1) return;
-    e.preventDefault();
-    const t = e.touches[0];
-    const svgP = svgPoint(svg, t.clientX, t.clientY, viewScale, viewOffX, viewOffY);
-    const dx = svgP.x - dragStartX;
-    const dy = svgP.y - dragStartY;
-    moveNode(dragging, dragNodeOrigX + dx, dragNodeOrigY + dy, dx, dy);
-  }
-
-  function onSvgMouseUp(e) {
-    if (dragging) {
-      const el = nodeG.querySelector(`[data-node-id="${dragging}"]`);
-      if (el) { el.style.filter = ''; el.style.outline = ''; }
-      dragging = null;
-    }
-    svg.removeEventListener('mousemove', onSvgMouseMove);
-    svg.removeEventListener('mouseup', onSvgMouseUp);
-  }
-
-  function onSvgTouchEnd() {
-    if (dragging) {
-      const el = nodeG.querySelector(`[data-node-id="${dragging}"]`);
-      if (el) { el.style.filter = ''; el.style.outline = ''; }
-      dragging = null;
-    }
-    svg.removeEventListener('touchmove', onSvgTouchMove);
-    svg.removeEventListener('touchend', onSvgTouchEnd);
-  }
-
-  function moveNode(nodeId, newX, newY, dx, dy) {
-    const node = nodeMap[nodeId];
-    if (!node) return;
-    const oldX = node.x, oldY = node.y;
-    node.x = newX;
-    node.y = newY;
-    // Move group element
-    positionNodeEl(node.el, newX, newY, node.w, node.h);
-    // Move children with same delta
-    (node.children || []).forEach(childId => {
-      const cn = nodeMap[childId];
-      if (cn) moveNode(childId, cn.x + dx, cn.y + dy, dx, dy);
-    });
-    // Refresh connections from parent to this node
-    refreshConnections(nodeId);
-    // Also refresh connections from this node to its children
-    (node.children || []).forEach(childId => refreshConnections(childId));
-  }
-
-  function refreshConnections(nodeId) {
-    const node = nodeMap[nodeId];
-    if (!node || !node.parentId) return;
-    const parent = nodeMap[node.parentId];
-    if (!parent) return;
-    const connId = `conn-${node.parentId}-${nodeId}`;
-    const existingConn = connG.querySelector(`[data-conn-id="${connId}"]`);
-    const color = node.color || (node.parentId !== 'center' ? (nodeMap[node.parentId].color || '#444') : '#444');
-    if (existingConn) {
-      updateCurvedConn(existingConn, parent, node);
-    }
-  }
-
-  // ---- SVG PAN & ZOOM ----
-  svg.addEventListener('mousedown', onSvgPanStart);
-  svg.addEventListener('touchstart', onSvgPanTouchStart, { passive: false });
-  svg.addEventListener('wheel', onSvgWheel, { passive: false });
-
-  function onSvgPanStart(e) {
-    if (e.target.closest('.mm-node')) return;
-    isPanning = true;
-    panStartX = e.clientX;
-    panStartY = e.clientY;
-    panOffX = viewOffX;
-    panOffY = viewOffY;
-    svg.style.cursor = 'grabbing';
-    window.addEventListener('mousemove', onSvgPanMove);
-    window.addEventListener('mouseup', onSvgPanEnd);
-  }
-
-  function onSvgPanTouchStart(e) {
-    if (e.target.closest('.mm-node')) return;
-    if (e.touches.length !== 1) return;
-    isPanning = true;
-    panStartX = e.touches[0].clientX;
-    panStartY = e.touches[0].clientY;
-    panOffX = viewOffX;
-    panOffY = viewOffY;
-    window.addEventListener('touchmove', onSvgPanTouchMove, { passive: false });
-    window.addEventListener('touchend', onSvgPanTouchEnd);
-  }
-
-  function onSvgPanMove(e) {
-    if (!isPanning) return;
-    const dx = (e.clientX - panStartX) / viewScale;
-    const dy = (e.clientY - panStartY) / viewScale;
-    viewOffX = panOffX + dx;
-    viewOffY = panOffY + dy;
-    applyTransform();
-  }
-
-  function onSvgPanTouchMove(e) {
-    if (!isPanning || e.touches.length !== 1) return;
-    e.preventDefault();
-    const dx = (e.touches[0].clientX - panStartX) / viewScale;
-    const dy = (e.touches[0].clientY - panStartY) / viewScale;
-    viewOffX = panOffX + dx;
-    viewOffY = panOffY + dy;
-    applyTransform();
-  }
-
-  function onSvgPanEnd() {
-    isPanning = false;
-    svg.style.cursor = 'grab';
-    window.removeEventListener('mousemove', onSvgPanMove);
-    window.removeEventListener('mouseup', onSvgPanEnd);
-  }
-
-  function onSvgPanTouchEnd() {
-    isPanning = false;
-    window.removeEventListener('touchmove', onSvgPanTouchMove);
-    window.removeEventListener('touchend', onSvgPanTouchEnd);
-  }
-
-  function onSvgWheel(e) {
-    e.preventDefault();
-    const delta = e.deltaY > 0 ? 0.9 : 1.1;
-    viewScale = Math.max(0.4, Math.min(2.5, viewScale * delta));
-    applyTransform();
-  }
-
-  function applyTransform() {
-    mainG.setAttribute('transform', `translate(${viewOffX},${viewOffY}) scale(${viewScale})`);
-    // Invert transform for the mainG so its coordinate space shifts
-    // Actually we apply to the mainG directly
-    mainG.setAttribute('transform', `translate(${viewOffX * viewScale},${viewOffY * viewScale}) scale(${viewScale})`);
-  }
-
-  // ---- DOUBLE CLICK EDIT ----
-  const editOverlay = document.getElementById('nodeEditOverlay');
-  let editingNodeId = null, editingSvgEl = null;
-
-  function onNodeDblClick(e) {
-    e.stopPropagation();
-    const nodeId = e.currentTarget.dataset.nodeId;
-    const node = nodeMap[nodeId];
-    if (!node) return;
-    editingNodeId = nodeId;
-    editingSvgEl = e.currentTarget.querySelector('text');
-
-    const rect = e.currentTarget.getBoundingClientRect();
-    editOverlay.textContent = editingSvgEl ? editingSvgEl.textContent : '';
-    editOverlay.style.display = 'block';
-    editOverlay.style.left = rect.left + 'px';
-    editOverlay.style.top = (rect.top - 4) + 'px';
-    editOverlay.style.width = Math.max(80, rect.width) + 'px';
-    editOverlay.focus();
-    // Select all
-    const range = document.createRange();
-    range.selectNodeContents(editOverlay);
-    const sel = window.getSelection();
-    sel.removeAllRanges();
-    sel.addRange(range);
-  }
-
-  editOverlay.addEventListener('keydown', function(e) {
-    if (e.key === 'Enter') { e.preventDefault(); confirmEdit(); }
-    if (e.key === 'Escape') { cancelEdit(); }
-  });
-
-  editOverlay.addEventListener('blur', function() {
-    if (editingNodeId) confirmEdit();
-  });
-
-  function confirmEdit() {
-    if (!editingNodeId) return;
-    const newText = editOverlay.textContent.trim();
-    if (newText && editingSvgEl) {
-      editingSvgEl.textContent = newText;
-      nodeMap[editingNodeId].text = newText;
-    }
-    cancelEdit();
-  }
-
-  function cancelEdit() {
-    editOverlay.style.display = 'none';
-    editingNodeId = null;
-    editingSvgEl = null;
-  }
-
-  // ---- CONTEXT MENU (right-click fw node to add leaf) ----
-  const ctxMenu = document.getElementById('nodeContextMenu');
-  const ctxAddLeaf = document.getElementById('ctxAddLeaf');
-  const ctxEditNode = document.getElementById('ctxEditNode');
-  let ctxNodeId = null;
-
-  function onNodeContextMenu(e) {
-    e.preventDefault();
-    e.stopPropagation();
-    const nodeId = e.currentTarget.dataset.nodeId;
-    ctxNodeId = nodeId;
-    const isFw = nodeId.startsWith('fw-');
-    ctxAddLeaf.style.display = isFw ? 'block' : 'none';
-    ctxMenu.style.display = 'block';
-    ctxMenu.style.left = e.clientX + 'px';
-    ctxMenu.style.top = e.clientY + 'px';
-  }
-
-  document.addEventListener('click', function() { ctxMenu.style.display = 'none'; });
-
-  ctxAddLeaf.addEventListener('click', function() {
-    if (!ctxNodeId || !ctxNodeId.startsWith('fw-')) return;
-    const fwNode = nodeMap[ctxNodeId];
-    const fi = fwNode.fwIdx;
-    const fw = data.frameworks[fi];
-    const existingLeaves = Object.keys(nodeMap).filter(k => k.startsWith(`leaf-${fi}-`));
-    const newIdx = existingLeaves.length;
-    const newAngle = (fi / N) * 2 * Math.PI - Math.PI / 2 + (newIdx * 0.4);
-    const lx = cx + Math.cos(newAngle) * (leafRadius + newIdx * 10);
-    const ly = cy + Math.sin(newAngle) * (leafRadius + newIdx * 10);
-
-    const newLeafNode = makeRectNode({
-      id: `leaf-${fi}-${newIdx}`,
-      text: '新节点',
-      x: lx, y: ly,
-      w: 80, h: 24,
-      fill: fw.dim,
-      stroke: fw.color + '88',
-      textColor: '#ccc',
-      fontSize: 9,
-      filterId: `shadow-${idx}`,
-      rx: 5
-    }, nodeG, idx);
-    nodeMap[`leaf-${fi}-${newIdx}`] = { ...newLeafNode, children: [], parentId: ctxNodeId, fwIdx: fi };
-    fwNode.children.push(`leaf-${fi}-${newIdx}`);
-    drawCurvedConn(connG, fwNode, newLeafNode, fw.color + 'aa');
-
-    // Attach events to new node
-    newLeafNode.el.addEventListener('mousedown', onNodeMouseDown, { passive: false });
-    newLeafNode.el.addEventListener('touchstart', onNodeTouchStart, { passive: false });
-    newLeafNode.el.addEventListener('dblclick', onNodeDblClick);
-    newLeafNode.el.addEventListener('contextmenu', onNodeContextMenu);
-
-    // Immediately trigger edit
-    setTimeout(() => {
-      newLeafNode.el.dispatchEvent(new MouseEvent('dblclick', { bubbles: true }));
-    }, 50);
-  });
-
-  ctxEditNode.addEventListener('click', function() {
-    if (!ctxNodeId) return;
-    const el = nodeG.querySelector(`[data-node-id="${ctxNodeId}"]`);
-    if (el) el.dispatchEvent(new MouseEvent('dblclick', { bubbles: true }));
-  });
-
-  // Close context menu on outside click
-  svg.addEventListener('click', function() { ctxMenu.style.display = 'none'; });
-}
-
-// ============================================================
-// SVG NODE HELPERS
-// ============================================================
-function createEl(tag) {
-  return document.createElementNS('http://www.w3.org/2000/svg', tag);
-}
-
-function addStop(grad, offset, color) {
-  const stop = createEl('stop');
-  stop.setAttribute('offset', offset);
-  stop.setAttribute('stop-color', color);
-  grad.appendChild(stop);
-}
-
-function makeRectNode(opts, parent, idx) {
-  const { id, text, x, y, w, h, fill, stroke, textColor, fontSize, filterId, rx, bold } = opts;
-  const g = createEl('g');
-  g.setAttribute('class', 'mm-node');
-  g.setAttribute('data-node-id', id);
-  g.style.cursor = 'grab';
-
-  const rect = createEl('rect');
-  rect.setAttribute('width', w);
-  rect.setAttribute('height', h);
-  rect.setAttribute('rx', rx || 6);
-  rect.setAttribute('fill', fill);
-  rect.setAttribute('stroke', stroke || '#444');
-  rect.setAttribute('stroke-width', '1.2');
-  if (filterId) rect.setAttribute('filter', `url(#${filterId})`);
-
-  const t = createEl('text');
-  t.setAttribute('x', w / 2);
-  t.setAttribute('y', h / 2 + fontSize * 0.38);
-  t.setAttribute('text-anchor', 'middle');
-  t.setAttribute('fill', textColor || '#ccc');
-  t.setAttribute('font-size', fontSize || 10);
-  t.setAttribute('font-family', '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif');
-  if (bold) t.setAttribute('font-weight', '600');
-  t.textContent = text;
-  // Clip text if too long for node width
-  t.setAttribute('clip-path', `inset(0 0 0 0)`);
-
-  g.appendChild(rect);
-  g.appendChild(t);
-  positionNodeEl(g, x, y, w, h);
-  g.style.opacity = '0';
-  parent.appendChild(g);
-
-  return { el: g, x, y, w, h, text, color: stroke };
-}
-
-function makePillNode(opts, parent, idx) {
-  const { id, text, x, y, color, dim, fontSize, filterId, fwId } = opts;
-  const padding = 10;
-  const h = 26;
-  // Measure text approximately
-  const approxCharW = fontSize * 0.62;
-  const w = Math.max(80, text.length * approxCharW + padding * 2);
-
-  const g = createEl('g');
-  g.setAttribute('class', 'mm-node mm-fw-node');
-  g.setAttribute('data-node-id', id);
-  g.setAttribute('data-fw-id', fwId);
-  g.style.cursor = 'grab';
-
-  const rect = createEl('rect');
-  rect.setAttribute('width', w);
-  rect.setAttribute('height', h);
-  rect.setAttribute('rx', 13);
-  rect.setAttribute('fill', dim || '#1a1a2e');
-  rect.setAttribute('stroke', color || '#6366f1');
-  rect.setAttribute('stroke-width', '1.5');
-  if (filterId) rect.setAttribute('filter', `url(#${filterId})`);
-
-  const t = createEl('text');
-  t.setAttribute('x', w / 2);
-  t.setAttribute('y', h / 2 + fontSize * 0.38);
-  t.setAttribute('text-anchor', 'middle');
-  t.setAttribute('fill', color || '#a5b4fc');
-  t.setAttribute('font-size', fontSize || 10);
-  t.setAttribute('font-family', '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif');
-  t.setAttribute('font-weight', '500');
-  t.textContent = text;
-
-  g.appendChild(rect);
-  g.appendChild(t);
-  positionNodeEl(g, x, y, w, h);
-  g.style.opacity = '0';
-  parent.appendChild(g);
-
-  return { el: g, x, y, w, h, text, color };
-}
-
-function positionNodeEl(el, x, y, w, h) {
-  el.setAttribute('transform', `translate(${x - w / 2},${y - h / 2})`);
-}
-
-function drawCurvedConn(parent, fromNode, toNode, color) {
-  const path = createEl('path');
-  path.setAttribute('fill', 'none');
-  path.setAttribute('stroke', color || '#444');
-  path.setAttribute('stroke-width', '1.5');
-  path.setAttribute('stroke-linecap', 'round');
-  path.setAttribute('opacity', '0.7');
-  const connId = `conn-${fromNode.el.dataset.nodeId}-${toNode.el.dataset.nodeId}`;
-  path.setAttribute('data-conn-id', connId);
-  updateCurvedConn(path, fromNode, toNode);
-  parent.appendChild(path);
-  return path;
-}
-
-function updateCurvedConn(pathEl, fromNode, toNode) {
-  const x1 = fromNode.x, y1 = fromNode.y;
-  const x2 = toNode.x, y2 = toNode.y;
-  const mx = (x1 + x2) / 2;
-  const my = (y1 + y2) / 2;
-  // Bezier control point offset perpendicular
-  const dx = x2 - x1, dy = y2 - y1;
-  const len = Math.sqrt(dx * dx + dy * dy) || 1;
-  const cx1 = x1 + dx * 0.4;
-  const cy1 = y1 + dy * 0.4;
-  const cx2 = x1 + dx * 0.6;
-  const cy2 = y1 + dy * 0.6;
-  const d = `M ${x1} ${y1} C ${cx1} ${cy1}, ${cx2} ${cy2}, ${x2} ${y2}`;
-  pathEl.setAttribute('d', d);
-}
-
-function animateConnections(connG) {
-  connG.querySelectorAll('path').forEach((p, i) => {
-    const length = p.getTotalLength ? p.getTotalLength() : 100;
-    p.style.strokeDasharray = length;
-    p.style.strokeDashoffset = length;
-    p.style.transition = `stroke-dashoffset 0.5s ease ${0.1 + i * 0.04}s`;
-    requestAnimationFrame(() => {
-      p.style.strokeDashoffset = '0';
-    });
-  });
-}
-
-function animateNodesFadeIn(nodeG) {
-  nodeG.querySelectorAll('.mm-node').forEach((n, i) => {
-    n.style.transition = `opacity 0.3s ease ${0.2 + i * 0.04}s`;
-    requestAnimationFrame(() => {
-      n.style.opacity = '1';
-    });
-  });
-}
-
-// ============================================================
-// UTILS
-// ============================================================
-function svgPoint(svg, clientX, clientY, scale, offX, offY) {
-  const rect = svg.getBoundingClientRect();
-  const x = (clientX - rect.left) / scale - offX;
-  const y = (clientY - rect.top) / scale - offY;
-  return { x, y };
-}
-
-function isMobile() {
-  return window.innerWidth < 640;
-}
 
 // ============================================================
 // SEARCH + CATEGORY + FRAMEWORK FILTER
@@ -4621,8 +4047,8 @@ function isMobile() {
     <button class="modal-btn" onclick="resetModal()">↻ 重置</button>
   </div>
   <div class="modal-canvas-wrap">
-    <svg class="mindmap-svg" id="modalSvg" xmlns="http://www.w3.org/2000/svg"></svg>
-    <div class="modal-hint">拖拽节点移动 · 双击编辑文字 · 右键添加节点 · 滚轮缩放 · 拖拽空白平移</div>
+    <div id="jsmindContainer" style="width:100%;height:100%;"></div>
+    <div class="modal-hint">拖拽节点移动 · 双击编辑文字 · Tab添加子节点 · Delete删除节点 · 滚轮缩放</div>
   </div>
   <div class="modal-thinking" id="modalThinking"></div>
 </div>
