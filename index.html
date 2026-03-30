@@ -45,40 +45,26 @@ body { background:#fafaf9; color:#1c1917; font-family:'Inter','Noto Sans SC',-ap
 @media(max-width:640px) { .grid { grid-template-columns:1fr; padding:0 12px 24px; } .header { padding:12px; } }
 
 /* ===== CARD CONTAINER & FLIP ===== */
-.card-container { perspective:1000px; min-height:320px; }
+.card-container { position:relative; }
 .card-container.hidden { display:none !important; }
-.card-flipper {
-  position:relative;
-  width:100%;
-  height:100%;
-  min-height:320px;
-  transform-style:preserve-3d;
-  transition:transform 0.6s cubic-bezier(0.4,0.2,0.2,1);
-}
-.card-flipper.flipped { transform:rotateY(180deg); }
+.card-flipper { position:relative; width:100%; }
 
 /* ===== CARD BASE ===== */
 .card {
-  position:absolute;
-  top:0; left:0;
   width:100%;
-  min-height:320px;
   background:#ffffff;
   border:1px solid #e7e5e4;
   border-radius:16px;
-  backface-visibility:hidden;
-  -webkit-backface-visibility:hidden;
   overflow:hidden;
 }
 
-/* ===== CARD BACK VISIBILITY FIX ===== */
-/* The back face is always rotated 180deg; hide it until the flipper is flipped */
-.card-back { visibility:hidden; }
-.card-flipper.flipped .card-back { visibility:visible; }
+/* Front is in normal flow; back overlays it */
+.card-front { position:relative; }
+.card-back { position:absolute; top:0; left:0; width:100%; height:100%; display:none; border-radius:16px; z-index:10; }
+.card-flipper.flipped .card-back { display:flex; }
 .card-flipper.flipped .card-front { visibility:hidden; }
 
-.card:not(.card-back) { display:flex; flex-direction:column; padding:24px; transition:transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease; box-shadow:0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.02); }
-/* Only lift the front face when the card is not yet flipped */
+.card-front { display:flex; flex-direction:column; padding:24px; transition:transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease; box-shadow:0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.02); }
 .card-container:hover .card-flipper:not(.flipped) .card-front {
   transform:translateY(-2px);
   box-shadow:0 4px 16px rgba(0,0,0,0.08);
@@ -112,11 +98,8 @@ body { background:#fafaf9; color:#1c1917; font-family:'Inter','Noto Sans SC',-ap
 
 /* ===== CARD BACK ===== */
 .card-back {
-  transform:rotateY(180deg);
-  display:flex;
   flex-direction:column;
   background:radial-gradient(ellipse at center, #1a1a2e 0%, #111118 100%);
-  height:100%;
   min-height:420px;
 }
 .back-topbar {
@@ -145,12 +128,12 @@ body { background:#fafaf9; color:#1c1917; font-family:'Inter','Noto Sans SC',-ap
 .mindmap-canvas-wrap {
   flex:1;
   position:relative;
-  overflow:hidden;
-  min-height:280px;
+  overflow:visible;
+  min-height:320px;
 }
 .mindmap-svg {
   width:100%;
-  height:100%;
+  height:320px;
   display:block;
   cursor:grab;
   user-select:none;
