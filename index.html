@@ -58,11 +58,9 @@ body { background:#fafaf9; color:#1c1917; font-family:'Inter','Noto Sans SC',-ap
   overflow:hidden;
 }
 
-/* Front is in normal flow; back overlays it */
+/* Front is in normal flow; back is hidden (used by fullscreen modal) */
 .card-front { position:relative; }
-.card-back { position:absolute; top:0; left:0; width:100%; height:100%; display:none; border-radius:16px; z-index:10; }
-.card-flipper.flipped .card-back { display:flex; }
-.card-flipper.flipped .card-front { visibility:hidden; }
+.card-back { display:none !important; }
 
 .card-front { display:flex; flex-direction:column; padding:24px; transition:transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease; box-shadow:0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.02); }
 .card-container:hover .card-flipper:not(.flipped) .card-front {
@@ -96,60 +94,67 @@ body { background:#fafaf9; color:#1c1917; font-family:'Inter','Noto Sans SC',-ap
 .flip-btn { display:inline-block; padding:6px 14px; background:#f5f3ff; border:1px solid #e9d5ff; color:#7c3aed; border-radius:6px; font-size:0.82rem; cursor:pointer; transition:all 0.2s; font-family:inherit; }
 .flip-btn:hover { background:#7c3aed; border-color:#7c3aed; color:#ffffff; }
 
-/* ===== CARD BACK ===== */
-.card-back {
+/* ===== FULLSCREEN MIND MAP MODAL ===== */
+.mindmap-modal {
+  display:none;
+  position:fixed;
+  top:0; left:0; width:100vw; height:100vh;
+  z-index:9000;
+  background:radial-gradient(ellipse at center, #1a1a2e 0%, #0d0d14 100%);
   flex-direction:column;
-  background:radial-gradient(ellipse at center, #1a1a2e 0%, #111118 100%);
-  min-height:420px;
+  animation:modalFadeIn 0.3s ease;
 }
-.back-topbar {
+.mindmap-modal.open { display:flex; }
+@keyframes modalFadeIn { from { opacity:0; } to { opacity:1; } }
+.modal-topbar {
   display:flex;
   justify-content:space-between;
   align-items:center;
-  padding:10px 14px;
-  background:rgba(17,17,24,0.7);
-  backdrop-filter:blur(8px);
-  border-bottom:1px solid #1e1e2e;
+  padding:14px 24px;
+  background:rgba(17,17,24,0.85);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid #2a2a3e;
   flex-shrink:0;
 }
-.back-btn, .reset-btn {
-  padding:5px 12px;
-  border-radius:6px;
-  border:1px solid #e7e5e4;
-  background:#f5f5f4;
-  color:#57534e;
+.modal-title { color:#e5e5e5; font-size:1rem; font-weight:600; flex:1; margin:0 16px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.modal-btn {
+  padding:8px 16px;
+  border-radius:8px;
+  border:1px solid #3a3a4e;
+  background:rgba(255,255,255,0.08);
+  color:#e5e5e5;
   cursor:pointer;
-  font-size:0.8rem;
+  font-size:0.85rem;
   transition:all 0.2s;
   font-family:inherit;
 }
-.back-btn:hover { border-color:#ef4444; color:#ef4444; background:#fef2f2; }
-.reset-btn:hover { border-color:#c4b5fd; color:#7c3aed; background:#ede9fe; }
-.mindmap-canvas-wrap {
+.modal-btn:hover { background:rgba(255,255,255,0.15); border-color:#6366f1; color:#a5b4fc; }
+.modal-btn.close-btn:hover { border-color:#ef4444; color:#fca5a5; }
+.modal-canvas-wrap {
   flex:1;
   position:relative;
-  overflow:visible;
-  min-height:320px;
+  overflow:hidden;
 }
-.mindmap-svg {
+.modal-canvas-wrap .mindmap-svg {
   width:100%;
-  height:320px;
+  height:100%;
   display:block;
   cursor:grab;
   user-select:none;
 }
-.mindmap-svg:active { cursor:grabbing; }
-.back-thinking {
-  padding:8px 14px;
-  font-size:0.78rem;
-  color:#78716c;
+.modal-canvas-wrap .mindmap-svg:active { cursor:grabbing; }
+.modal-thinking {
+  padding:12px 24px;
+  font-size:0.85rem;
+  color:#a8a29e;
   font-style:italic;
-  border-top:1px solid #1e1e2e;
-  line-height:1.5;
+  border-top:1px solid #2a2a3e;
+  line-height:1.6;
   flex-shrink:0;
-  max-height:60px;
-  overflow:hidden;
+  background:rgba(17,17,24,0.6);
 }
+/* Hide the in-card back elements completely */
+.back-topbar, .mindmap-canvas-wrap, .back-thinking { display:none; }
 
 /* ===== CONTEXT MENU ===== */
 .node-context-menu {
@@ -3869,34 +3874,51 @@ const FW_INFO = {
 // ============================================================
 // CARD FLIP
 // ============================================================
+let currentModalIdx = -1;
+
 function flipCard(btn) {
   const container = btn.closest('.card-container');
-  const flipper = container.querySelector('.card-flipper');
-  flipper.classList.add('flipped');
   const idx = parseInt(container.dataset.idx);
-  // lazy init mind map
-  const svg = container.querySelector('.mindmap-svg');
-  if (!svg.dataset.initialized) {
+  const data = MIND_MAP_DATA[idx];
+  if (!data) return;
+  currentModalIdx = idx;
+  const modal = document.getElementById('mindmapModal');
+  document.getElementById('modalTitle').textContent = data.title;
+  document.getElementById('modalThinking').innerHTML = '<em>思考路径：' + data.thinking + '</em>';
+  const svg = document.getElementById('modalSvg');
+  while (svg.firstChild) svg.removeChild(svg.firstChild);
+  svg.removeAttribute('data-initialized');
+  modal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  requestAnimationFrame(() => {
     svg.dataset.initialized = '1';
-    initMindMap(svg, idx, container);
-  }
+    initMindMap(svg, idx, modal);
+  });
 }
 
-function flipBack(btn) {
-  const container = btn.closest('.card-container');
-  const flipper = container.querySelector('.card-flipper');
-  flipper.classList.remove('flipped');
+function closeModal() {
+  const modal = document.getElementById('mindmapModal');
+  modal.classList.remove('open');
+  document.body.style.overflow = '';
+  currentModalIdx = -1;
 }
 
-function resetMap(btn) {
-  const container = btn.closest('.card-container');
-  const svg = container.querySelector('.mindmap-svg');
-  const idx = parseInt(container.dataset.idx);
-  svg.dataset.initialized = '';
+function resetModal() {
+  if (currentModalIdx < 0) return;
+  const svg = document.getElementById('modalSvg');
   while (svg.firstChild) svg.removeChild(svg.firstChild);
   svg.dataset.initialized = '1';
-  initMindMap(svg, idx, container);
+  initMindMap(svg, currentModalIdx, document.getElementById('mindmapModal'));
 }
+
+// ESC to close modal
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape' && currentModalIdx >= 0) closeModal();
+});
+
+// Keep old function names for any remaining onclick handlers
+function flipBack(btn) { closeModal(); }
+function resetMap(btn) { resetModal(); }
 
 // ============================================================
 // MIND MAP ENGINE
@@ -4585,6 +4607,17 @@ function isMobile() {
 
 })();
 </script>
+<div class="mindmap-modal" id="mindmapModal">
+  <div class="modal-topbar">
+    <button class="modal-btn close-btn" onclick="closeModal()">✕ 返回</button>
+    <div class="modal-title" id="modalTitle"></div>
+    <button class="modal-btn" onclick="resetModal()">↻ 重置</button>
+  </div>
+  <div class="modal-canvas-wrap">
+    <svg class="mindmap-svg" id="modalSvg" xmlns="http://www.w3.org/2000/svg"></svg>
+  </div>
+  <div class="modal-thinking" id="modalThinking"></div>
+</div>
 <footer class="site-footer">
   小Lin说 · 金融知识库 — 138个视频 · 思维框架分析 · <a href="https://github.com/YuqingNicole/xiaolin-finance-notes" target="_blank" rel="noopener">GitHub</a>
 </footer>
