@@ -1,0 +1,10 @@
+# Skills 工具链（npx skills add 生成）
+.agents/
+.claude/
+.codebuddy/
+.kiro/
+.trae/
+.windsurf/
+.gstack/
+skills/
+skills-lock.json
