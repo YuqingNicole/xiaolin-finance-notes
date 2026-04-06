@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Howard Marks · 投资思维操作系统</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:#fafaf9;color:#1c1917;font-family:'Inter','Noto Sans SC',sans-serif;line-height:1.7;}
+
+/* ===== HERO ===== */
+.hero{position:relative;min-height:70vh;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#1a1a2e 0%,#16213e 40%,#0f3460 100%);overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");}
+.hero-content{position:relative;z-index:1;text-align:center;padding:40px 24px;max-width:800px;}
+.hero-badge{display:inline-block;padding:6px 16px;border:1px solid rgba(255,255,255,0.2);border-radius:20px;color:rgba(255,255,255,0.6);font-size:0.8rem;margin-bottom:24px;letter-spacing:0.05em;}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.5rem,6vw,4rem);color:#fff;font-weight:700;line-height:1.2;margin-bottom:16px;}
+.hero h1 em{font-style:italic;color:#a5b4fc;}
+.hero-sub{font-size:1.1rem;color:rgba(255,255,255,0.6);max-width:600px;margin:0 auto 32px;line-height:1.8;}
+.hero-quote{font-family:'Playfair Display',serif;font-style:italic;font-size:1.15rem;color:rgba(255,255,255,0.45);max-width:580px;margin:0 auto;line-height:1.6;}
+.hero-stats{display:flex;justify-content:center;gap:40px;margin-top:40px;}
+.hero-stat{text-align:center;}
+.hero-stat .num{font-size:2rem;font-weight:800;color:#a5b4fc;}
+.hero-stat .label{font-size:0.75rem;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.08em;margin-top:4px;}
+.back-link{position:absolute;top:20px;left:24px;z-index:10;color:rgba(255,255,255,0.5);text-decoration:none;font-size:0.85rem;transition:color 0.2s;}
+.back-link:hover{color:#fff;}
+
+/* ===== NAV ===== */
+.theme-nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.92);backdrop-filter:blur(12px);border-bottom:1px solid #e7e5e4;padding:12px 24px;overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch;}
+.theme-nav::-webkit-scrollbar{display:none;}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;gap:8px;}
+.nav-pill{padding:8px 16px;border-radius:20px;border:1px solid #e7e5e4;background:#fff;color:#78716c;cursor:pointer;font-size:0.82rem;transition:all 0.2s;font-family:inherit;white-space:nowrap;}
+.nav-pill:hover{border-color:#d6d3d1;color:#1c1917;background:#f5f5f4;}
+.nav-pill.active{background:#1e1b4b;border-color:#1e1b4b;color:#fff;}
+
+/* ===== SECTIONS ===== */
+.theme-section{max-width:1200px;margin:0 auto;padding:60px 24px;}
+.theme-section:nth-child(odd){background:transparent;}
+.section-header{margin-bottom:40px;}
+.section-num{font-size:0.75rem;color:#a8a29e;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:8px;}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.4rem);font-weight:700;color:#1c1917;margin-bottom:12px;line-height:1.25;}
+.section-desc{font-size:1rem;color:#78716c;max-width:700px;line-height:1.8;}
+
+/* ===== QUOTE CARDS ===== */
+.quotes-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px;margin-bottom:32px;}
+.quote-card{background:#fff;border:1px solid #e7e5e4;border-radius:16px;padding:24px;position:relative;transition:transform 0.2s,box-shadow 0.2s;}
+.quote-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,0.06);}
+.quote-card::before{content:'\201C';position:absolute;top:12px;left:20px;font-size:3rem;color:#e7e5e4;font-family:'Playfair Display',serif;line-height:1;}
+.quote-text{font-size:0.95rem;color:#44403c;line-height:1.7;padding-top:24px;font-style:italic;}
+.quote-source{font-size:0.78rem;color:#a8a29e;margin-top:12px;}
+
+/* ===== INSIGHT CARDS ===== */
+.insights{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;}
+.insight-card{background:#fff;border:1px solid #e7e5e4;border-radius:16px;padding:24px;border-left:3px solid var(--accent);transition:transform 0.2s,box-shadow 0.2s;}
+.insight-card:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,0.05);}
+.insight-icon{font-size:1.5rem;margin-bottom:12px;}
+.insight-title{font-weight:700;font-size:1rem;margin-bottom:8px;color:#1c1917;}
+.insight-body{font-size:0.875rem;color:#57534e;line-height:1.7;}
+
+/* ===== TIMELINE ===== */
+.timeline{position:relative;padding-left:32px;}
+.timeline::before{content:'';position:absolute;left:8px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,#e7e5e4,#d6d3d1);}
+.tl-item{position:relative;margin-bottom:28px;padding-left:24px;}
+.tl-item::before{content:'';position:absolute;left:-28px;top:6px;width:12px;height:12px;border-radius:50%;background:#fff;border:3px solid #6366f1;}
+.tl-item.highlight::before{background:#6366f1;box-shadow:0 0 0 4px rgba(99,102,241,0.15);}
+.tl-year{font-size:0.78rem;font-weight:700;color:#6366f1;margin-bottom:2px;}
+.tl-title{font-weight:600;font-size:0.95rem;color:#1c1917;}
+.tl-desc{font-size:0.82rem;color:#78716c;margin-top:2px;}
+
+/* ===== MEMO CARDS ===== */
+.memos-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;}
+.memo-card{background:#fff;border:1px solid #e7e5e4;border-radius:12px;padding:20px;transition:all 0.2s;}
+.memo-card:hover{border-color:#6366f1;box-shadow:0 4px 12px rgba(99,102,241,0.08);}
+.memo-year{font-size:0.72rem;color:#a8a29e;font-weight:600;}
+.memo-name{font-weight:600;font-size:0.92rem;color:#1c1917;margin:4px 0;}
+.memo-desc{font-size:0.8rem;color:#78716c;line-height:1.6;}
+
+/* ===== MATRIX ===== */
+.matrix-wrap{max-width:560px;margin:32px auto;}
+.matrix{display:grid;grid-template-columns:1fr 1fr;gap:2px;border-radius:16px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.06);}
+.matrix-cell{padding:24px;text-align:center;font-size:0.85rem;line-height:1.5;}
+.matrix-cell.tl{background:#fef2f2;color:#991b1b;}
+.matrix-cell.tr{background:#f0fdf4;color:#166534;}
+.matrix-cell.bl{background:#fefce8;color:#854d0e;}
+.matrix-cell.br{background:#eff6ff;color:#1e40af;}
+.matrix-cell strong{display:block;font-size:1rem;margin-bottom:4px;}
+.matrix-labels{display:flex;justify-content:space-between;max-width:560px;margin:8px auto 0;font-size:0.75rem;color:#a8a29e;}
+
+/* ===== INVESTCON ===== */
+.investcon{display:flex;gap:4px;max-width:600px;margin:24px auto;align-items:flex-end;}
+.inv-bar{flex:1;border-radius:8px 8px 0 0;text-align:center;padding:8px 4px;font-size:0.72rem;font-weight:600;color:#fff;transition:all 0.3s;}
+.inv-label{font-size:0.7rem;color:#78716c;text-align:center;margin-top:4px;}
+
+/* ===== FOOTER ===== */
+.page-footer{text-align:center;padding:48px 24px;color:#a8a29e;font-size:0.8rem;border-top:1px solid #f5f5f4;margin-top:40px;}
+.page-footer a{color:#78716c;text-decoration:none;}
+.page-footer a:hover{color:#1c1917;}
+
+/* ===== SCROLL ANIMATION ===== */
+.fade-in{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;}
+.fade-in.visible{opacity:1;transform:translateY(0);}
+
+@media(max-width:640px){
+  .hero-stats{gap:24px;flex-wrap:wrap;}
+  .quotes-grid,.insights,.memos-grid{grid-template-columns:1fr;}
+  .theme-section{padding:40px 16px;}
+  .matrix-wrap{max-width:100%;}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== HERO ===== -->
+<a class="back-link" href="index.html">&larr; 返回知识库</a>
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-badge">OAKTREE CAPITAL &middot; 35 YEARS OF MEMOS</div>
+    <h1>Howard Marks<br><em>投资思维操作系统</em></h1>
+    <p class="hero-sub">基于《The Best of...》492 页 / 45 篇自选备忘录的深度蒸馏<br>从 1990 到 2025，横跨互联网泡沫、金融危机、Sea Change</p>
+    <p class="hero-quote">"The most important thing is being attentive to cycles.<br>The second most important thing is knowing we can't predict them."</p>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="num">45</div><div class="label">精选备忘录</div></div>
+      <div class="hero-stat"><div class="num">10</div><div class="label">思维主题</div></div>
+      <div class="hero-stat"><div class="num">6</div><div class="label">心智模型</div></div>
+      <div class="hero-stat"><div class="num">35</div><div class="label">年投资经验</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== THEME NAV ===== -->
+<nav class="theme-nav">
+  <div class="nav-inner">
+    <button class="nav-pill active" data-target="risk">风险的本质</button>
+    <button class="nav-pill" data-target="cycle">周期与钟摆</button>
+    <button class="nav-pill" data-target="forecast">预测的无效</button>
+    <button class="nav-pill" data-target="contrarian">逆向投资</button>
+    <button class="nav-pill" data-target="luck">运气与技能</button>
+    <button class="nav-pill" data-target="value">价格与价值</button>
+    <button class="nav-pill" data-target="psychology">投资者心理</button>
+    <button class="nav-pill" data-target="defense">防守型投资</button>
+    <button class="nav-pill" data-target="asymmetry">不对称性</button>
+    <button class="nav-pill" data-target="crisis">2008 金融危机</button>
+    <button class="nav-pill" data-target="timeline">人物时间线</button>
+    <button class="nav-pill" data-target="memos">备忘录索引</button>
+  </div>
+</nav>
+
+<!-- ===== 1. RISK ===== -->
+<section class="theme-section fade-in" id="risk">
+  <div class="section-header">
+    <div class="section-num">01 / 10</div>
+    <h2 class="section-title">风险的本质：风险 ≠ 波动率</h2>
+    <p class="section-desc">风险是永久性资本损失的概率，不是价格波动。风险最高的时候，恰恰是所有人觉得最安全的时候——安全感催生不审慎的行为。</p>
+  </div>
+  <div class="quotes-grid">
+    <div class="quote-card"><p class="quote-text">Riskier investments absolutely cannot be counted on to deliver higher returns. Why not? It's simple: if riskier investments reliably produced higher returns, they wouldn't be riskier!</p><div class="quote-source">— Risk (2006)</div></div>
+    <div class="quote-card"><p class="quote-text">The riskiest thing in the world is the widespread belief that there's no risk.</p><div class="quote-source">— It's Not Easy (2015)</div></div>
+    <div class="quote-card"><p class="quote-text">One of my favorite adages concerns the six-foot-tall man who drowned crossing the stream that was five feet deep on average.</p><div class="quote-source">— Volatility + Leverage = Dynamite (2008)</div></div>
+  </div>
+  <div class="insights">
+    <div class="insight-card" style="--accent:#ef4444;"><div class="insight-icon">&#9888;&#65039;</div><div class="insight-title">风险的悖论性</div><div class="insight-body">所有人觉得安全 → 行为不审慎 → 真实风险最高。恐慌蔓延 → 价格暴跌 → 风险已被释放。</div></div>
+    <div class="insight-card" style="--accent:#f59e0b;"><div class="insight-icon">&#9889;</div><div class="insight-title">杠杆是炸药</div><div class="insight-body">杠杆不改变对错概率，只放大后果。LTCM 自称"在全世界捡硬币"——省略了"在压路机前面"。</div></div>
+    <div class="insight-card" style="--accent:#22c55e;"><div class="insight-icon">&#9878;&#65039;</div><div class="insight-title">风险不可回避</div><div class="insight-body">不愿承担风险本身就是极其冒险的策略。投资者的工作是聪明地承担风险以获取回报。</div></div>
+  </div>
+</section>
+
+<!-- ===== 2. CYCLE ===== -->
+<section class="theme-section fade-in" id="cycle">
+  <div class="section-header">
+    <div class="section-num">02 / 10</div>
+    <h2 class="section-title">周期与钟摆：万物皆有周期</h2>
+    <p class="section-desc">市场情绪像钟摆，在极端之间摆动，几乎从不停留在中间。你不能预测周期的时点，但必须知道身处周期的什么位置。</p>
+  </div>
+  <div class="quotes-grid">
+    <div class="quote-card"><p class="quote-text">The mood swings of the securities markets resemble the movement of a pendulum. Although the midpoint of its arc best describes the location of the pendulum "on average," it actually spends very little of its time there.</p><div class="quote-source">— First Quarter Performance (1991)</div></div>
+    <div class="quote-card"><p class="quote-text">The worst loans are made at the best of times.</p><div class="quote-source">— You Can't Predict. You Can Prepare. (2001)</div></div>
+  </div>
+  <div class="insights" style="margin-bottom:36px;">
+    <div class="insight-card" style="--accent:#6366f1;"><div class="insight-icon">&#128260;</div><div class="insight-title">牛市三阶段</div><div class="insight-body">① 少数前瞻者觉得会好转<br>② 多数人确认改善正在发生<br>③ 所有人认为会永远好下去</div></div>
+    <div class="insight-card" style="--accent:#0ea5e9;"><div class="insight-icon">&#127754;</div><div class="insight-title">Sea Change (2022)</div><div class="insight-body">40年利率下降趋势结束。这不是周期波动，是根本性转变。投资者过去走在"机场传送带"上，现在传送带停了。</div></div>
+    <div class="insight-card" style="--accent:#8b5cf6;"><div class="insight-icon">&#127777;&#65039;</div><div class="insight-title">测温度，不预报天气</div><div class="insight-body">50年只做了5次市场判断，每次都在极端时刻。"Yeah, Dad, that's because you did it five times in 50 years." — Andrew Marks</div></div>
+  </div>
+</section>
+
+<!-- ===== 3. FORECAST ===== -->
+<section class="theme-section fade-in" id="forecast">
+  <div class="section-header">
+    <div class="section-num">03 / 10</div>
+    <h2 class="section-title">预测的无效与知识的谦逊</h2>
+    <p class="section-desc">"I know" 学派与 "I don't know" 学派。Marks 坚定地站在后者——承认你不知道的，比假装你知道的更有投资价值。</p>
+  </div>
+  <div class="quotes-grid">
+    <div class="quote-card"><p class="quote-text">There are two kinds of forecasters: those who don't know, and those who don't know they don't know.</p><div class="quote-source">— Galbraith, 引于 The Illusion of Knowledge (2022)</div></div>
+    <div class="quote-card"><p class="quote-text">Human beings want to feel that they are on a power walk into the future, when in fact we are always just tapping our canes on the pavement in the fog.</p><div class="quote-source">— Uncertainty II (2020)</div></div>
+    <div class="quote-card"><p class="quote-text">95% of all financial history happens within two standard deviations of normal, and everything interesting happens outside of two standard deviations.</p><div class="quote-source">— Uncertainty II (2020)</div></div>
+  </div>
+</section>
+
+<!-- ===== 4. CONTRARIAN ===== -->
+<section class="theme-section fade-in" id="contrarian">
+  <div class="section-header">
+    <div class="section-num">04 / 10</div>
+    <h2 class="section-title">逆向投资：敢于不同</h2>
+    <p class="section-desc">杰出投资需要非共识且正确的判断。二层思维是核心能力：不仅要有判断，还要判断共识的判断。</p>
+  </div>
+  <div class="quotes-grid" style="margin-bottom:32px;">
+    <div class="quote-card"><p class="quote-text">This just in: you can't take the same actions as everyone else and expect to outperform.</p><div class="quote-source">— Dare to Be Great (2006)</div></div>
+    <div class="quote-card"><p class="quote-text">I'm convinced that everything that's important in investing is counterintuitive, and everything that's obvious is wrong.</p><div class="quote-source">— Dare to Be Great II (2014)</div></div>
+  </div>
+  <h3 style="text-align:center;color:#78716c;font-size:0.85rem;margin-bottom:16px;">Dare to Be Great 矩阵</h3>
+  <div class="matrix-wrap">
+    <div class="matrix">
+      <div class="matrix-cell tl"><strong>平均好成绩</strong>常规行为 × 有利结果</div>
+      <div class="matrix-cell tr"><strong>&#11088; 超额回报</strong>非常规行为 × 有利结果</div>
+      <div class="matrix-cell bl"><strong>平均差成绩</strong>常规行为 × 不利结果</div>
+      <div class="matrix-cell br"><strong>超额亏损</strong>非常规行为 × 不利结果</div>
+    </div>
+    <div class="matrix-labels"><span>&larr; 常规行为</span><span>非常规行为 &rarr;</span></div>
+  </div>
+</section>
+
+<!-- ===== 5. LUCK ===== -->
+<section class="theme-section fade-in" id="luck">
+  <div class="section-header">
+    <div class="section-num">05 / 10</div>
+    <h2 class="section-title">运气、技能与决策质量</h2>
+    <p class="section-desc">决策质量不能由结果判断。好决策可能因坏运气失败，坏决策可能因好运气成功。</p>
+  </div>
+  <div class="quotes-grid">
+    <div class="quote-card"><p class="quote-text">Success in gambling doesn't go to those who pick winners, but to those with the ability to identify superior propositions — mispricing.</p><div class="quote-source">— You Bet! (2020)</div></div>
+    <div class="quote-card"><p class="quote-text">$10 million earned through Russian roulette does not have the same value as $10 million earned through the diligent and artful practice of dentistry.</p><div class="quote-source">— Nassim Taleb, 引于 Returns and How They Get That Way (2002)</div></div>
+    <div class="quote-card"><p class="quote-text">Risk means more things can happen than will happen.</p><div class="quote-source">— Elroy Dimson, 引于 Getting Lucky (2014)</div></div>
+  </div>
+</section>
+
+<!-- ===== 6. VALUE ===== -->
+<section class="theme-section fade-in" id="value">
+  <div class="section-header">
+    <div class="section-num">06 / 10</div>
+    <h2 class="section-title">价格与价值：买得好 &gt; 买好的</h2>
+    <p class="section-desc">没有任何资产好到不能被高价毁掉，也没有任何资产差到不能被低价拯救。</p>
+  </div>
+  <div class="quotes-grid">
+    <div class="quote-card"><p class="quote-text">In the end, superior investing is all about mistakes... and about being the person who profits from them, not the one who commits them.</p><div class="quote-source">— It's All a Big Mistake (2012)</div></div>
+    <div class="quote-card"><p class="quote-text">The first rule of compounding is to never interrupt it unnecessarily.</p><div class="quote-source">— Charlie Munger, 引于 Something of Value (2021)</div></div>
+  </div>
+  <div class="insights">
+    <div class="insight-card" style="--accent:#dc2626;"><div class="insight-icon">&#128176;</div><div class="insight-title">RCA 教训</div><div class="insight-body">1927-1929 从 $8 涨到 $114，之后跌至 $2.5。收音机确实改变了世界，但投资者仍巨亏。</div></div>
+    <div class="insight-card" style="--accent:#059669;"><div class="insight-icon">&#128200;</div><div class="insight-title">价值/成长融合</div><div class="insight-body">2021年 Something of Value 标志着 Marks 的思想演化：对于真正的复利机器，应该"说服自己不要卖"。</div></div>
+    <div class="insight-card" style="--accent:#7c3aed;"><div class="insight-icon">&#127919;</div><div class="insight-title">利用错误</div><div class="insight-body">Bruce Karsh 困境债团队 23 年平均 23% 年化回报。对手犯错是其商业模式根基。</div></div>
+  </div>
+</section>
+
+<!-- ===== 7. PSYCHOLOGY ===== -->
+<section class="theme-section fade-in" id="psychology">
+  <div class="section-header">
+    <div class="section-num">07 / 10</div>
+    <h2 class="section-title">投资者心理：从"完美"到"绝望"一步之遥</h2>
+    <p class="section-desc">投资的基础是心理学，不是金融学。市场没有特殊智慧，价格下跌是反映性的，不是预测性的。</p>
+  </div>
+  <div class="quotes-grid">
+    <div class="quote-card"><p class="quote-text">In the real world, things generally fluctuate between "pretty good" and "not so hot." But in the world of investing, perception often swings from "flawless" to "hopeless."</p><div class="quote-source">— On the Couch (2016)</div></div>
+    <div class="quote-card"><p class="quote-text">If I could know only one thing about an investment I'm contemplating, it might be how much optimism is embodied in the price.</p><div class="quote-source">— On the Couch (2016)</div></div>
+  </div>
+</section>
+
+<!-- ===== 8. DEFENSE ===== -->
+<section class="theme-section fade-in" id="defense">
+  <div class="section-header">
+    <div class="section-num">08 / 10</div>
+    <h2 class="section-title">防守型投资：避免失败优先</h2>
+    <p class="section-desc">"If we avoid the losers, the winners will take care of themselves." 平庸中的一致性创造卓越。</p>
+  </div>
+  <div class="quotes-grid">
+    <div class="quote-card"><p class="quote-text">The key to investment success isn't hitting home runs; it's avoiding strikeouts and inning-ending double plays.</p><div class="quote-source">— What's Your Game Plan? (2003)</div></div>
+    <div class="quote-card"><p class="quote-text">There's such a thing as the risk of taking too little risk.</p><div class="quote-source">— Fewer Losers, or More Winners? (2023)</div></div>
+  </div>
+  <div class="insights">
+    <div class="insight-card" style="--accent:#0d9488;"><div class="insight-icon">&#9971;</div><div class="insight-title">Tom Kite</div><div class="insight-body">20年累计奖金最多却从未赢过大满贯。持续稳定"进钱圈"胜过偶尔夺冠。</div></div>
+    <div class="insight-card" style="--accent:#2563eb;"><div class="insight-icon">&#9918;</div><div class="insight-title">Henry Aaron</div><div class="insight-body">最佳赛季不如 Bonds/Mays，但"他在最高水平上打得比任何人都久"。</div></div>
+    <div class="insight-card" style="--accent:#dc2626;"><div class="insight-icon">&#127942;</div><div class="insight-title">养老金奇迹</div><div class="insight-body">中西部养老金 14 年从未低于 47 百分位、也未高于 27 百分位，最终排名第 4 百分位。</div></div>
+  </div>
+</section>
+
+<!-- ===== 9. ASYMMETRY ===== -->
+<section class="theme-section fade-in" id="asymmetry">
+  <div class="section-header">
+    <div class="section-num">09 / 10</div>
+    <h2 class="section-title">不对称性：卓越投资的终极标准</h2>
+    <p class="section-desc">上涨时跟上市场，下跌时少亏。短期业绩不重要，5-10 年的不对称性才是真正的 alpha。</p>
+  </div>
+  <div class="quotes-grid">
+    <div class="quote-card"><p class="quote-text">Don't just do something; sit there.</p><div class="quote-source">— I Beg to Differ (2022)</div></div>
+    <div class="quote-card"><p class="quote-text">It's one or the other. You can't simultaneously emphasize both preservation of capital and maximization of growth. This is the fundamental, inescapable truth in investing.</p><div class="quote-source">— Ruminating on Asset Allocation (2024)</div></div>
+  </div>
+  <h3 style="text-align:center;color:#78716c;font-size:0.85rem;margin:32px 0 16px;">INVESTCON 防御等级系统</h3>
+  <div class="investcon">
+    <div><div class="inv-bar" style="height:50px;background:#22c55e;">6</div><div class="inv-label">全面进攻</div></div>
+    <div><div class="inv-bar" style="height:70px;background:#84cc16;">5</div><div class="inv-label">增配防御</div></div>
+    <div><div class="inv-bar" style="height:90px;background:#eab308;">4</div><div class="inv-label">中性</div></div>
+    <div><div class="inv-bar" style="height:110px;background:#f97316;">3</div><div class="inv-label">减仓</div></div>
+    <div><div class="inv-bar" style="height:130px;background:#ef4444;">2</div><div class="inv-label">高度防御</div></div>
+    <div><div class="inv-bar" style="height:150px;background:#991b1b;">1</div><div class="inv-label">全面防御</div></div>
+  </div>
+  <p style="text-align:center;font-size:0.8rem;color:#a8a29e;margin-top:8px;">2025 年 Marks 建议：INVESTCON 5 — 停止买入、增加防御性持仓</p>
+</section>
+
+<!-- ===== 10. CRISIS ===== -->
+<section class="theme-section fade-in" id="crisis">
+  <div class="section-header">
+    <div class="section-num">10 / 10</div>
+    <h2 class="section-title">2007-2008 金融危机：理论的终极实验场</h2>
+    <p class="section-desc">五篇备忘录构成了从预警到危机到抄底的完整链条——周期理论、逆向投资、风险观，全部在一场真实危机中接受检验。</p>
+  </div>
+  <div class="timeline">
+    <div class="tl-item"><div class="tl-year">2007.02</div><div class="tl-title">The Race to the Bottom</div><div class="tl-desc">信贷标准崩塌，"逐底竞赛"正在进行</div></div>
+    <div class="tl-item"><div class="tl-year">2007.07</div><div class="tl-title">It's All Good</div><div class="tl-desc">Marks 目睹过的最强烈的上行周期，所有危险信号亮起</div></div>
+    <div class="tl-item"><div class="tl-year">2007.07</div><div class="tl-title">It's All Good... Really?</div><div class="tl-desc">仅两周后，次贷问题开始传染。杠杆才是真正的 "L word"</div></div>
+    <div class="tl-item"><div class="tl-year">2007.09</div><div class="tl-title">Now It's All Bad?</div><div class="tl-desc">六周内从"全部美好"翻转为"全部糟糕"</div></div>
+    <div class="tl-item highlight"><div class="tl-year">2008.10</div><div class="tl-title">The Limits to Negativism</div><div class="tl-desc">在绝对底部附近呼吁买入。随后 15 周部署 60 亿美元，IRR 31.5%</div></div>
+  </div>
+  <div class="quotes-grid" style="margin-top:32px;">
+    <div class="quote-card"><p class="quote-text">Skepticism and pessimism aren't synonymous. Skepticism calls for pessimism when optimism is excessive. But it also calls for optimism when pessimism is excessive.</p><div class="quote-source">— The Limits to Negativism (2008)</div></div>
+  </div>
+</section>
+
+<!-- ===== TIMELINE ===== -->
+<section class="theme-section fade-in" id="timeline">
+  <div class="section-header">
+    <div class="section-num">BIOGRAPHY</div>
+    <h2 class="section-title">Howard Marks 人物时间线</h2>
+  </div>
+  <div class="timeline">
+    <div class="tl-item"><div class="tl-year">1946</div><div class="tl-title">出生于纽约 Queens</div></div>
+    <div class="tl-item"><div class="tl-year">1967</div><div class="tl-title">Wharton 毕业</div><div class="tl-desc">金融+日本研究</div></div>
+    <div class="tl-item"><div class="tl-year">1969</div><div class="tl-title">Chicago Booth MBA</div><div class="tl-desc">接触有效市场假说，与 EMH 的"复杂关系"开始</div></div>
+    <div class="tl-item highlight"><div class="tl-year">1978</div><div class="tl-title">被"发配"管理可转债</div><div class="tl-desc">发现低效市场的价值——投资生涯最重要的转折点</div></div>
+    <div class="tl-item highlight"><div class="tl-year">1990</div><div class="tl-title">第一篇备忘录</div><div class="tl-desc">"The Route to Performance"，写作成为思考工具</div></div>
+    <div class="tl-item highlight"><div class="tl-year">1995</div><div class="tl-title">创立 Oaktree Capital</div><div class="tl-desc">与 Bruce Karsh 等合伙人，45 岁创业</div></div>
+    <div class="tl-item"><div class="tl-year">2000</div><div class="tl-title">"bubble.com" 备忘录</div><div class="tl-desc">预警互联网泡沫，两个月后泡沫破裂</div></div>
+    <div class="tl-item highlight"><div class="tl-year">2008</div><div class="tl-title">金融危机中逆向抄底</div><div class="tl-desc">15 周部署 60 亿美元，困境债 IRR 31.5%</div></div>
+    <div class="tl-item"><div class="tl-year">2011</div><div class="tl-title">出版《The Most Important Thing》</div></div>
+    <div class="tl-item"><div class="tl-year">2018</div><div class="tl-title">出版《Mastering the Market Cycle》</div></div>
+    <div class="tl-item highlight"><div class="tl-year">2022</div><div class="tl-title">"Sea Change" 备忘录</div><div class="tl-desc">宣布低利率时代结束，推翻自己 40 年工作假设</div></div>
+    <div class="tl-item"><div class="tl-year">2025</div><div class="tl-title">备忘录 35 周年</div><div class="tl-desc">精华集发布，被美国金融博物馆永久收藏</div></div>
+  </div>
+</section>
+
+<!-- ===== MEMOS INDEX ===== -->
+<section class="theme-section fade-in" id="memos">
+  <div class="section-header">
+    <div class="section-num">INDEX</div>
+    <h2 class="section-title">45 篇备忘录索引</h2>
+    <p class="section-desc">Howard Marks 35 年自选精华，按时间排列</p>
+  </div>
+  <div class="memos-grid" id="memosGrid"></div>
+</section>
+
+<footer class="page-footer">
+  Howard Marks · 投资思维操作系统 — 基于《The Best of...》(2025) 深度蒸馏 · <a href="index.html">返回知识库</a> · <a href="https://github.com/YuqingNicole/xiaolin-finance-notes" target="_blank">GitHub</a>
+</footer>
+
+<script>
+// Memo data
+const MEMOS = [
+  {y:'1990',t:'The Route to Performance',d:'一致性优于偶尔辉煌',u:'the-route-to-performance'},
+  {y:'1991',t:'First Quarter Performance',d:'钟摆理论首次提出',u:'first-quarter-performance'},
+  {y:'1995',t:'How the Game Should Be Played',d:'打击率而非全垒打',u:'how-the-game-should-be-played'},
+  {y:'2000',t:'bubble.com',d:'互联网泡沫预警',u:'bubble-com'},
+  {y:'2001',t:"What's It All About, Alpha?",d:'Alpha是差异化优势',u:'what-s-it-all-about-alpha'},
+  {y:'2001',t:"You Can't Predict. You Can Prepare.",d:'周期定位而非预测',u:'you-can-t-predict-you-can-prepare'},
+  {y:'2002',t:"The Realist's Creed",d:'投资七条信条',u:'the-realist-s-creed'},
+  {y:'2002',t:'Returns and How They Get That Way',d:'运气vs技能',u:'returns-and-how-they-get-that-way'},
+  {y:'2003',t:"What's Your Game Plan?",d:'选择防守策略',u:'what-s-your-game-plan'},
+  {y:'2004',t:'Us and Them',d:'"I know" vs "I don\'t know"',u:'us-and-them'},
+  {y:'2004',t:'Hedge Funds: A Case for Caution',d:'没有资产天生高回报',u:'hedge-funds-a-case-for-caution'},
+  {y:'2006',t:'Risk',d:'风险≠波动率',u:'risk'},
+  {y:'2006',t:'Dare to Be Great',d:'非常规思维矩阵',u:'dare-to-be-great'},
+  {y:'2006',t:'The New Paradigm',d:'管理费驱动的范式转换',u:'the-new-paradigm'},
+  {y:'2006',t:'Pigweed',d:'Amaranth崩溃与杠杆之害',u:'pigweed'},
+  {y:'2007',t:'The Race to the Bottom',d:'信贷标准逐底竞赛',u:'the-race-to-the-bottom'},
+  {y:'2007',t:"It's All Good",d:'最强烈的上行周期',u:'it-s-all-good'},
+  {y:'2007',t:"It's All Good... Really?",d:'次贷传染开始',u:'it-s-all-good-really'},
+  {y:'2007',t:"Now It's All Bad?",d:'六周内情绪翻转',u:'now-it-s-all-bad'},
+  {y:'2008',t:'The Limits to Negativism',d:'绝对底部附近呼吁买入',u:'the-limits-to-negativism'},
+  {y:'2008',t:'Volatility + Leverage = Dynamite',d:'杠杆与波动率的致命组合',u:'volatility-leverage-dynamite'},
+  {y:'2010',t:'All That Glitters',d:'黄金是信仰不是投资',u:'all-that-glitters'},
+  {y:'2012',t:'Déjà Vu All Over Again',d:'历史押韵与均值回归',u:'deja-vu-all-over-again'},
+  {y:'2012',t:"It's All a Big Mistake",d:'利用他人错误',u:'it-s-all-a-big-mistake'},
+  {y:'2013',t:'The Outlook for Equities',d:'好回报消耗未来回报',u:'the-outlook-for-equities'},
+  {y:'2014',t:'Getting Lucky',d:'运气的角色被低估',u:'getting-lucky'},
+  {y:'2014',t:'Dare to Be Great II',d:'敢于不同、敢于犯错',u:'dare-to-be-great-ii'},
+  {y:'2015',t:'Risk Revisited Again',d:'24种风险分类',u:'risk-revisited-again'},
+  {y:'2015',t:"It's Not Easy",d:'二层思维是核心竞争力',u:'its-not-easy'},
+  {y:'2016',t:'On the Couch',d:'投资心理学',u:'on-the-couch'},
+  {y:'2016',t:'What Does the Market Know?',d:'市场没有特殊智慧',u:'what-does-the-market-know'},
+  {y:'2019',t:"This Time It's Different",d:'九大乐观命题的审视',u:'this-time-its-different'},
+  {y:'2020',t:'You Bet!',d:'投资本质=概率决策',u:'you-bet'},
+  {y:'2020',t:'Uncertainty',d:'知识谦逊是最重要品质',u:'uncertainty'},
+  {y:'2020',t:'Uncertainty II',d:'未来由集体行为创造',u:'uncertainty-ii'},
+  {y:'2021',t:'Something of Value',d:'价值与成长的融合',u:'something-of-value'},
+  {y:'2022',t:'I Beg to Differ',d:'不对称性是卓越的本质',u:'i-beg-to-differ'},
+  {y:'2022',t:'The Illusion of Knowledge',d:'预测的反馈循环不可解',u:'the-illusion-of-knowledge'},
+  {y:'2022',t:'What Really Matters?',d:'真正重要的是长期+不对称',u:'what-really-matters'},
+  {y:'2022',t:'Sea Change',d:'第三次根本性转变',u:'sea-change'},
+  {y:'2023',t:'Taking the Temperature',d:'50年5次市场判断',u:'taking-the-temperature'},
+  {y:'2023',t:'Fewer Losers, or More Winners?',d:'风险控制vs风险回避',u:'fewer-losers-or-more-winners'},
+  {y:'2024',t:'The Indispensability of Risk',d:'不承担风险是最大风险',u:'the-indispensability-of-risk'},
+  {y:'2024',t:'Ruminating on Asset Allocation',d:'所有权vs债务',u:'ruminating-on-asset-allocation'},
+  {y:'2025',t:'The Calculus of Value',d:'INVESTCON防御等级系统',u:'the-calculus-of-value'}
+];
+
+const OAK = 'https://www.oaktreecapital.com/insights/memo/';
+const grid = document.getElementById('memosGrid');
+MEMOS.forEach(m => {
+  grid.innerHTML += `<a class="memo-card" href="${OAK}${m.u}" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;"><div class="memo-year">${m.y}</div><div class="memo-name">${m.t} <span style="font-size:0.7rem;color:#6366f1;">&#8599;</span></div><div class="memo-desc">${m.d}</div></a>`;
+});
+
+// Nav scroll
+document.querySelectorAll('.nav-pill').forEach(pill => {
+  pill.addEventListener('click', () => {
+    document.querySelectorAll('.nav-pill').forEach(p => p.classList.remove('active'));
+    pill.classList.add('active');
+    const target = document.getElementById(pill.dataset.target);
+    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+
+// Scroll animations
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+
+// Update nav on scroll
+const sections = document.querySelectorAll('.theme-section');
+const navPills = document.querySelectorAll('.nav-pill');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(s => {
+    if (window.scrollY >= s.offsetTop - 120) current = s.id;
+  });
+  navPills.forEach(p => {
+    p.classList.toggle('active', p.dataset.target === current);
+  });
+}, { passive: true });
+</script>
+</body>
+</html>
