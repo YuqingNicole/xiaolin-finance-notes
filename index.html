@@ -18,12 +18,17 @@ body { background:#fafaf9; color:#1c1917; font-family:'Inter','Noto Sans SC',-ap
 /* ===== HEADER ===== */
 .header { position:sticky; top:0; z-index:100; background:rgba(255,255,255,0.85); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); border-bottom:1px solid #f5f5f4; padding:20px 24px; }
 .header-inner { max-width:1400px; margin:0 auto; }
-.header h1 { font-size:1.5rem; margin-bottom:12px; color:#1c1917; font-weight:700; }
+.header h1 { font-size:1.5rem; margin-bottom:12px; color:#1c1917; font-weight:700; display:flex; align-items:center; gap:0; }
+.nav-tabs { display:inline-flex; margin-left:24px; gap:0; border:1px solid #e7e5e4; border-radius:8px; overflow:hidden; vertical-align:middle; }
+.nav-tab { padding:6px 16px; font-size:0.8rem; font-weight:500; text-decoration:none; color:#57534e; transition:all 0.2s; border-right:1px solid #e7e5e4; }
+.nav-tab:last-child { border-right:none; }
+.nav-tab:hover { background:#f5f5f4; color:#1c1917; }
+.nav-tab.active { background:#1c1917; color:#fff; }
 .search-row { display:flex; gap:16px; align-items:center; flex-wrap:wrap; margin-bottom:8px; }
 .search-input { flex:1; min-width:200px; padding:10px 16px 10px 40px; background:#f5f5f4; border:1px solid #e7e5e4; border-radius:10px; color:#1c1917; font-size:1rem; outline:none; transition:border-color 0.2s, box-shadow 0.2s, background 0.2s; font-family:inherit; }
 .search-input:focus { border-color:#2563eb; box-shadow:0 0 0 3px rgba(37,99,235,0.1); background:#fff; }
 .search-wrapper { position:relative; flex:1; min-width:200px; }
-.search-wrapper::before { content:"\1F50D"; position:absolute; left:12px; top:50%; transform:translateY(-50%); font-size:0.85rem; pointer-events:none; opacity:0.5; }
+.search-wrapper::before { content:""; position:absolute; left:12px; top:50%; transform:translateY(-50%); width:16px; height:16px; background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2378716c' stroke-width='2'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cpath d='M21 21l-4.35-4.35'/%3E%3C/svg%3E") center/contain no-repeat; pointer-events:none; opacity:0.5; }
 .search-wrapper .search-input { width:100%; padding-left:36px; }
 .filter-btns { display:flex; gap:8px; flex-wrap:wrap; }
 .filter-btn { padding:10px 16px; border-radius:8px; border:1px solid #e7e5e4; background:#ffffff; color:#57534e; cursor:pointer; font-size:0.85rem; transition:all 0.2s; min-height:44px; font-family:inherit; }
@@ -134,6 +139,18 @@ body { background:#fafaf9; color:#1c1917; font-family:'Inter','Noto Sans SC',-ap
   overflow:hidden;
 }
 .modal-hint { position:absolute; bottom:16px; left:50%; transform:translateX(-50%); color:rgba(255,255,255,0.3); font-size:0.75rem; pointer-events:none; white-space:nowrap; }
+/* Help panel */
+.modal-help-toggle { position:absolute; top:12px; right:12px; z-index:10; width:32px; height:32px; border-radius:50%; border:1px solid #3a3a4e; background:rgba(255,255,255,0.08); color:#a5b4fc; cursor:pointer; font-size:0.9rem; display:flex; align-items:center; justify-content:center; transition:all 0.2s; font-family:inherit; }
+.modal-help-toggle:hover { background:rgba(255,255,255,0.15); border-color:#6366f1; }
+.modal-help-panel { position:absolute; top:52px; right:12px; z-index:10; background:rgba(20,20,35,0.95); border:1px solid #3a3a4e; border-radius:12px; padding:16px 20px; width:280px; backdrop-filter:blur(12px); animation:helpFadeIn 0.2s ease; }
+.modal-help-panel.hidden { display:none !important; }
+@keyframes helpFadeIn { from { opacity:0; transform:translateY(-8px); } to { opacity:1; transform:translateY(0); } }
+.modal-help-panel h4 { color:#e5e5e5; font-size:0.85rem; margin-bottom:12px; font-weight:600; }
+.modal-help-panel table { width:100%; border-collapse:collapse; }
+.modal-help-panel td { padding:5px 0; font-size:0.78rem; color:#a8a29e; vertical-align:top; }
+.modal-help-panel td:first-child { color:#c4b5fd; font-weight:500; white-space:nowrap; padding-right:12px; width:90px; }
+.modal-help-panel .help-divider { height:1px; background:#2a2a3e; margin:8px 0; }
+.modal-help-panel .help-note { font-size:0.72rem; color:rgba(255,255,255,0.3); margin-top:10px; line-height:1.4; }
 .modal-thinking {
   padding:12px 24px;
   font-size:0.85rem;
@@ -194,7 +211,7 @@ body { background:#fafaf9; color:#1c1917; font-family:'Inter','Noto Sans SC',-ap
 <body>
 <div class="header">
   <div class="header-inner">
-    <h1>&#127916; 小Lin说 · 金融知识库 <a href="howard-marks.html" style="font-size:0.75rem;font-weight:500;color:#6366f1;text-decoration:none;margin-left:12px;padding:4px 12px;border:1px solid #e0e7ff;border-radius:8px;vertical-align:middle;">&#128214; Howard Marks 投资思维</a></h1>
+    <h1>小Lin说 · 金融知识库 <nav class="nav-tabs"><a class="nav-tab active" href="index.html">金融知识库</a><a class="nav-tab" href="howard-marks.html">Howard Marks 投资思维</a></nav></h1>
     <div class="search-row">
       <div class="search-wrapper">
         <input type="text" class="search-input" id="searchInput" placeholder="搜索视频标题或知识点...">
@@ -206,16 +223,16 @@ body { background:#fafaf9; color:#1c1917; font-family:'Inter','Noto Sans SC',-ap
         <button class="filter-btn" data-cat="country">国家经济</button>
         <button class="filter-btn" data-cat="biz">商业故事</button>
         <button class="filter-btn" data-cat="invest">投资理财</button>
-        <button class="filter-btn" id="fwToggleBtn" data-cat="__fw__">&#129504;思维逻辑</button>
+        <button class="filter-btn" id="fwToggleBtn" data-cat="__fw__">思维逻辑</button>
       </div>
     </div>
     <div class="framework-bar" id="frameworkBar">
-      <span class="fw-pill" data-fw="logic">&#128269; 追问底层逻辑</span>
-      <span class="fw-pill" data-fw="stake">&#128506;&#65039; 利益方分析</span>
-      <span class="fw-pill" data-fw="system">&#9881;&#65039; 制度视角</span>
-      <span class="fw-pill" data-fw="history">&#128220; 历史纵深</span>
-      <span class="fw-pill" data-fw="loop">&#128260; 循环建模</span>
-      <span class="fw-pill" data-fw="signal">&#128202; 市场信号</span>
+      <span class="fw-pill" data-fw="logic">追问底层逻辑</span>
+      <span class="fw-pill" data-fw="stake">利益方分析</span>
+      <span class="fw-pill" data-fw="system">制度视角</span>
+      <span class="fw-pill" data-fw="history">历史纵深</span>
+      <span class="fw-pill" data-fw="loop">循环建模</span>
+      <span class="fw-pill" data-fw="signal">市场信号</span>
     </div>
   </div>
 </div>
@@ -231,7 +248,25 @@ body { background:#fafaf9; color:#1c1917; font-family:'Inter','Noto Sans SC',-ap
   </div>
   <div class="modal-canvas-wrap">
     <div id="jsmindContainer" style="width:100%;height:100%;"></div>
-    <div class="modal-hint">拖拽节点移动 · 双击编辑文字 · Tab添加子节点 · Delete删除节点 · 滚轮缩放</div>
+    <button class="modal-help-toggle" id="helpToggle" title="操作说明">?</button>
+    <div class="modal-help-panel" id="helpPanel">
+      <h4>操作说明</h4>
+      <table>
+        <tr><td>拖拽节点</td><td>按住节点拖动，调整位置</td></tr>
+        <tr><td>双击节点</td><td>进入编辑模式，修改文字</td></tr>
+        <tr><td>Tab</td><td>为选中节点添加子节点</td></tr>
+        <tr><td>Enter</td><td>为选中节点添加兄弟节点</td></tr>
+        <tr><td>Delete</td><td>删除选中的节点</td></tr>
+        <tr><td>滚轮</td><td>缩放思维导图</td></tr>
+      </table>
+      <div class="help-divider"></div>
+      <table>
+        <tr><td>&#8635; 重置</td><td>恢复到初始状态</td></tr>
+        <tr><td>Esc</td><td>关闭思维导图</td></tr>
+      </table>
+      <div class="help-note">点击任意节点选中后，即可使用快捷键操作</div>
+    </div>
+    <div class="modal-hint">点击右上角 ? 查看操作说明</div>
   </div>
   <div class="modal-thinking" id="modalThinking"></div>
 </div>
@@ -265,8 +300,8 @@ document.addEventListener('DOMContentLoaded', function() {
   function createCardHTML(card) {
     const cc = CAT_COLORS[card.cat];
     const sourceBadge = card.source === 'sub'
-      ? '<span class="badge source-sub">\uD83D\uDCDD字幕</span>'
-      : '<span class="badge source-know">\uD83E\uDDE0知识</span>';
+      ? '<span class="badge source-sub">字幕</span>'
+      : '<span class="badge source-know">知识</span>';
     const pointsHTML = card.points.map(p => '<li>' + p + '</li>').join('');
 
     return '<div class="card-container" data-idx="' + card.idx + '">' +
@@ -279,8 +314,8 @@ document.addEventListener('DOMContentLoaded', function() {
       '<h3 class="card-title">' + card.title + '</h3>' +
       '<ul class="points">' + pointsHTML + '</ul>' +
       '<div class="card-front-footer">' +
-      '<a class="yt-btn" href="' + card.youtubeUrl + '" target="_blank" rel="noopener">&#9654; YouTube</a>' +
-      '<button class="flip-btn" data-idx="' + card.idx + '">&#129504; 思维导图</button>' +
+      '<a class="yt-btn" href="' + card.youtubeUrl + '" target="_blank" rel="noopener">YouTube</a>' +
+      '<button class="flip-btn" data-idx="' + card.idx + '">思维导图</button>' +
       '</div></div></div></div>';
   }
 
@@ -478,6 +513,26 @@ document.addEventListener('DOMContentLoaded', function() {
 
   document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape' && currentModalIdx >= 0) closeModal();
+  });
+
+  // Help panel toggle
+  var helpPanel = document.getElementById('helpPanel');
+  var helpToggle = document.getElementById('helpToggle');
+  var helpDismissed = !!localStorage.getItem('mindmap-help-seen');
+  if (helpDismissed) helpPanel.classList.add('hidden');
+
+  helpToggle.addEventListener('click', function(e) {
+    e.stopPropagation();
+    helpPanel.classList.toggle('hidden');
+  });
+
+  helpPanel.addEventListener('click', function(e) { e.stopPropagation(); });
+
+  document.getElementById('jsmindContainer').addEventListener('click', function() {
+    if (!helpPanel.classList.contains('hidden')) {
+      helpPanel.classList.add('hidden');
+      localStorage.setItem('mindmap-help-seen', '1');
+    }
   });
 });
 </script>
