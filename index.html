@@ -9,7 +9,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsmind@0.8.5/style/jsmind.css" />
 <script defer src="https://cdn.jsdelivr.net/npm/jsmind@0.8.5/es6/jsmind.js"></script>
-<script defer src="data.js"></script>
+<script defer src="data.js?v=2"></script>
 <style>
 /* ===== RESET & BASE ===== */
 * { margin:0; padding:0; box-sizing:border-box; }
@@ -133,6 +133,11 @@ body { background:#fafaf9; color:#1c1917; font-family:'Inter','Noto Sans SC',-ap
 }
 .modal-btn:hover { background:rgba(255,255,255,0.15); border-color:#6366f1; color:#a5b4fc; }
 .modal-btn.close-btn:hover { border-color:#ef4444; color:#fca5a5; }
+.modal-btn.save-btn { border-color:#22c55e40; color:#86efac; }
+.modal-btn.save-btn:hover { background:rgba(34,197,94,0.15); border-color:#22c55e; color:#4ade80; }
+.modal-btn.save-btn.saved { border-color:#22c55e; color:#4ade80; }
+.save-toast { position:fixed; top:24px; left:50%; transform:translateX(-50%); background:#22c55e; color:#fff; padding:8px 20px; border-radius:8px; font-size:0.85rem; z-index:9999; opacity:0; transition:opacity 0.3s; pointer-events:none; }
+.save-toast.show { opacity:1; }
 .modal-canvas-wrap {
   flex:1;
   position:relative;
@@ -244,6 +249,7 @@ body { background:#fafaf9; color:#1c1917; font-family:'Inter','Noto Sans SC',-ap
   <div class="modal-topbar">
     <button class="modal-btn close-btn" onclick="closeModal()">&#10005; 返回</button>
     <div class="modal-title" id="modalTitle"></div>
+    <button class="modal-btn save-btn" onclick="saveModal()">保存</button>
     <button class="modal-btn" onclick="resetModal()">&#8635; 重置</button>
   </div>
   <div class="modal-canvas-wrap">
@@ -252,24 +258,27 @@ body { background:#fafaf9; color:#1c1917; font-family:'Inter','Noto Sans SC',-ap
     <div class="modal-help-panel" id="helpPanel">
       <h4>操作说明</h4>
       <table>
-        <tr><td>拖拽节点</td><td>按住节点拖动，调整位置</td></tr>
-        <tr><td>双击节点</td><td>进入编辑模式，修改文字</td></tr>
-        <tr><td>Tab</td><td>为选中节点添加子节点</td></tr>
-        <tr><td>Enter</td><td>为选中节点添加兄弟节点</td></tr>
-        <tr><td>Delete</td><td>删除选中的节点</td></tr>
-        <tr><td>滚轮</td><td>缩放思维导图</td></tr>
+        <tr><td>点击节点</td><td>选中节点（高亮显示）</td></tr>
+        <tr><td>双击 / F2</td><td>编辑节点文字</td></tr>
+        <tr><td>Tab</td><td>添加子节点</td></tr>
+        <tr><td>Enter</td><td>添加兄弟节点</td></tr>
+        <tr><td>Delete</td><td>删除节点</td></tr>
+        <tr><td>Space</td><td>展开/折叠子节点</td></tr>
+        <tr><td>拖拽</td><td>移动节点位置</td></tr>
       </table>
       <div class="help-divider"></div>
       <table>
-        <tr><td>&#8635; 重置</td><td>恢复到初始状态</td></tr>
+        <tr><td>Ctrl/Cmd+S</td><td>保存到本地浏览器</td></tr>
+        <tr><td>&#8635; 重置</td><td>清除修改，恢复初始</td></tr>
         <tr><td>Esc</td><td>关闭思维导图</td></tr>
       </table>
-      <div class="help-note">点击任意节点选中后，即可使用快捷键操作</div>
+      <div class="help-note">先点击节点选中，再用快捷键操作。修改会保存在浏览器本地。</div>
     </div>
     <div class="modal-hint">点击右上角 ? 查看操作说明</div>
   </div>
   <div class="modal-thinking" id="modalThinking"></div>
 </div>
+<div class="save-toast" id="saveToast">已保存</div>
 <footer class="site-footer" id="siteFooter"></footer>
 
 <script>
@@ -436,6 +445,24 @@ document.addEventListener('DOMContentLoaded', function() {
     flipCard(idx);
   });
 
+  function getSavedMind(idx) {
+    try { var s = localStorage.getItem('mindmap-' + idx); return s ? JSON.parse(s) : null; } catch(e) { return null; }
+  }
+
+  function buildDefaultMind(data) {
+    var mind = { meta: { name: data.title, author: 'xiaolin' }, format: 'node_array', data: [] };
+    mind.data.push({ id: 'root', isroot: true, topic: data.title });
+    var nodeId = 1;
+    data.frameworks.forEach(function(fw) {
+      var parentId = 'fw_' + fw.id;
+      mind.data.push({ id: parentId, parentid: 'root', topic: fw.name });
+      fw.leaves.forEach(function(leaf) {
+        mind.data.push({ id: 'n' + (nodeId++), parentid: parentId, topic: leaf });
+      });
+    });
+    return mind;
+  }
+
   function flipCard(idx) {
     var data = MIND_MAP_DATA[idx];
     if (!data) return;
@@ -453,46 +480,88 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     document.getElementById('jsmindContainer').innerHTML = '';
 
+    // Check for saved version
+    var savedMind = getSavedMind(idx);
+    var hasSaved = !!savedMind;
+    var saveBtn = document.querySelector('.save-btn');
+    if (saveBtn) saveBtn.classList.toggle('saved', hasSaved);
+
     setTimeout(function() {
-      var mind = { meta: { name: data.title, author: 'xiaolin' }, format: 'node_array', data: [] };
-      mind.data.push({ id: 'root', isroot: true, topic: data.title });
-      var nodeId = 1;
-      data.frameworks.forEach(function(fw) {
-        var parentId = 'fw_' + fw.id;
-        mind.data.push({ id: parentId, parentid: 'root', topic: fw.name });
-        fw.leaves.forEach(function(leaf) {
-          mind.data.push({ id: 'n' + (nodeId++), parentid: parentId, topic: leaf });
-        });
-      });
+      var mind = savedMind || buildDefaultMind(data);
 
       var options = {
         container: 'jsmindContainer',
         editable: true,
         theme: 'primary',
         view: { draggable: true },
-        layout: { hspace: 60, vspace: 30 }
+        layout: { hspace: 60, vspace: 30 },
+        shortcut: { enable: false }
       };
       currentJsMind = new jsMind(options);
       currentJsMind.show(mind);
 
-      setTimeout(function() {
-        data.frameworks.forEach(function(fw) {
-          var node = currentJsMind.get_node('fw_' + fw.id);
-          if (node) {
-            var el = node._data.view.element;
-            if (el) el.setAttribute('data-fw', fw.id);
+      // Register keyboard shortcuts on the container
+      document.addEventListener('keydown', function(e) {
+        if (currentModalIdx < 0 || !currentJsMind) return;
+        // Skip if editing a node (input present)
+        if (document.querySelector('#jsmindContainer input')) return;
+        var selected = currentJsMind.get_selected_node();
+        if (!selected) return;
+
+        if (e.key === 'Tab') {
+          e.preventDefault();
+          currentJsMind.add_node(selected, 'n_' + Date.now(), 'New Node');
+        } else if (e.key === 'Enter' && !e.ctrlKey && !e.metaKey) {
+          e.preventDefault();
+          if (!selected.isroot && selected.parent) {
+            currentJsMind.add_node(selected.parent, 'n_' + Date.now(), 'New Node');
           }
-          fw.leaves.forEach(function(leaf, li) {
-            var cnode = mind.data.find(function(n) { return n.parentid === 'fw_' + fw.id && n.topic === leaf; });
-            if (cnode) {
-              var cn = currentJsMind.get_node(cnode.id);
-              if (cn && cn._data.view.element) cn._data.view.element.setAttribute('data-fw', fw.id);
+        } else if ((e.key === 'Delete' || e.key === 'Backspace') && !selected.isroot) {
+          e.preventDefault();
+          currentJsMind.remove_node(selected);
+        } else if (e.key === 'F2') {
+          e.preventDefault();
+          currentJsMind.begin_edit(selected);
+        }
+      });
+
+      // Apply framework colors to nodes
+      if (!savedMind) {
+        setTimeout(function() {
+          data.frameworks.forEach(function(fw) {
+            var node = currentJsMind.get_node('fw_' + fw.id);
+            if (node) {
+              var el = node._data.view.element;
+              if (el) el.setAttribute('data-fw', fw.id);
             }
+            fw.leaves.forEach(function(leaf) {
+              var cnode = mind.data.find(function(n) { return n.parentid === 'fw_' + fw.id && n.topic === leaf; });
+              if (cnode) {
+                var cn = currentJsMind.get_node(cnode.id);
+                if (cn && cn._data.view.element) cn._data.view.element.setAttribute('data-fw', fw.id);
+              }
+            });
           });
-        });
-      }, 100);
+        }, 100);
+      }
     }, 50);
   }
+
+  function showToast(msg) {
+    var toast = document.getElementById('saveToast');
+    toast.textContent = msg || '已保存';
+    toast.classList.add('show');
+    setTimeout(function() { toast.classList.remove('show'); }, 1500);
+  }
+
+  window.saveModal = function() {
+    if (currentModalIdx < 0 || !currentJsMind) return;
+    var mindData = currentJsMind.get_data('node_array');
+    localStorage.setItem('mindmap-' + currentModalIdx, JSON.stringify(mindData));
+    var saveBtn = document.querySelector('.save-btn');
+    if (saveBtn) saveBtn.classList.add('saved');
+    showToast('已保存到本地');
+  };
 
   window.closeModal = function() {
     var modal = document.getElementById('mindmapModal');
@@ -503,16 +572,27 @@ document.addEventListener('DOMContentLoaded', function() {
 
   window.resetModal = function() {
     if (currentModalIdx < 0) return;
+    localStorage.removeItem('mindmap-' + currentModalIdx);
     if (currentJsMind) {
       try { currentJsMind.destroy && currentJsMind.destroy(); } catch(e) {}
       currentJsMind = null;
     }
     document.getElementById('jsmindContainer').innerHTML = '';
     flipCard(currentModalIdx);
+    showToast('已重置');
   };
 
   document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape' && currentModalIdx >= 0) closeModal();
+    if (e.key === 'Escape' && currentModalIdx >= 0) {
+      // Don't close if jsMind is in edit mode (has an input element)
+      if (document.querySelector('#jsmindContainer input')) return;
+      closeModal();
+    }
+    // Ctrl/Cmd+S to save
+    if ((e.ctrlKey || e.metaKey) && e.key === 's' && currentModalIdx >= 0) {
+      e.preventDefault();
+      saveModal();
+    }
   });
 
   // Help panel toggle

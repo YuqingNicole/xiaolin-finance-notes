@@ -2230,7 +2230,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "history",
-        "name": "📜 历史纵深",
+        "name": "历史纵深",
         "color": "#22c55e",
         "dim": "#0f3d1a",
         "leaves": [
@@ -2240,7 +2240,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "stake",
-        "name": "🗺️ 利益方分析",
+        "name": "利益方分析",
         "color": "#f97316",
         "dim": "#5f2e0a",
         "leaves": [
@@ -2250,7 +2250,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -2260,7 +2260,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "signal",
-        "name": "📊 市场信号",
+        "name": "市场信号",
         "color": "#14b8a6",
         "dim": "#0a3d38",
         "leaves": [
@@ -2276,7 +2276,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -2286,7 +2286,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "stake",
-        "name": "🗺️ 利益方分析",
+        "name": "利益方分析",
         "color": "#f97316",
         "dim": "#5f2e0a",
         "leaves": [
@@ -2302,7 +2302,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "loop",
-        "name": "🔄 循环建模",
+        "name": "循环建模",
         "color": "#ec4899",
         "dim": "#5f0f2e",
         "leaves": [
@@ -2312,7 +2312,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "signal",
-        "name": "📊 市场信号",
+        "name": "市场信号",
         "color": "#14b8a6",
         "dim": "#0a3d38",
         "leaves": [
@@ -2322,7 +2322,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -2332,7 +2332,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "system",
-        "name": "⚙️ 制度视角",
+        "name": "制度视角",
         "color": "#8b5cf6",
         "dim": "#3b1f6b",
         "leaves": [
@@ -2348,7 +2348,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "history",
-        "name": "📜 历史纵深",
+        "name": "历史纵深",
         "color": "#22c55e",
         "dim": "#0f3d1a",
         "leaves": [
@@ -2358,7 +2358,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "stake",
-        "name": "🗺️ 利益方分析",
+        "name": "利益方分析",
         "color": "#f97316",
         "dim": "#5f2e0a",
         "leaves": [
@@ -2368,7 +2368,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "loop",
-        "name": "🔄 循环建模",
+        "name": "循环建模",
         "color": "#ec4899",
         "dim": "#5f0f2e",
         "leaves": [
@@ -2378,7 +2378,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "system",
-        "name": "⚙️ 制度视角",
+        "name": "制度视角",
         "color": "#8b5cf6",
         "dim": "#3b1f6b",
         "leaves": [
@@ -2394,7 +2394,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -2404,7 +2404,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "signal",
-        "name": "📊 市场信号",
+        "name": "市场信号",
         "color": "#14b8a6",
         "dim": "#0a3d38",
         "leaves": [
@@ -2414,7 +2414,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "loop",
-        "name": "🔄 循环建模",
+        "name": "循环建模",
         "color": "#ec4899",
         "dim": "#5f0f2e",
         "leaves": [
@@ -2424,7 +2424,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "stake",
-        "name": "🗺️ 利益方分析",
+        "name": "利益方分析",
         "color": "#f97316",
         "dim": "#5f2e0a",
         "leaves": [
@@ -2440,7 +2440,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -2450,7 +2450,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "stake",
-        "name": "🗺️ 利益方分析",
+        "name": "利益方分析",
         "color": "#f97316",
         "dim": "#5f2e0a",
         "leaves": [
@@ -2460,7 +2460,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "system",
-        "name": "⚙️ 制度视角",
+        "name": "制度视角",
         "color": "#8b5cf6",
         "dim": "#3b1f6b",
         "leaves": [
@@ -2476,7 +2476,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -2486,7 +2486,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "signal",
-        "name": "📊 市场信号",
+        "name": "市场信号",
         "color": "#14b8a6",
         "dim": "#0a3d38",
         "leaves": [
@@ -2496,7 +2496,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "system",
-        "name": "⚙️ 制度视角",
+        "name": "制度视角",
         "color": "#8b5cf6",
         "dim": "#3b1f6b",
         "leaves": [
@@ -2512,7 +2512,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "stake",
-        "name": "🗺️ 利益方分析",
+        "name": "利益方分析",
         "color": "#f97316",
         "dim": "#5f2e0a",
         "leaves": [
@@ -2522,7 +2522,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "system",
-        "name": "⚙️ 制度视角",
+        "name": "制度视角",
         "color": "#8b5cf6",
         "dim": "#3b1f6b",
         "leaves": [
@@ -2532,7 +2532,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "loop",
-        "name": "🔄 循环建模",
+        "name": "循环建模",
         "color": "#ec4899",
         "dim": "#5f0f2e",
         "leaves": [
@@ -2542,7 +2542,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "signal",
-        "name": "📊 市场信号",
+        "name": "市场信号",
         "color": "#14b8a6",
         "dim": "#0a3d38",
         "leaves": [
@@ -2558,7 +2558,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "signal",
-        "name": "📊 市场信号",
+        "name": "市场信号",
         "color": "#14b8a6",
         "dim": "#0a3d38",
         "leaves": [
@@ -2568,7 +2568,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -2578,7 +2578,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "stake",
-        "name": "🗺️ 利益方分析",
+        "name": "利益方分析",
         "color": "#f97316",
         "dim": "#5f2e0a",
         "leaves": [
@@ -2588,7 +2588,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "loop",
-        "name": "🔄 循环建模",
+        "name": "循环建模",
         "color": "#ec4899",
         "dim": "#5f0f2e",
         "leaves": [
@@ -2604,7 +2604,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "history",
-        "name": "📜 历史纵深",
+        "name": "历史纵深",
         "color": "#22c55e",
         "dim": "#0f3d1a",
         "leaves": [
@@ -2614,7 +2614,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "system",
-        "name": "⚙️ 制度视角",
+        "name": "制度视角",
         "color": "#8b5cf6",
         "dim": "#3b1f6b",
         "leaves": [
@@ -2624,7 +2624,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "loop",
-        "name": "🔄 循环建模",
+        "name": "循环建模",
         "color": "#ec4899",
         "dim": "#5f0f2e",
         "leaves": [
@@ -2634,7 +2634,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "stake",
-        "name": "🗺️ 利益方分析",
+        "name": "利益方分析",
         "color": "#f97316",
         "dim": "#5f2e0a",
         "leaves": [
@@ -2650,7 +2650,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -2660,7 +2660,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "signal",
-        "name": "📊 市场信号",
+        "name": "市场信号",
         "color": "#14b8a6",
         "dim": "#0a3d38",
         "leaves": [
@@ -2670,7 +2670,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "loop",
-        "name": "🔄 循环建模",
+        "name": "循环建模",
         "color": "#ec4899",
         "dim": "#5f0f2e",
         "leaves": [
@@ -2686,7 +2686,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -2696,7 +2696,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "signal",
-        "name": "📊 市场信号",
+        "name": "市场信号",
         "color": "#14b8a6",
         "dim": "#0a3d38",
         "leaves": [
@@ -2706,7 +2706,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "stake",
-        "name": "🗺️ 利益方分析",
+        "name": "利益方分析",
         "color": "#f97316",
         "dim": "#5f2e0a",
         "leaves": [
@@ -2722,7 +2722,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -2732,7 +2732,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "signal",
-        "name": "📊 市场信号",
+        "name": "市场信号",
         "color": "#14b8a6",
         "dim": "#0a3d38",
         "leaves": [
@@ -2742,7 +2742,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "stake",
-        "name": "🗺️ 利益方分析",
+        "name": "利益方分析",
         "color": "#f97316",
         "dim": "#5f2e0a",
         "leaves": [
@@ -2752,7 +2752,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "history",
-        "name": "📜 历史纵深",
+        "name": "历史纵深",
         "color": "#22c55e",
         "dim": "#0f3d1a",
         "leaves": [
@@ -2768,7 +2768,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -2778,7 +2778,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "loop",
-        "name": "🔄 循环建模",
+        "name": "循环建模",
         "color": "#ec4899",
         "dim": "#5f0f2e",
         "leaves": [
@@ -2788,7 +2788,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "signal",
-        "name": "📊 市场信号",
+        "name": "市场信号",
         "color": "#14b8a6",
         "dim": "#0a3d38",
         "leaves": [
@@ -2798,7 +2798,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "system",
-        "name": "⚙️ 制度视角",
+        "name": "制度视角",
         "color": "#8b5cf6",
         "dim": "#3b1f6b",
         "leaves": [
@@ -2814,7 +2814,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "system",
-        "name": "⚙️ 制度视角",
+        "name": "制度视角",
         "color": "#8b5cf6",
         "dim": "#3b1f6b",
         "leaves": [
@@ -2824,7 +2824,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "stake",
-        "name": "🗺️ 利益方分析",
+        "name": "利益方分析",
         "color": "#f97316",
         "dim": "#5f2e0a",
         "leaves": [
@@ -2834,7 +2834,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -2850,7 +2850,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "system",
-        "name": "⚙️ 制度视角",
+        "name": "制度视角",
         "color": "#8b5cf6",
         "dim": "#3b1f6b",
         "leaves": [
@@ -2860,7 +2860,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "stake",
-        "name": "🗺️ 利益方分析",
+        "name": "利益方分析",
         "color": "#f97316",
         "dim": "#5f2e0a",
         "leaves": [
@@ -2870,7 +2870,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -2880,7 +2880,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "history",
-        "name": "📜 历史纵深",
+        "name": "历史纵深",
         "color": "#22c55e",
         "dim": "#0f3d1a",
         "leaves": [
@@ -2896,7 +2896,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "system",
-        "name": "⚙️ 制度视角",
+        "name": "制度视角",
         "color": "#8b5cf6",
         "dim": "#3b1f6b",
         "leaves": [
@@ -2906,7 +2906,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "stake",
-        "name": "🗺️ 利益方分析",
+        "name": "利益方分析",
         "color": "#f97316",
         "dim": "#5f2e0a",
         "leaves": [
@@ -2916,7 +2916,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -2926,7 +2926,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "loop",
-        "name": "🔄 循环建模",
+        "name": "循环建模",
         "color": "#ec4899",
         "dim": "#5f0f2e",
         "leaves": [
@@ -2942,7 +2942,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "stake",
-        "name": "🗺️ 利益方分析",
+        "name": "利益方分析",
         "color": "#f97316",
         "dim": "#5f2e0a",
         "leaves": [
@@ -2952,7 +2952,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -2962,7 +2962,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "history",
-        "name": "📜 历史纵深",
+        "name": "历史纵深",
         "color": "#22c55e",
         "dim": "#0f3d1a",
         "leaves": [
@@ -2972,7 +2972,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "signal",
-        "name": "📊 市场信号",
+        "name": "市场信号",
         "color": "#14b8a6",
         "dim": "#0a3d38",
         "leaves": [
@@ -2988,7 +2988,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -2998,7 +2998,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "stake",
-        "name": "🗺️ 利益方分析",
+        "name": "利益方分析",
         "color": "#f97316",
         "dim": "#5f2e0a",
         "leaves": [
@@ -3008,7 +3008,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "loop",
-        "name": "🔄 循环建模",
+        "name": "循环建模",
         "color": "#ec4899",
         "dim": "#5f0f2e",
         "leaves": [
@@ -3024,7 +3024,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "history",
-        "name": "📜 历史纵深",
+        "name": "历史纵深",
         "color": "#22c55e",
         "dim": "#0f3d1a",
         "leaves": [
@@ -3034,7 +3034,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "system",
-        "name": "⚙️ 制度视角",
+        "name": "制度视角",
         "color": "#8b5cf6",
         "dim": "#3b1f6b",
         "leaves": [
@@ -3044,7 +3044,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "stake",
-        "name": "🗺️ 利益方分析",
+        "name": "利益方分析",
         "color": "#f97316",
         "dim": "#5f2e0a",
         "leaves": [
@@ -3054,7 +3054,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -3070,7 +3070,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -3080,7 +3080,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "system",
-        "name": "⚙️ 制度视角",
+        "name": "制度视角",
         "color": "#8b5cf6",
         "dim": "#3b1f6b",
         "leaves": [
@@ -3090,7 +3090,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "signal",
-        "name": "📊 市场信号",
+        "name": "市场信号",
         "color": "#14b8a6",
         "dim": "#0a3d38",
         "leaves": [
@@ -3100,7 +3100,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "history",
-        "name": "📜 历史纵深",
+        "name": "历史纵深",
         "color": "#22c55e",
         "dim": "#0f3d1a",
         "leaves": [
@@ -3116,7 +3116,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "stake",
-        "name": "🗺️ 利益方分析",
+        "name": "利益方分析",
         "color": "#f97316",
         "dim": "#5f2e0a",
         "leaves": [
@@ -3126,7 +3126,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "system",
-        "name": "⚙️ 制度视角",
+        "name": "制度视角",
         "color": "#8b5cf6",
         "dim": "#3b1f6b",
         "leaves": [
@@ -3136,7 +3136,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "signal",
-        "name": "📊 市场信号",
+        "name": "市场信号",
         "color": "#14b8a6",
         "dim": "#0a3d38",
         "leaves": [
@@ -3146,7 +3146,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -3162,7 +3162,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "stake",
-        "name": "🗺️ 利益方分析",
+        "name": "利益方分析",
         "color": "#f97316",
         "dim": "#5f2e0a",
         "leaves": [
@@ -3172,7 +3172,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "system",
-        "name": "⚙️ 制度视角",
+        "name": "制度视角",
         "color": "#8b5cf6",
         "dim": "#3b1f6b",
         "leaves": [
@@ -3182,7 +3182,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "signal",
-        "name": "📊 市场信号",
+        "name": "市场信号",
         "color": "#14b8a6",
         "dim": "#0a3d38",
         "leaves": [
@@ -3192,7 +3192,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -3208,7 +3208,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "history",
-        "name": "📜 历史纵深",
+        "name": "历史纵深",
         "color": "#22c55e",
         "dim": "#0f3d1a",
         "leaves": [
@@ -3218,7 +3218,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -3228,7 +3228,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "stake",
-        "name": "🗺️ 利益方分析",
+        "name": "利益方分析",
         "color": "#f97316",
         "dim": "#5f2e0a",
         "leaves": [
@@ -3238,7 +3238,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "system",
-        "name": "⚙️ 制度视角",
+        "name": "制度视角",
         "color": "#8b5cf6",
         "dim": "#3b1f6b",
         "leaves": [
@@ -3254,7 +3254,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -3264,7 +3264,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "stake",
-        "name": "🗺️ 利益方分析",
+        "name": "利益方分析",
         "color": "#f97316",
         "dim": "#5f2e0a",
         "leaves": [
@@ -3280,7 +3280,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "system",
-        "name": "⚙️ 制度视角",
+        "name": "制度视角",
         "color": "#8b5cf6",
         "dim": "#3b1f6b",
         "leaves": [
@@ -3290,7 +3290,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -3300,7 +3300,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "loop",
-        "name": "🔄 循环建模",
+        "name": "循环建模",
         "color": "#ec4899",
         "dim": "#5f0f2e",
         "leaves": [
@@ -3310,7 +3310,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "stake",
-        "name": "🗺️ 利益方分析",
+        "name": "利益方分析",
         "color": "#f97316",
         "dim": "#5f2e0a",
         "leaves": [
@@ -3326,7 +3326,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -3336,7 +3336,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "stake",
-        "name": "🗺️ 利益方分析",
+        "name": "利益方分析",
         "color": "#f97316",
         "dim": "#5f2e0a",
         "leaves": [
@@ -3346,7 +3346,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "system",
-        "name": "⚙️ 制度视角",
+        "name": "制度视角",
         "color": "#8b5cf6",
         "dim": "#3b1f6b",
         "leaves": [
@@ -3356,7 +3356,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "loop",
-        "name": "🔄 循环建模",
+        "name": "循环建模",
         "color": "#ec4899",
         "dim": "#5f0f2e",
         "leaves": [
@@ -3372,7 +3372,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "signal",
-        "name": "📊 市场信号",
+        "name": "市场信号",
         "color": "#14b8a6",
         "dim": "#0a3d38",
         "leaves": [
@@ -3382,7 +3382,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -3392,7 +3392,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "loop",
-        "name": "🔄 循环建模",
+        "name": "循环建模",
         "color": "#ec4899",
         "dim": "#5f0f2e",
         "leaves": [
@@ -3402,7 +3402,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "stake",
-        "name": "🗺️ 利益方分析",
+        "name": "利益方分析",
         "color": "#f97316",
         "dim": "#5f2e0a",
         "leaves": [
@@ -3418,7 +3418,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -3428,7 +3428,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "stake",
-        "name": "🗺️ 利益方分析",
+        "name": "利益方分析",
         "color": "#f97316",
         "dim": "#5f2e0a",
         "leaves": [
@@ -3438,7 +3438,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "loop",
-        "name": "🔄 循环建模",
+        "name": "循环建模",
         "color": "#ec4899",
         "dim": "#5f0f2e",
         "leaves": [
@@ -3454,7 +3454,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -3464,7 +3464,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "system",
-        "name": "⚙️ 制度视角",
+        "name": "制度视角",
         "color": "#8b5cf6",
         "dim": "#3b1f6b",
         "leaves": [
@@ -3474,7 +3474,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "loop",
-        "name": "🔄 循环建模",
+        "name": "循环建模",
         "color": "#ec4899",
         "dim": "#5f0f2e",
         "leaves": [
@@ -3484,7 +3484,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "stake",
-        "name": "🗺️ 利益方分析",
+        "name": "利益方分析",
         "color": "#f97316",
         "dim": "#5f2e0a",
         "leaves": [
@@ -3500,7 +3500,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "stake",
-        "name": "🗺️ 利益方分析",
+        "name": "利益方分析",
         "color": "#f97316",
         "dim": "#5f2e0a",
         "leaves": [
@@ -3510,7 +3510,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -3520,7 +3520,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "signal",
-        "name": "📊 市场信号",
+        "name": "市场信号",
         "color": "#14b8a6",
         "dim": "#0a3d38",
         "leaves": [
@@ -3536,7 +3536,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -3546,7 +3546,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "stake",
-        "name": "🗺️ 利益方分析",
+        "name": "利益方分析",
         "color": "#f97316",
         "dim": "#5f2e0a",
         "leaves": [
@@ -3562,7 +3562,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -3572,7 +3572,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "system",
-        "name": "⚙️ 制度视角",
+        "name": "制度视角",
         "color": "#8b5cf6",
         "dim": "#3b1f6b",
         "leaves": [
@@ -3582,7 +3582,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "stake",
-        "name": "🗺️ 利益方分析",
+        "name": "利益方分析",
         "color": "#f97316",
         "dim": "#5f2e0a",
         "leaves": [
@@ -3592,7 +3592,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "history",
-        "name": "📜 历史纵深",
+        "name": "历史纵深",
         "color": "#22c55e",
         "dim": "#0f3d1a",
         "leaves": [
@@ -3608,7 +3608,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "signal",
-        "name": "📊 市场信号",
+        "name": "市场信号",
         "color": "#14b8a6",
         "dim": "#0a3d38",
         "leaves": [
@@ -3618,7 +3618,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -3628,7 +3628,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "loop",
-        "name": "🔄 循环建模",
+        "name": "循环建模",
         "color": "#ec4899",
         "dim": "#5f0f2e",
         "leaves": [
@@ -3638,7 +3638,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "stake",
-        "name": "🗺️ 利益方分析",
+        "name": "利益方分析",
         "color": "#f97316",
         "dim": "#5f2e0a",
         "leaves": [
@@ -3654,7 +3654,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "history",
-        "name": "📜 历史纵深",
+        "name": "历史纵深",
         "color": "#22c55e",
         "dim": "#0f3d1a",
         "leaves": [
@@ -3664,7 +3664,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "system",
-        "name": "⚙️ 制度视角",
+        "name": "制度视角",
         "color": "#8b5cf6",
         "dim": "#3b1f6b",
         "leaves": [
@@ -3674,7 +3674,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -3684,7 +3684,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "stake",
-        "name": "🗺️ 利益方分析",
+        "name": "利益方分析",
         "color": "#f97316",
         "dim": "#5f2e0a",
         "leaves": [
@@ -3700,7 +3700,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "history",
-        "name": "📜 历史纵深",
+        "name": "历史纵深",
         "color": "#22c55e",
         "dim": "#0f3d1a",
         "leaves": [
@@ -3710,7 +3710,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -3720,7 +3720,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "signal",
-        "name": "📊 市场信号",
+        "name": "市场信号",
         "color": "#14b8a6",
         "dim": "#0a3d38",
         "leaves": [
@@ -3730,7 +3730,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "stake",
-        "name": "🗺️ 利益方分析",
+        "name": "利益方分析",
         "color": "#f97316",
         "dim": "#5f2e0a",
         "leaves": [
@@ -3746,7 +3746,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -3756,7 +3756,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "signal",
-        "name": "📊 市场信号",
+        "name": "市场信号",
         "color": "#14b8a6",
         "dim": "#0a3d38",
         "leaves": [
@@ -3766,7 +3766,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "system",
-        "name": "⚙️ 制度视角",
+        "name": "制度视角",
         "color": "#8b5cf6",
         "dim": "#3b1f6b",
         "leaves": [
@@ -3782,7 +3782,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -3792,7 +3792,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "stake",
-        "name": "🗺️ 利益方分析",
+        "name": "利益方分析",
         "color": "#f97316",
         "dim": "#5f2e0a",
         "leaves": [
@@ -3802,7 +3802,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "system",
-        "name": "⚙️ 制度视角",
+        "name": "制度视角",
         "color": "#8b5cf6",
         "dim": "#3b1f6b",
         "leaves": [
@@ -3818,7 +3818,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "history",
-        "name": "📜 历史纵深",
+        "name": "历史纵深",
         "color": "#22c55e",
         "dim": "#0f3d1a",
         "leaves": [
@@ -3828,7 +3828,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "system",
-        "name": "⚙️ 制度视角",
+        "name": "制度视角",
         "color": "#8b5cf6",
         "dim": "#3b1f6b",
         "leaves": [
@@ -3838,7 +3838,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -3848,7 +3848,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "stake",
-        "name": "🗺️ 利益方分析",
+        "name": "利益方分析",
         "color": "#f97316",
         "dim": "#5f2e0a",
         "leaves": [
@@ -3864,7 +3864,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "history",
-        "name": "📜 历史纵深",
+        "name": "历史纵深",
         "color": "#22c55e",
         "dim": "#0f3d1a",
         "leaves": [
@@ -3874,7 +3874,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "system",
-        "name": "⚙️ 制度视角",
+        "name": "制度视角",
         "color": "#8b5cf6",
         "dim": "#3b1f6b",
         "leaves": [
@@ -3884,7 +3884,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -3894,7 +3894,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "stake",
-        "name": "🗺️ 利益方分析",
+        "name": "利益方分析",
         "color": "#f97316",
         "dim": "#5f2e0a",
         "leaves": [
@@ -3910,7 +3910,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "signal",
-        "name": "📊 市场信号",
+        "name": "市场信号",
         "color": "#14b8a6",
         "dim": "#0a3d38",
         "leaves": [
@@ -3920,7 +3920,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -3930,7 +3930,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "stake",
-        "name": "🗺️ 利益方分析",
+        "name": "利益方分析",
         "color": "#f97316",
         "dim": "#5f2e0a",
         "leaves": [
@@ -3946,7 +3946,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "history",
-        "name": "📜 历史纵深",
+        "name": "历史纵深",
         "color": "#22c55e",
         "dim": "#0f3d1a",
         "leaves": [
@@ -3956,7 +3956,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "signal",
-        "name": "📊 市场信号",
+        "name": "市场信号",
         "color": "#14b8a6",
         "dim": "#0a3d38",
         "leaves": [
@@ -3966,7 +3966,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "stake",
-        "name": "🗺️ 利益方分析",
+        "name": "利益方分析",
         "color": "#f97316",
         "dim": "#5f2e0a",
         "leaves": [
@@ -3976,7 +3976,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -3992,7 +3992,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "signal",
-        "name": "📊 市场信号",
+        "name": "市场信号",
         "color": "#14b8a6",
         "dim": "#0a3d38",
         "leaves": [
@@ -4002,7 +4002,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "loop",
-        "name": "🔄 循环建模",
+        "name": "循环建模",
         "color": "#ec4899",
         "dim": "#5f0f2e",
         "leaves": [
@@ -4012,7 +4012,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -4022,7 +4022,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "history",
-        "name": "📜 历史纵深",
+        "name": "历史纵深",
         "color": "#22c55e",
         "dim": "#0f3d1a",
         "leaves": [
@@ -4038,7 +4038,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -4048,7 +4048,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "signal",
-        "name": "📊 市场信号",
+        "name": "市场信号",
         "color": "#14b8a6",
         "dim": "#0a3d38",
         "leaves": [
@@ -4058,7 +4058,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "stake",
-        "name": "🗺️ 利益方分析",
+        "name": "利益方分析",
         "color": "#f97316",
         "dim": "#5f2e0a",
         "leaves": [
@@ -4068,7 +4068,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "loop",
-        "name": "🔄 循环建模",
+        "name": "循环建模",
         "color": "#ec4899",
         "dim": "#5f0f2e",
         "leaves": [
@@ -4084,7 +4084,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "signal",
-        "name": "📊 市场信号",
+        "name": "市场信号",
         "color": "#14b8a6",
         "dim": "#0a3d38",
         "leaves": [
@@ -4094,7 +4094,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -4104,7 +4104,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "loop",
-        "name": "🔄 循环建模",
+        "name": "循环建模",
         "color": "#ec4899",
         "dim": "#5f0f2e",
         "leaves": [
@@ -4114,7 +4114,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "stake",
-        "name": "🗺️ 利益方分析",
+        "name": "利益方分析",
         "color": "#f97316",
         "dim": "#5f2e0a",
         "leaves": [
@@ -4130,7 +4130,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "signal",
-        "name": "📊 市场信号",
+        "name": "市场信号",
         "color": "#14b8a6",
         "dim": "#0a3d38",
         "leaves": [
@@ -4140,7 +4140,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -4150,7 +4150,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "loop",
-        "name": "🔄 循环建模",
+        "name": "循环建模",
         "color": "#ec4899",
         "dim": "#5f0f2e",
         "leaves": [
@@ -4160,7 +4160,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "stake",
-        "name": "🗺️ 利益方分析",
+        "name": "利益方分析",
         "color": "#f97316",
         "dim": "#5f2e0a",
         "leaves": [
@@ -4176,7 +4176,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -4186,7 +4186,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "loop",
-        "name": "🔄 循环建模",
+        "name": "循环建模",
         "color": "#ec4899",
         "dim": "#5f0f2e",
         "leaves": [
@@ -4196,7 +4196,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "stake",
-        "name": "🗺️ 利益方分析",
+        "name": "利益方分析",
         "color": "#f97316",
         "dim": "#5f2e0a",
         "leaves": [
@@ -4206,7 +4206,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "signal",
-        "name": "📊 市场信号",
+        "name": "市场信号",
         "color": "#14b8a6",
         "dim": "#0a3d38",
         "leaves": [
@@ -4222,7 +4222,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -4232,7 +4232,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "stake",
-        "name": "🗺️ 利益方分析",
+        "name": "利益方分析",
         "color": "#f97316",
         "dim": "#5f2e0a",
         "leaves": [
@@ -4242,7 +4242,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "system",
-        "name": "⚙️ 制度视角",
+        "name": "制度视角",
         "color": "#8b5cf6",
         "dim": "#3b1f6b",
         "leaves": [
@@ -4258,7 +4258,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -4268,7 +4268,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "system",
-        "name": "⚙️ 制度视角",
+        "name": "制度视角",
         "color": "#8b5cf6",
         "dim": "#3b1f6b",
         "leaves": [
@@ -4278,7 +4278,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "stake",
-        "name": "🗺️ 利益方分析",
+        "name": "利益方分析",
         "color": "#f97316",
         "dim": "#5f2e0a",
         "leaves": [
@@ -4294,7 +4294,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "history",
-        "name": "📜 历史纵深",
+        "name": "历史纵深",
         "color": "#22c55e",
         "dim": "#0f3d1a",
         "leaves": [
@@ -4304,7 +4304,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "system",
-        "name": "⚙️ 制度视角",
+        "name": "制度视角",
         "color": "#8b5cf6",
         "dim": "#3b1f6b",
         "leaves": [
@@ -4314,7 +4314,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -4324,7 +4324,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "signal",
-        "name": "📊 市场信号",
+        "name": "市场信号",
         "color": "#14b8a6",
         "dim": "#0a3d38",
         "leaves": [
@@ -4340,7 +4340,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -4350,7 +4350,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "stake",
-        "name": "🗺️ 利益方分析",
+        "name": "利益方分析",
         "color": "#f97316",
         "dim": "#5f2e0a",
         "leaves": [
@@ -4360,7 +4360,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "system",
-        "name": "⚙️ 制度视角",
+        "name": "制度视角",
         "color": "#8b5cf6",
         "dim": "#3b1f6b",
         "leaves": [
@@ -4370,7 +4370,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "loop",
-        "name": "🔄 循环建模",
+        "name": "循环建模",
         "color": "#ec4899",
         "dim": "#5f0f2e",
         "leaves": [
@@ -4386,7 +4386,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "system",
-        "name": "⚙️ 制度视角",
+        "name": "制度视角",
         "color": "#8b5cf6",
         "dim": "#3b1f6b",
         "leaves": [
@@ -4396,7 +4396,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "stake",
-        "name": "🗺️ 利益方分析",
+        "name": "利益方分析",
         "color": "#f97316",
         "dim": "#5f2e0a",
         "leaves": [
@@ -4406,7 +4406,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -4422,7 +4422,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -4432,7 +4432,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "system",
-        "name": "⚙️ 制度视角",
+        "name": "制度视角",
         "color": "#8b5cf6",
         "dim": "#3b1f6b",
         "leaves": [
@@ -4442,7 +4442,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "loop",
-        "name": "🔄 循环建模",
+        "name": "循环建模",
         "color": "#ec4899",
         "dim": "#5f0f2e",
         "leaves": [
@@ -4458,7 +4458,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "history",
-        "name": "📜 历史纵深",
+        "name": "历史纵深",
         "color": "#22c55e",
         "dim": "#0f3d1a",
         "leaves": [
@@ -4468,7 +4468,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "stake",
-        "name": "🗺️ 利益方分析",
+        "name": "利益方分析",
         "color": "#f97316",
         "dim": "#5f2e0a",
         "leaves": [
@@ -4478,7 +4478,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "system",
-        "name": "⚙️ 制度视角",
+        "name": "制度视角",
         "color": "#8b5cf6",
         "dim": "#3b1f6b",
         "leaves": [
@@ -4488,7 +4488,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "loop",
-        "name": "🔄 循环建模",
+        "name": "循环建模",
         "color": "#ec4899",
         "dim": "#5f0f2e",
         "leaves": [
@@ -4504,7 +4504,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "history",
-        "name": "📜 历史纵深",
+        "name": "历史纵深",
         "color": "#22c55e",
         "dim": "#0f3d1a",
         "leaves": [
@@ -4514,7 +4514,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "system",
-        "name": "⚙️ 制度视角",
+        "name": "制度视角",
         "color": "#8b5cf6",
         "dim": "#3b1f6b",
         "leaves": [
@@ -4524,7 +4524,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -4534,7 +4534,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "stake",
-        "name": "🗺️ 利益方分析",
+        "name": "利益方分析",
         "color": "#f97316",
         "dim": "#5f2e0a",
         "leaves": [
@@ -4550,7 +4550,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "stake",
-        "name": "🗺️ 利益方分析",
+        "name": "利益方分析",
         "color": "#f97316",
         "dim": "#5f2e0a",
         "leaves": [
@@ -4560,7 +4560,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "system",
-        "name": "⚙️ 制度视角",
+        "name": "制度视角",
         "color": "#8b5cf6",
         "dim": "#3b1f6b",
         "leaves": [
@@ -4570,7 +4570,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -4586,7 +4586,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "loop",
-        "name": "🔄 循环建模",
+        "name": "循环建模",
         "color": "#ec4899",
         "dim": "#5f0f2e",
         "leaves": [
@@ -4596,7 +4596,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "system",
-        "name": "⚙️ 制度视角",
+        "name": "制度视角",
         "color": "#8b5cf6",
         "dim": "#3b1f6b",
         "leaves": [
@@ -4606,7 +4606,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "stake",
-        "name": "🗺️ 利益方分析",
+        "name": "利益方分析",
         "color": "#f97316",
         "dim": "#5f2e0a",
         "leaves": [
@@ -4616,7 +4616,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -4632,7 +4632,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -4642,7 +4642,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "stake",
-        "name": "🗺️ 利益方分析",
+        "name": "利益方分析",
         "color": "#f97316",
         "dim": "#5f2e0a",
         "leaves": [
@@ -4652,7 +4652,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "loop",
-        "name": "🔄 循环建模",
+        "name": "循环建模",
         "color": "#ec4899",
         "dim": "#5f0f2e",
         "leaves": [
@@ -4668,7 +4668,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "system",
-        "name": "⚙️ 制度视角",
+        "name": "制度视角",
         "color": "#8b5cf6",
         "dim": "#3b1f6b",
         "leaves": [
@@ -4678,7 +4678,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "loop",
-        "name": "🔄 循环建模",
+        "name": "循环建模",
         "color": "#ec4899",
         "dim": "#5f0f2e",
         "leaves": [
@@ -4688,7 +4688,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "stake",
-        "name": "🗺️ 利益方分析",
+        "name": "利益方分析",
         "color": "#f97316",
         "dim": "#5f2e0a",
         "leaves": [
@@ -4698,7 +4698,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -4714,7 +4714,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "system",
-        "name": "⚙️ 制度视角",
+        "name": "制度视角",
         "color": "#8b5cf6",
         "dim": "#3b1f6b",
         "leaves": [
@@ -4724,7 +4724,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "loop",
-        "name": "🔄 循环建模",
+        "name": "循环建模",
         "color": "#ec4899",
         "dim": "#5f0f2e",
         "leaves": [
@@ -4734,7 +4734,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -4744,7 +4744,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "history",
-        "name": "📜 历史纵深",
+        "name": "历史纵深",
         "color": "#22c55e",
         "dim": "#0f3d1a",
         "leaves": [
@@ -4760,7 +4760,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "history",
-        "name": "📜 历史纵深",
+        "name": "历史纵深",
         "color": "#22c55e",
         "dim": "#0f3d1a",
         "leaves": [
@@ -4770,7 +4770,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "system",
-        "name": "⚙️ 制度视角",
+        "name": "制度视角",
         "color": "#8b5cf6",
         "dim": "#3b1f6b",
         "leaves": [
@@ -4780,7 +4780,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "stake",
-        "name": "🗺️ 利益方分析",
+        "name": "利益方分析",
         "color": "#f97316",
         "dim": "#5f2e0a",
         "leaves": [
@@ -4790,7 +4790,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -4806,7 +4806,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "history",
-        "name": "📜 历史纵深",
+        "name": "历史纵深",
         "color": "#22c55e",
         "dim": "#0f3d1a",
         "leaves": [
@@ -4816,7 +4816,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "system",
-        "name": "⚙️ 制度视角",
+        "name": "制度视角",
         "color": "#8b5cf6",
         "dim": "#3b1f6b",
         "leaves": [
@@ -4826,7 +4826,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "loop",
-        "name": "🔄 循环建模",
+        "name": "循环建模",
         "color": "#ec4899",
         "dim": "#5f0f2e",
         "leaves": [
@@ -4836,7 +4836,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "stake",
-        "name": "🗺️ 利益方分析",
+        "name": "利益方分析",
         "color": "#f97316",
         "dim": "#5f2e0a",
         "leaves": [
@@ -4852,7 +4852,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -4862,7 +4862,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "system",
-        "name": "⚙️ 制度视角",
+        "name": "制度视角",
         "color": "#8b5cf6",
         "dim": "#3b1f6b",
         "leaves": [
@@ -4872,7 +4872,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "stake",
-        "name": "🗺️ 利益方分析",
+        "name": "利益方分析",
         "color": "#f97316",
         "dim": "#5f2e0a",
         "leaves": [
@@ -4888,7 +4888,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -4898,7 +4898,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "loop",
-        "name": "🔄 循环建模",
+        "name": "循环建模",
         "color": "#ec4899",
         "dim": "#5f0f2e",
         "leaves": [
@@ -4908,7 +4908,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "signal",
-        "name": "📊 市场信号",
+        "name": "市场信号",
         "color": "#14b8a6",
         "dim": "#0a3d38",
         "leaves": [
@@ -4918,7 +4918,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "stake",
-        "name": "🗺️ 利益方分析",
+        "name": "利益方分析",
         "color": "#f97316",
         "dim": "#5f2e0a",
         "leaves": [
@@ -4934,7 +4934,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -4944,7 +4944,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "system",
-        "name": "⚙️ 制度视角",
+        "name": "制度视角",
         "color": "#8b5cf6",
         "dim": "#3b1f6b",
         "leaves": [
@@ -4954,7 +4954,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "history",
-        "name": "📜 历史纵深",
+        "name": "历史纵深",
         "color": "#22c55e",
         "dim": "#0f3d1a",
         "leaves": [
@@ -4970,7 +4970,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -4980,7 +4980,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "signal",
-        "name": "📊 市场信号",
+        "name": "市场信号",
         "color": "#14b8a6",
         "dim": "#0a3d38",
         "leaves": [
@@ -4990,7 +4990,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "loop",
-        "name": "🔄 循环建模",
+        "name": "循环建模",
         "color": "#ec4899",
         "dim": "#5f0f2e",
         "leaves": [
@@ -5000,7 +5000,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "history",
-        "name": "📜 历史纵深",
+        "name": "历史纵深",
         "color": "#22c55e",
         "dim": "#0f3d1a",
         "leaves": [
@@ -5016,7 +5016,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "stake",
-        "name": "🗺️ 利益方分析",
+        "name": "利益方分析",
         "color": "#f97316",
         "dim": "#5f2e0a",
         "leaves": [
@@ -5026,7 +5026,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -5036,7 +5036,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "signal",
-        "name": "📊 市场信号",
+        "name": "市场信号",
         "color": "#14b8a6",
         "dim": "#0a3d38",
         "leaves": [
@@ -5046,7 +5046,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "history",
-        "name": "📜 历史纵深",
+        "name": "历史纵深",
         "color": "#22c55e",
         "dim": "#0f3d1a",
         "leaves": [
@@ -5062,7 +5062,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "history",
-        "name": "📜 历史纵深",
+        "name": "历史纵深",
         "color": "#22c55e",
         "dim": "#0f3d1a",
         "leaves": [
@@ -5072,7 +5072,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "system",
-        "name": "⚙️ 制度视角",
+        "name": "制度视角",
         "color": "#8b5cf6",
         "dim": "#3b1f6b",
         "leaves": [
@@ -5082,7 +5082,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "loop",
-        "name": "🔄 循环建模",
+        "name": "循环建模",
         "color": "#ec4899",
         "dim": "#5f0f2e",
         "leaves": [
@@ -5092,7 +5092,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "stake",
-        "name": "🗺️ 利益方分析",
+        "name": "利益方分析",
         "color": "#f97316",
         "dim": "#5f2e0a",
         "leaves": [
@@ -5108,7 +5108,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -5118,7 +5118,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "loop",
-        "name": "🔄 循环建模",
+        "name": "循环建模",
         "color": "#ec4899",
         "dim": "#5f0f2e",
         "leaves": [
@@ -5128,7 +5128,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "signal",
-        "name": "📊 市场信号",
+        "name": "市场信号",
         "color": "#14b8a6",
         "dim": "#0a3d38",
         "leaves": [
@@ -5144,7 +5144,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "loop",
-        "name": "🔄 循环建模",
+        "name": "循环建模",
         "color": "#ec4899",
         "dim": "#5f0f2e",
         "leaves": [
@@ -5154,7 +5154,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "signal",
-        "name": "📊 市场信号",
+        "name": "市场信号",
         "color": "#14b8a6",
         "dim": "#0a3d38",
         "leaves": [
@@ -5164,7 +5164,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -5174,7 +5174,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "system",
-        "name": "⚙️ 制度视角",
+        "name": "制度视角",
         "color": "#8b5cf6",
         "dim": "#3b1f6b",
         "leaves": [
@@ -5190,7 +5190,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -5206,7 +5206,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "loop",
-        "name": "🔄 循环建模",
+        "name": "循环建模",
         "color": "#ec4899",
         "dim": "#5f0f2e",
         "leaves": [
@@ -5216,7 +5216,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "signal",
-        "name": "📊 市场信号",
+        "name": "市场信号",
         "color": "#14b8a6",
         "dim": "#0a3d38",
         "leaves": [
@@ -5226,7 +5226,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -5236,7 +5236,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "system",
-        "name": "⚙️ 制度视角",
+        "name": "制度视角",
         "color": "#8b5cf6",
         "dim": "#3b1f6b",
         "leaves": [
@@ -5252,7 +5252,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "signal",
-        "name": "📊 市场信号",
+        "name": "市场信号",
         "color": "#14b8a6",
         "dim": "#0a3d38",
         "leaves": [
@@ -5262,7 +5262,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "loop",
-        "name": "🔄 循环建模",
+        "name": "循环建模",
         "color": "#ec4899",
         "dim": "#5f0f2e",
         "leaves": [
@@ -5272,7 +5272,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -5282,7 +5282,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "system",
-        "name": "⚙️ 制度视角",
+        "name": "制度视角",
         "color": "#8b5cf6",
         "dim": "#3b1f6b",
         "leaves": [
@@ -5298,7 +5298,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -5308,7 +5308,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "loop",
-        "name": "🔄 循环建模",
+        "name": "循环建模",
         "color": "#ec4899",
         "dim": "#5f0f2e",
         "leaves": [
@@ -5318,7 +5318,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "stake",
-        "name": "🗺️ 利益方分析",
+        "name": "利益方分析",
         "color": "#f97316",
         "dim": "#5f2e0a",
         "leaves": [
@@ -5334,7 +5334,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -5344,7 +5344,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "signal",
-        "name": "📊 市场信号",
+        "name": "市场信号",
         "color": "#14b8a6",
         "dim": "#0a3d38",
         "leaves": [
@@ -5354,7 +5354,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "stake",
-        "name": "🗺️ 利益方分析",
+        "name": "利益方分析",
         "color": "#f97316",
         "dim": "#5f2e0a",
         "leaves": [
@@ -5364,7 +5364,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "loop",
-        "name": "🔄 循环建模",
+        "name": "循环建模",
         "color": "#ec4899",
         "dim": "#5f0f2e",
         "leaves": [
@@ -5380,7 +5380,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -5390,7 +5390,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "loop",
-        "name": "🔄 循环建模",
+        "name": "循环建模",
         "color": "#ec4899",
         "dim": "#5f0f2e",
         "leaves": [
@@ -5400,7 +5400,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "history",
-        "name": "📜 历史纵深",
+        "name": "历史纵深",
         "color": "#22c55e",
         "dim": "#0f3d1a",
         "leaves": [
@@ -5410,7 +5410,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "signal",
-        "name": "📊 市场信号",
+        "name": "市场信号",
         "color": "#14b8a6",
         "dim": "#0a3d38",
         "leaves": [
@@ -5426,7 +5426,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "signal",
-        "name": "📊 市场信号",
+        "name": "市场信号",
         "color": "#14b8a6",
         "dim": "#0a3d38",
         "leaves": [
@@ -5436,7 +5436,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "loop",
-        "name": "🔄 循环建模",
+        "name": "循环建模",
         "color": "#ec4899",
         "dim": "#5f0f2e",
         "leaves": [
@@ -5446,7 +5446,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -5456,7 +5456,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "stake",
-        "name": "🗺️ 利益方分析",
+        "name": "利益方分析",
         "color": "#f97316",
         "dim": "#5f2e0a",
         "leaves": [
@@ -5472,7 +5472,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -5482,7 +5482,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "stake",
-        "name": "🗺️ 利益方分析",
+        "name": "利益方分析",
         "color": "#f97316",
         "dim": "#5f2e0a",
         "leaves": [
@@ -5498,7 +5498,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "history",
-        "name": "📜 历史纵深",
+        "name": "历史纵深",
         "color": "#22c55e",
         "dim": "#0f3d1a",
         "leaves": [
@@ -5508,7 +5508,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "stake",
-        "name": "🗺️ 利益方分析",
+        "name": "利益方分析",
         "color": "#f97316",
         "dim": "#5f2e0a",
         "leaves": [
@@ -5518,7 +5518,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "system",
-        "name": "⚙️ 制度视角",
+        "name": "制度视角",
         "color": "#8b5cf6",
         "dim": "#3b1f6b",
         "leaves": [
@@ -5528,7 +5528,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "signal",
-        "name": "📊 市场信号",
+        "name": "市场信号",
         "color": "#14b8a6",
         "dim": "#0a3d38",
         "leaves": [
@@ -5544,7 +5544,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "stake",
-        "name": "🗺️ 利益方分析",
+        "name": "利益方分析",
         "color": "#f97316",
         "dim": "#5f2e0a",
         "leaves": [
@@ -5554,7 +5554,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -5564,7 +5564,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "signal",
-        "name": "📊 市场信号",
+        "name": "市场信号",
         "color": "#14b8a6",
         "dim": "#0a3d38",
         "leaves": [
@@ -5580,7 +5580,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "stake",
-        "name": "🗺️ 利益方分析",
+        "name": "利益方分析",
         "color": "#f97316",
         "dim": "#5f2e0a",
         "leaves": [
@@ -5590,7 +5590,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "loop",
-        "name": "🔄 循环建模",
+        "name": "循环建模",
         "color": "#ec4899",
         "dim": "#5f0f2e",
         "leaves": [
@@ -5600,7 +5600,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "signal",
-        "name": "📊 市场信号",
+        "name": "市场信号",
         "color": "#14b8a6",
         "dim": "#0a3d38",
         "leaves": [
@@ -5610,7 +5610,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -5626,7 +5626,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "signal",
-        "name": "📊 市场信号",
+        "name": "市场信号",
         "color": "#14b8a6",
         "dim": "#0a3d38",
         "leaves": [
@@ -5636,7 +5636,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "loop",
-        "name": "🔄 循环建模",
+        "name": "循环建模",
         "color": "#ec4899",
         "dim": "#5f0f2e",
         "leaves": [
@@ -5646,7 +5646,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -5656,7 +5656,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "system",
-        "name": "⚙️ 制度视角",
+        "name": "制度视角",
         "color": "#8b5cf6",
         "dim": "#3b1f6b",
         "leaves": [
@@ -5672,7 +5672,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "signal",
-        "name": "📊 市场信号",
+        "name": "市场信号",
         "color": "#14b8a6",
         "dim": "#0a3d38",
         "leaves": [
@@ -5682,7 +5682,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "loop",
-        "name": "🔄 循环建模",
+        "name": "循环建模",
         "color": "#ec4899",
         "dim": "#5f0f2e",
         "leaves": [
@@ -5692,7 +5692,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -5702,7 +5702,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "system",
-        "name": "⚙️ 制度视角",
+        "name": "制度视角",
         "color": "#8b5cf6",
         "dim": "#3b1f6b",
         "leaves": [
@@ -5718,7 +5718,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "history",
-        "name": "📜 历史纵深",
+        "name": "历史纵深",
         "color": "#22c55e",
         "dim": "#0f3d1a",
         "leaves": [
@@ -5728,7 +5728,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "loop",
-        "name": "🔄 循环建模",
+        "name": "循环建模",
         "color": "#ec4899",
         "dim": "#5f0f2e",
         "leaves": [
@@ -5738,7 +5738,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "system",
-        "name": "⚙️ 制度视角",
+        "name": "制度视角",
         "color": "#8b5cf6",
         "dim": "#3b1f6b",
         "leaves": [
@@ -5748,7 +5748,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -5764,7 +5764,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -5774,7 +5774,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "signal",
-        "name": "📊 市场信号",
+        "name": "市场信号",
         "color": "#14b8a6",
         "dim": "#0a3d38",
         "leaves": [
@@ -5784,7 +5784,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "loop",
-        "name": "🔄 循环建模",
+        "name": "循环建模",
         "color": "#ec4899",
         "dim": "#5f0f2e",
         "leaves": [
@@ -5800,7 +5800,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "loop",
-        "name": "🔄 循环建模",
+        "name": "循环建模",
         "color": "#ec4899",
         "dim": "#5f0f2e",
         "leaves": [
@@ -5810,7 +5810,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "signal",
-        "name": "📊 市场信号",
+        "name": "市场信号",
         "color": "#14b8a6",
         "dim": "#0a3d38",
         "leaves": [
@@ -5820,7 +5820,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -5830,7 +5830,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "stake",
-        "name": "🗺️ 利益方分析",
+        "name": "利益方分析",
         "color": "#f97316",
         "dim": "#5f2e0a",
         "leaves": [
@@ -5846,7 +5846,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "signal",
-        "name": "📊 市场信号",
+        "name": "市场信号",
         "color": "#14b8a6",
         "dim": "#0a3d38",
         "leaves": [
@@ -5856,7 +5856,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -5866,7 +5866,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "loop",
-        "name": "🔄 循环建模",
+        "name": "循环建模",
         "color": "#ec4899",
         "dim": "#5f0f2e",
         "leaves": [
@@ -5876,7 +5876,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "history",
-        "name": "📜 历史纵深",
+        "name": "历史纵深",
         "color": "#22c55e",
         "dim": "#0f3d1a",
         "leaves": [
@@ -5892,7 +5892,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -5902,7 +5902,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "stake",
-        "name": "🗺️ 利益方分析",
+        "name": "利益方分析",
         "color": "#f97316",
         "dim": "#5f2e0a",
         "leaves": [
@@ -5918,7 +5918,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "history",
-        "name": "📜 历史纵深",
+        "name": "历史纵深",
         "color": "#22c55e",
         "dim": "#0f3d1a",
         "leaves": [
@@ -5928,7 +5928,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "loop",
-        "name": "🔄 循环建模",
+        "name": "循环建模",
         "color": "#ec4899",
         "dim": "#5f0f2e",
         "leaves": [
@@ -5938,7 +5938,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "signal",
-        "name": "📊 市场信号",
+        "name": "市场信号",
         "color": "#14b8a6",
         "dim": "#0a3d38",
         "leaves": [
@@ -5948,7 +5948,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -5964,7 +5964,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "history",
-        "name": "📜 历史纵深",
+        "name": "历史纵深",
         "color": "#22c55e",
         "dim": "#0f3d1a",
         "leaves": [
@@ -5974,7 +5974,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "signal",
-        "name": "📊 市场信号",
+        "name": "市场信号",
         "color": "#14b8a6",
         "dim": "#0a3d38",
         "leaves": [
@@ -5984,7 +5984,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -6000,7 +6000,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "history",
-        "name": "📜 历史纵深",
+        "name": "历史纵深",
         "color": "#22c55e",
         "dim": "#0f3d1a",
         "leaves": [
@@ -6010,7 +6010,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "stake",
-        "name": "🗺️ 利益方分析",
+        "name": "利益方分析",
         "color": "#f97316",
         "dim": "#5f2e0a",
         "leaves": [
@@ -6020,7 +6020,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "signal",
-        "name": "📊 市场信号",
+        "name": "市场信号",
         "color": "#14b8a6",
         "dim": "#0a3d38",
         "leaves": [
@@ -6030,7 +6030,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -6046,7 +6046,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -6056,7 +6056,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "signal",
-        "name": "📊 市场信号",
+        "name": "市场信号",
         "color": "#14b8a6",
         "dim": "#0a3d38",
         "leaves": [
@@ -6066,7 +6066,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "loop",
-        "name": "🔄 循环建模",
+        "name": "循环建模",
         "color": "#ec4899",
         "dim": "#5f0f2e",
         "leaves": [
@@ -6082,7 +6082,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "signal",
-        "name": "📊 市场信号",
+        "name": "市场信号",
         "color": "#14b8a6",
         "dim": "#0a3d38",
         "leaves": [
@@ -6092,7 +6092,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -6102,7 +6102,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "stake",
-        "name": "🗺️ 利益方分析",
+        "name": "利益方分析",
         "color": "#f97316",
         "dim": "#5f2e0a",
         "leaves": [
@@ -6112,7 +6112,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "loop",
-        "name": "🔄 循环建模",
+        "name": "循环建模",
         "color": "#ec4899",
         "dim": "#5f0f2e",
         "leaves": [
@@ -6128,7 +6128,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -6138,7 +6138,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "stake",
-        "name": "🗺️ 利益方分析",
+        "name": "利益方分析",
         "color": "#f97316",
         "dim": "#5f2e0a",
         "leaves": [
@@ -6148,7 +6148,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "system",
-        "name": "⚙️ 制度视角",
+        "name": "制度视角",
         "color": "#8b5cf6",
         "dim": "#3b1f6b",
         "leaves": [
@@ -6164,7 +6164,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "stake",
-        "name": "🗺️ 利益方分析",
+        "name": "利益方分析",
         "color": "#f97316",
         "dim": "#5f2e0a",
         "leaves": [
@@ -6174,7 +6174,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -6184,7 +6184,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "system",
-        "name": "⚙️ 制度视角",
+        "name": "制度视角",
         "color": "#8b5cf6",
         "dim": "#3b1f6b",
         "leaves": [
@@ -6200,7 +6200,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "history",
-        "name": "📜 历史纵深",
+        "name": "历史纵深",
         "color": "#22c55e",
         "dim": "#0f3d1a",
         "leaves": [
@@ -6210,7 +6210,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "stake",
-        "name": "🗺️ 利益方分析",
+        "name": "利益方分析",
         "color": "#f97316",
         "dim": "#5f2e0a",
         "leaves": [
@@ -6220,7 +6220,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "signal",
-        "name": "📊 市场信号",
+        "name": "市场信号",
         "color": "#14b8a6",
         "dim": "#0a3d38",
         "leaves": [
@@ -6230,7 +6230,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -6246,7 +6246,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "system",
-        "name": "⚙️ 制度视角",
+        "name": "制度视角",
         "color": "#8b5cf6",
         "dim": "#3b1f6b",
         "leaves": [
@@ -6256,7 +6256,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "loop",
-        "name": "🔄 循环建模",
+        "name": "循环建模",
         "color": "#ec4899",
         "dim": "#5f0f2e",
         "leaves": [
@@ -6266,7 +6266,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -6276,7 +6276,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "signal",
-        "name": "📊 市场信号",
+        "name": "市场信号",
         "color": "#14b8a6",
         "dim": "#0a3d38",
         "leaves": [
@@ -6292,7 +6292,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "system",
-        "name": "⚙️ 制度视角",
+        "name": "制度视角",
         "color": "#8b5cf6",
         "dim": "#3b1f6b",
         "leaves": [
@@ -6302,7 +6302,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -6312,7 +6312,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "signal",
-        "name": "📊 市场信号",
+        "name": "市场信号",
         "color": "#14b8a6",
         "dim": "#0a3d38",
         "leaves": [
@@ -6328,7 +6328,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "history",
-        "name": "📜 历史纵深",
+        "name": "历史纵深",
         "color": "#22c55e",
         "dim": "#0f3d1a",
         "leaves": [
@@ -6338,7 +6338,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "system",
-        "name": "⚙️ 制度视角",
+        "name": "制度视角",
         "color": "#8b5cf6",
         "dim": "#3b1f6b",
         "leaves": [
@@ -6348,7 +6348,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "stake",
-        "name": "🗺️ 利益方分析",
+        "name": "利益方分析",
         "color": "#f97316",
         "dim": "#5f2e0a",
         "leaves": [
@@ -6358,7 +6358,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "loop",
-        "name": "🔄 循环建模",
+        "name": "循环建模",
         "color": "#ec4899",
         "dim": "#5f0f2e",
         "leaves": [
@@ -6374,7 +6374,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "signal",
-        "name": "📊 市场信号",
+        "name": "市场信号",
         "color": "#14b8a6",
         "dim": "#0a3d38",
         "leaves": [
@@ -6384,7 +6384,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -6394,7 +6394,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "stake",
-        "name": "🗺️ 利益方分析",
+        "name": "利益方分析",
         "color": "#f97316",
         "dim": "#5f2e0a",
         "leaves": [
@@ -6410,7 +6410,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -6420,7 +6420,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "stake",
-        "name": "🗺️ 利益方分析",
+        "name": "利益方分析",
         "color": "#f97316",
         "dim": "#5f2e0a",
         "leaves": [
@@ -6430,7 +6430,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "history",
-        "name": "📜 历史纵深",
+        "name": "历史纵深",
         "color": "#22c55e",
         "dim": "#0f3d1a",
         "leaves": [
@@ -6446,7 +6446,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -6456,7 +6456,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "stake",
-        "name": "🗺️ 利益方分析",
+        "name": "利益方分析",
         "color": "#f97316",
         "dim": "#5f2e0a",
         "leaves": [
@@ -6466,7 +6466,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "system",
-        "name": "⚙️ 制度视角",
+        "name": "制度视角",
         "color": "#8b5cf6",
         "dim": "#3b1f6b",
         "leaves": [
@@ -6482,7 +6482,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -6492,7 +6492,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "signal",
-        "name": "📊 市场信号",
+        "name": "市场信号",
         "color": "#14b8a6",
         "dim": "#0a3d38",
         "leaves": [
@@ -6502,7 +6502,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "loop",
-        "name": "🔄 循环建模",
+        "name": "循环建模",
         "color": "#ec4899",
         "dim": "#5f0f2e",
         "leaves": [
@@ -6518,7 +6518,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -6528,7 +6528,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "stake",
-        "name": "🗺️ 利益方分析",
+        "name": "利益方分析",
         "color": "#f97316",
         "dim": "#5f2e0a",
         "leaves": [
@@ -6538,7 +6538,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "system",
-        "name": "⚙️ 制度视角",
+        "name": "制度视角",
         "color": "#8b5cf6",
         "dim": "#3b1f6b",
         "leaves": [
@@ -6554,7 +6554,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "system",
-        "name": "⚙️ 制度视角",
+        "name": "制度视角",
         "color": "#8b5cf6",
         "dim": "#3b1f6b",
         "leaves": [
@@ -6564,7 +6564,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "loop",
-        "name": "🔄 循环建模",
+        "name": "循环建模",
         "color": "#ec4899",
         "dim": "#5f0f2e",
         "leaves": [
@@ -6574,7 +6574,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "signal",
-        "name": "📊 市场信号",
+        "name": "市场信号",
         "color": "#14b8a6",
         "dim": "#0a3d38",
         "leaves": [
@@ -6584,7 +6584,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -6600,7 +6600,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -6610,7 +6610,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "stake",
-        "name": "🗺️ 利益方分析",
+        "name": "利益方分析",
         "color": "#f97316",
         "dim": "#5f2e0a",
         "leaves": [
@@ -6620,7 +6620,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "system",
-        "name": "⚙️ 制度视角",
+        "name": "制度视角",
         "color": "#8b5cf6",
         "dim": "#3b1f6b",
         "leaves": [
@@ -6636,7 +6636,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -6646,7 +6646,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "stake",
-        "name": "🗺️ 利益方分析",
+        "name": "利益方分析",
         "color": "#f97316",
         "dim": "#5f2e0a",
         "leaves": [
@@ -6656,7 +6656,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "system",
-        "name": "⚙️ 制度视角",
+        "name": "制度视角",
         "color": "#8b5cf6",
         "dim": "#3b1f6b",
         "leaves": [
@@ -6672,7 +6672,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -6682,7 +6682,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "loop",
-        "name": "🔄 循环建模",
+        "name": "循环建模",
         "color": "#ec4899",
         "dim": "#5f0f2e",
         "leaves": [
@@ -6692,7 +6692,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "signal",
-        "name": "📊 市场信号",
+        "name": "市场信号",
         "color": "#14b8a6",
         "dim": "#0a3d38",
         "leaves": [
@@ -6702,7 +6702,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "stake",
-        "name": "🗺️ 利益方分析",
+        "name": "利益方分析",
         "color": "#f97316",
         "dim": "#5f2e0a",
         "leaves": [
@@ -6718,7 +6718,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "loop",
-        "name": "🔄 循环建模",
+        "name": "循环建模",
         "color": "#ec4899",
         "dim": "#5f0f2e",
         "leaves": [
@@ -6728,7 +6728,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "signal",
-        "name": "📊 市场信号",
+        "name": "市场信号",
         "color": "#14b8a6",
         "dim": "#0a3d38",
         "leaves": [
@@ -6738,7 +6738,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "system",
-        "name": "⚙️ 制度视角",
+        "name": "制度视角",
         "color": "#8b5cf6",
         "dim": "#3b1f6b",
         "leaves": [
@@ -6748,7 +6748,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -6764,7 +6764,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -6774,7 +6774,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "history",
-        "name": "📜 历史纵深",
+        "name": "历史纵深",
         "color": "#22c55e",
         "dim": "#0f3d1a",
         "leaves": [
@@ -6784,7 +6784,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "stake",
-        "name": "🗺️ 利益方分析",
+        "name": "利益方分析",
         "color": "#f97316",
         "dim": "#5f2e0a",
         "leaves": [
@@ -6800,7 +6800,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "signal",
-        "name": "📊 市场信号",
+        "name": "市场信号",
         "color": "#14b8a6",
         "dim": "#0a3d38",
         "leaves": [
@@ -6810,7 +6810,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -6820,7 +6820,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "loop",
-        "name": "🔄 循环建模",
+        "name": "循环建模",
         "color": "#ec4899",
         "dim": "#5f0f2e",
         "leaves": [
@@ -6830,7 +6830,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "history",
-        "name": "📜 历史纵深",
+        "name": "历史纵深",
         "color": "#22c55e",
         "dim": "#0f3d1a",
         "leaves": [
@@ -6846,7 +6846,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "signal",
-        "name": "📊 市场信号",
+        "name": "市场信号",
         "color": "#14b8a6",
         "dim": "#0a3d38",
         "leaves": [
@@ -6856,7 +6856,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "loop",
-        "name": "🔄 循环建模",
+        "name": "循环建模",
         "color": "#ec4899",
         "dim": "#5f0f2e",
         "leaves": [
@@ -6866,7 +6866,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "system",
-        "name": "⚙️ 制度视角",
+        "name": "制度视角",
         "color": "#8b5cf6",
         "dim": "#3b1f6b",
         "leaves": [
@@ -6876,7 +6876,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -6892,7 +6892,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -6902,7 +6902,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "stake",
-        "name": "🗺️ 利益方分析",
+        "name": "利益方分析",
         "color": "#f97316",
         "dim": "#5f2e0a",
         "leaves": [
@@ -6912,7 +6912,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "signal",
-        "name": "📊 市场信号",
+        "name": "市场信号",
         "color": "#14b8a6",
         "dim": "#0a3d38",
         "leaves": [
@@ -6928,7 +6928,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "loop",
-        "name": "🔄 循环建模",
+        "name": "循环建模",
         "color": "#ec4899",
         "dim": "#5f0f2e",
         "leaves": [
@@ -6938,7 +6938,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "signal",
-        "name": "📊 市场信号",
+        "name": "市场信号",
         "color": "#14b8a6",
         "dim": "#0a3d38",
         "leaves": [
@@ -6948,7 +6948,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "system",
-        "name": "⚙️ 制度视角",
+        "name": "制度视角",
         "color": "#8b5cf6",
         "dim": "#3b1f6b",
         "leaves": [
@@ -6958,7 +6958,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -6974,7 +6974,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -6984,7 +6984,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "signal",
-        "name": "📊 市场信号",
+        "name": "市场信号",
         "color": "#14b8a6",
         "dim": "#0a3d38",
         "leaves": [
@@ -6994,7 +6994,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "loop",
-        "name": "🔄 循环建模",
+        "name": "循环建模",
         "color": "#ec4899",
         "dim": "#5f0f2e",
         "leaves": [
@@ -7010,7 +7010,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -7020,7 +7020,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "stake",
-        "name": "🗺️ 利益方分析",
+        "name": "利益方分析",
         "color": "#f97316",
         "dim": "#5f2e0a",
         "leaves": [
@@ -7030,7 +7030,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "system",
-        "name": "⚙️ 制度视角",
+        "name": "制度视角",
         "color": "#8b5cf6",
         "dim": "#3b1f6b",
         "leaves": [
@@ -7046,7 +7046,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -7056,7 +7056,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "stake",
-        "name": "🗺️ 利益方分析",
+        "name": "利益方分析",
         "color": "#f97316",
         "dim": "#5f2e0a",
         "leaves": [
@@ -7072,7 +7072,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -7082,7 +7082,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "stake",
-        "name": "🗺️ 利益方分析",
+        "name": "利益方分析",
         "color": "#f97316",
         "dim": "#5f2e0a",
         "leaves": [
@@ -7092,7 +7092,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "system",
-        "name": "⚙️ 制度视角",
+        "name": "制度视角",
         "color": "#8b5cf6",
         "dim": "#3b1f6b",
         "leaves": [
@@ -7108,7 +7108,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -7118,7 +7118,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "signal",
-        "name": "📊 市场信号",
+        "name": "市场信号",
         "color": "#14b8a6",
         "dim": "#0a3d38",
         "leaves": [
@@ -7128,7 +7128,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "stake",
-        "name": "🗺️ 利益方分析",
+        "name": "利益方分析",
         "color": "#f97316",
         "dim": "#5f2e0a",
         "leaves": [
@@ -7144,7 +7144,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "loop",
-        "name": "🔄 循环建模",
+        "name": "循环建模",
         "color": "#ec4899",
         "dim": "#5f0f2e",
         "leaves": [
@@ -7154,7 +7154,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "signal",
-        "name": "📊 市场信号",
+        "name": "市场信号",
         "color": "#14b8a6",
         "dim": "#0a3d38",
         "leaves": [
@@ -7164,7 +7164,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "system",
-        "name": "⚙️ 制度视角",
+        "name": "制度视角",
         "color": "#8b5cf6",
         "dim": "#3b1f6b",
         "leaves": [
@@ -7174,7 +7174,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -7190,7 +7190,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -7200,7 +7200,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "signal",
-        "name": "📊 市场信号",
+        "name": "市场信号",
         "color": "#14b8a6",
         "dim": "#0a3d38",
         "leaves": [
@@ -7210,7 +7210,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "stake",
-        "name": "🗺️ 利益方分析",
+        "name": "利益方分析",
         "color": "#f97316",
         "dim": "#5f2e0a",
         "leaves": [
@@ -7220,7 +7220,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "history",
-        "name": "📜 历史纵深",
+        "name": "历史纵深",
         "color": "#22c55e",
         "dim": "#0f3d1a",
         "leaves": [
@@ -7236,7 +7236,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -7246,7 +7246,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "loop",
-        "name": "🔄 循环建模",
+        "name": "循环建模",
         "color": "#ec4899",
         "dim": "#5f0f2e",
         "leaves": [
@@ -7256,7 +7256,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "system",
-        "name": "⚙️ 制度视角",
+        "name": "制度视角",
         "color": "#8b5cf6",
         "dim": "#3b1f6b",
         "leaves": [
@@ -7272,7 +7272,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "stake",
-        "name": "🗺️ 利益方分析",
+        "name": "利益方分析",
         "color": "#f97316",
         "dim": "#5f2e0a",
         "leaves": [
@@ -7282,7 +7282,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -7292,7 +7292,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "system",
-        "name": "⚙️ 制度视角",
+        "name": "制度视角",
         "color": "#8b5cf6",
         "dim": "#3b1f6b",
         "leaves": [
@@ -7302,7 +7302,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "signal",
-        "name": "📊 市场信号",
+        "name": "市场信号",
         "color": "#14b8a6",
         "dim": "#0a3d38",
         "leaves": [
@@ -7318,7 +7318,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -7328,7 +7328,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "stake",
-        "name": "🗺️ 利益方分析",
+        "name": "利益方分析",
         "color": "#f97316",
         "dim": "#5f2e0a",
         "leaves": [
@@ -7338,7 +7338,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "system",
-        "name": "⚙️ 制度视角",
+        "name": "制度视角",
         "color": "#8b5cf6",
         "dim": "#3b1f6b",
         "leaves": [
@@ -7354,7 +7354,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -7364,7 +7364,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "signal",
-        "name": "📊 市场信号",
+        "name": "市场信号",
         "color": "#14b8a6",
         "dim": "#0a3d38",
         "leaves": [
@@ -7374,7 +7374,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "loop",
-        "name": "🔄 循环建模",
+        "name": "循环建模",
         "color": "#ec4899",
         "dim": "#5f0f2e",
         "leaves": [
@@ -7384,7 +7384,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "system",
-        "name": "⚙️ 制度视角",
+        "name": "制度视角",
         "color": "#8b5cf6",
         "dim": "#3b1f6b",
         "leaves": [
@@ -7400,7 +7400,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -7410,7 +7410,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "stake",
-        "name": "🗺️ 利益方分析",
+        "name": "利益方分析",
         "color": "#f97316",
         "dim": "#5f2e0a",
         "leaves": [
@@ -7426,7 +7426,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -7436,7 +7436,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "stake",
-        "name": "🗺️ 利益方分析",
+        "name": "利益方分析",
         "color": "#f97316",
         "dim": "#5f2e0a",
         "leaves": [
@@ -7446,7 +7446,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "system",
-        "name": "⚙️ 制度视角",
+        "name": "制度视角",
         "color": "#8b5cf6",
         "dim": "#3b1f6b",
         "leaves": [
@@ -7462,7 +7462,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -7472,7 +7472,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "loop",
-        "name": "🔄 循环建模",
+        "name": "循环建模",
         "color": "#ec4899",
         "dim": "#5f0f2e",
         "leaves": [
@@ -7482,7 +7482,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "signal",
-        "name": "📊 市场信号",
+        "name": "市场信号",
         "color": "#14b8a6",
         "dim": "#0a3d38",
         "leaves": [
@@ -7492,7 +7492,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "history",
-        "name": "📜 历史纵深",
+        "name": "历史纵深",
         "color": "#22c55e",
         "dim": "#0f3d1a",
         "leaves": [
@@ -7508,7 +7508,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -7518,7 +7518,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "signal",
-        "name": "📊 市场信号",
+        "name": "市场信号",
         "color": "#14b8a6",
         "dim": "#0a3d38",
         "leaves": [
@@ -7528,7 +7528,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "loop",
-        "name": "🔄 循环建模",
+        "name": "循环建模",
         "color": "#ec4899",
         "dim": "#5f0f2e",
         "leaves": [
@@ -7544,7 +7544,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -7554,7 +7554,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "loop",
-        "name": "🔄 循环建模",
+        "name": "循环建模",
         "color": "#ec4899",
         "dim": "#5f0f2e",
         "leaves": [
@@ -7564,7 +7564,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "signal",
-        "name": "📊 市场信号",
+        "name": "市场信号",
         "color": "#14b8a6",
         "dim": "#0a3d38",
         "leaves": [
@@ -7574,7 +7574,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "stake",
-        "name": "🗺️ 利益方分析",
+        "name": "利益方分析",
         "color": "#f97316",
         "dim": "#5f2e0a",
         "leaves": [
@@ -7590,7 +7590,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -7600,7 +7600,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "signal",
-        "name": "📊 市场信号",
+        "name": "市场信号",
         "color": "#14b8a6",
         "dim": "#0a3d38",
         "leaves": [
@@ -7610,7 +7610,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "loop",
-        "name": "🔄 循环建模",
+        "name": "循环建模",
         "color": "#ec4899",
         "dim": "#5f0f2e",
         "leaves": [
@@ -7620,7 +7620,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "stake",
-        "name": "🗺️ 利益方分析",
+        "name": "利益方分析",
         "color": "#f97316",
         "dim": "#5f2e0a",
         "leaves": [
@@ -7636,7 +7636,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -7646,7 +7646,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "system",
-        "name": "⚙️ 制度视角",
+        "name": "制度视角",
         "color": "#8b5cf6",
         "dim": "#3b1f6b",
         "leaves": [
@@ -7662,7 +7662,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -7672,7 +7672,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "stake",
-        "name": "🗺️ 利益方分析",
+        "name": "利益方分析",
         "color": "#f97316",
         "dim": "#5f2e0a",
         "leaves": [
@@ -7682,7 +7682,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "signal",
-        "name": "📊 市场信号",
+        "name": "市场信号",
         "color": "#14b8a6",
         "dim": "#0a3d38",
         "leaves": [
@@ -7698,7 +7698,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -7708,7 +7708,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "signal",
-        "name": "📊 市场信号",
+        "name": "市场信号",
         "color": "#14b8a6",
         "dim": "#0a3d38",
         "leaves": [
@@ -7718,7 +7718,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "stake",
-        "name": "🗺️ 利益方分析",
+        "name": "利益方分析",
         "color": "#f97316",
         "dim": "#5f2e0a",
         "leaves": [
@@ -7734,7 +7734,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -7744,7 +7744,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "stake",
-        "name": "🗺️ 利益方分析",
+        "name": "利益方分析",
         "color": "#f97316",
         "dim": "#5f2e0a",
         "leaves": [
@@ -7754,7 +7754,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "signal",
-        "name": "📊 市场信号",
+        "name": "市场信号",
         "color": "#14b8a6",
         "dim": "#0a3d38",
         "leaves": [
@@ -7764,7 +7764,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "loop",
-        "name": "🔄 循环建模",
+        "name": "循环建模",
         "color": "#ec4899",
         "dim": "#5f0f2e",
         "leaves": [
@@ -7780,7 +7780,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -7790,7 +7790,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "stake",
-        "name": "🗺️ 利益方分析",
+        "name": "利益方分析",
         "color": "#f97316",
         "dim": "#5f2e0a",
         "leaves": [
@@ -7800,7 +7800,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "system",
-        "name": "⚙️ 制度视角",
+        "name": "制度视角",
         "color": "#8b5cf6",
         "dim": "#3b1f6b",
         "leaves": [
@@ -7816,7 +7816,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
@@ -7826,7 +7826,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "history",
-        "name": "📜 历史纵深",
+        "name": "历史纵深",
         "color": "#22c55e",
         "dim": "#0f3d1a",
         "leaves": [
@@ -7842,7 +7842,7 @@ const MIND_MAP_DATA = [
     "frameworks": [
       {
         "id": "history",
-        "name": "📜 历史纵深",
+        "name": "历史纵深",
         "color": "#22c55e",
         "dim": "#0f3d1a",
         "leaves": [
@@ -7852,7 +7852,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "stake",
-        "name": "🗺️ 利益方分析",
+        "name": "利益方分析",
         "color": "#f97316",
         "dim": "#5f2e0a",
         "leaves": [
@@ -7862,7 +7862,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "signal",
-        "name": "📊 市场信号",
+        "name": "市场信号",
         "color": "#14b8a6",
         "dim": "#0a3d38",
         "leaves": [
@@ -7872,7 +7872,7 @@ const MIND_MAP_DATA = [
       },
       {
         "id": "logic",
-        "name": "🔍 追问底层逻辑",
+        "name": "追问底层逻辑",
         "color": "#3b82f6",
         "dim": "#1e3a5f",
         "leaves": [
