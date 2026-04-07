@@ -177,6 +177,9 @@ body { background:#fafaf9; color:#1c1917; font-family:'Inter','Noto Sans SC',-ap
   font-size: 13px !important;
   border: 1px solid #3a3a4e !important;
   font-family: 'Inter', 'Noto Sans SC', sans-serif !important;
+  text-overflow: clip !important;
+  overflow: visible !important;
+  line-height: 1.4 !important;
 }
 #jsmindContainer jmnode.root {
   background: linear-gradient(135deg, #2a2a4a, #1a1a2e) !important;
@@ -449,7 +452,15 @@ document.addEventListener('DOMContentLoaded', function() {
     try { var s = localStorage.getItem('mindmap-' + idx); return s ? JSON.parse(s) : null; } catch(e) { return null; }
   }
 
-  function buildDefaultMind(data) {
+  function expandLeaf(leaf, idx) {
+    var card = CARDS_DATA[idx];
+    if (!card) return leaf;
+    var prefix = leaf.replace(/…$/, '');
+    var match = card.points.find(function(p) { return p.indexOf(prefix) === 0; });
+    return match || leaf;
+  }
+
+  function buildDefaultMind(data, idx) {
     var mind = { meta: { name: data.title, author: 'xiaolin' }, format: 'node_array', data: [] };
     mind.data.push({ id: 'root', isroot: true, topic: data.title });
     var nodeId = 1;
@@ -457,7 +468,7 @@ document.addEventListener('DOMContentLoaded', function() {
       var parentId = 'fw_' + fw.id;
       mind.data.push({ id: parentId, parentid: 'root', topic: fw.name });
       fw.leaves.forEach(function(leaf) {
-        mind.data.push({ id: 'n' + (nodeId++), parentid: parentId, topic: leaf });
+        mind.data.push({ id: 'n' + (nodeId++), parentid: parentId, topic: expandLeaf(leaf, idx) });
       });
     });
     return mind;
@@ -487,14 +498,14 @@ document.addEventListener('DOMContentLoaded', function() {
     if (saveBtn) saveBtn.classList.toggle('saved', hasSaved);
 
     setTimeout(function() {
-      var mind = savedMind || buildDefaultMind(data);
+      var mind = savedMind || buildDefaultMind(data, idx);
 
       var options = {
         container: 'jsmindContainer',
         editable: true,
         theme: 'primary',
         view: { draggable: true },
-        layout: { hspace: 60, vspace: 30 },
+        layout: { hspace: 100, vspace: 50 },
         shortcut: { enable: false }
       };
       currentJsMind = new jsMind(options);
@@ -525,9 +536,9 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       });
 
-      // Apply framework colors to nodes
-      if (!savedMind) {
-        setTimeout(function() {
+      // Apply framework colors and fix node wrapping
+      setTimeout(function() {
+        if (!savedMind) {
           data.frameworks.forEach(function(fw) {
             var node = currentJsMind.get_node('fw_' + fw.id);
             if (node) {
@@ -535,15 +546,24 @@ document.addEventListener('DOMContentLoaded', function() {
               if (el) el.setAttribute('data-fw', fw.id);
             }
             fw.leaves.forEach(function(leaf) {
-              var cnode = mind.data.find(function(n) { return n.parentid === 'fw_' + fw.id && n.topic === leaf; });
+              var cnode = mind.data.find(function(n) { return n.parentid === 'fw_' + fw.id && n.topic === expandLeaf(leaf, idx); });
               if (cnode) {
                 var cn = currentJsMind.get_node(cnode.id);
                 if (cn && cn._data.view.element) cn._data.view.element.setAttribute('data-fw', fw.id);
               }
             });
           });
-        }, 100);
-      }
+        }
+        // Force text wrapping on leaf nodes and relayout
+        document.querySelectorAll('#jsmindContainer jmnode').forEach(function(el) {
+          if (!el.classList.contains('root')) {
+            el.style.maxWidth = '240px';
+            el.style.whiteSpace = 'normal';
+            el.style.wordBreak = 'break-word';
+          }
+        });
+        currentJsMind.view.relayout();
+      }, 100);
     }, 50);
   }
 
